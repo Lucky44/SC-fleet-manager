@@ -4,7 +4,7 @@ import { fetchShips, fetchItems } from './services/dataService';
 import { ShipList } from './components/ShipList';
 import { FleetList } from './components/FleetList';
 import { LoadoutEditor } from './components/LoadoutEditor';
-import { Rocket, Shield, Database, Layout } from 'lucide-react';
+import { Rocket, Shield, Database, Layout, FileText } from 'lucide-react';
 import { decodeFleet } from './utils/dataEncoding';
 
 const App: React.FC = () => {
@@ -127,7 +127,19 @@ const App: React.FC = () => {
           <h1 className="text-4xl font-bold text-sc-blue tracking-tighter flex items-center gap-2">
             <Shield className="w-10 h-10" /> SC FLEET LOADOUT MANAGER
           </h1>
-          <p className="text-gray-500 font-mono text-sm mt-1">v{__APP_VERSION__} // DATALINK: SCUNPACKED</p>
+          <p className="text-gray-500 font-mono text-sm mt-1 flex items-center gap-2">
+            v{__APP_VERSION__} // DATALINK: SCUNPACKED
+            <a
+              href="https://github.com/Lucky44/sc-fleet-loadout-manager/blob/main/README.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sc-blue/60 hover:text-sc-blue transition-colors flex items-center gap-1 ml-1"
+              title="View Documentation"
+            >
+              <FileText className="w-3.5 h-3.5" />
+              <span className="text-[10px] uppercase tracking-widest border-b border-sc-blue/30">Docs</span>
+            </a>
+          </p>
         </div>
 
         <nav className="flex bg-sc-gray rounded-lg p-1 border border-white/5">
