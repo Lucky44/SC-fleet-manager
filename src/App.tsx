@@ -1,0 +1,136 @@
+import React, { useState, useEffect } from 'react';
+import type { Ship, Item, FleetShip } from './types';
+import { fetchShips, fetchItems } from './services/dataService';
+import { ShipList } from './components/ShipList';
+import { FleetList } from './components/FleetList';
+import { LoadoutEditor } from './components/LoadoutEditor';
+import { Rocket, Shield, Database, Layout } from 'lucide-react';
+
+const App: React.FC = () => {
+  const [ships, setShips] = useState<Ship[]>([]);
+  const [items, setItems] = useState<Item[]>([]);
+  const [fleet, setFleet] = useState<FleetShip[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState<'ships' | 'fleet'>('ships');
+  const [editingShipId, setEditingShipId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const [shipsData, itemsData] = await Promise.all([fetchShips(), fetchItems()]);
+        setShips(shipsData);
+        setItems(itemsData);
+
+        const savedFleet = localStorage.getItem('sc_fleet');
+        if (savedFleet) {
+          setFleet(JSON.parse(savedFleet));
+        }
+      } catch (error) {
+        console.error("Error loading data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadData();
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('sc_fleet', JSON.stringify(fleet));
+  }, [fleet]);
+
+  const addToFleet = (ship: Ship) => {
+    const newShip: FleetShip = {
+      id: crypto.randomUUID(),
+      shipClass: ship.ClassName,
+      name: ship.Name,
+      customLoadout: {}
+    };
+    setFleet([...fleet, newShip]);
+    setActiveTab('fleet');
+  };
+
+  const removeFromFleet = (id: string) => {
+    setFleet(fleet.filter(s => s.id !== id));
+    if (editingShipId === id) setEditingShipId(null);
+  };
+
+  const updateLoadout = (id: string, portName: string, itemClassName: string) => {
+    setFleet(fleet.map(s => {
+      if (s.id === id) {
+        return {
+          ...s,
+          customLoadout: { ...s.customLoadout, [portName]: itemClassName }
+        };
+      }
+      return s;
+    }));
+  };
+
+  const editingShip = fleet.find(s => s.id === editingShipId);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-sc-dark flex items-center justify-center text-sc-blue">
+        <div className="flex flex-col items-center gap-4">
+          <Rocket className="animate-bounce w-12 h-12" />
+          <p className="text-xl font-mono tracking-widest">INITIALIZING HUD...</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-sc-dark text-gray-200 font-sans p-4 md:p-8">
+      {/* Header */}
+      <header className="max-w-7xl mx-auto mb-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div>
+          <h1 className="text-4xl font-bold text-sc-blue tracking-tighter flex items-center gap-2">
+            <Shield className="w-10 h-10" /> STAR CITIZEN FLEET OPS
+          </h1>
+          <p className="text-gray-500 font-mono text-sm mt-1">v4.0.0 // DATALINK: SCUNPACKED</p>
+        </div>
+
+        <nav className="flex bg-sc-gray rounded-lg p-1 border border-white/5">
+          <button
+            onClick={() => setActiveTab('ships')}
+            className={`flex items-center gap-2 px-6 py-2 rounded-md transition-all ${activeTab === 'ships' ? 'bg-sc-blue text-black font-bold' : 'hover:bg-white/5 text-gray-400'}`}
+          >
+            <Database className="w-4 h-4" /> SHIP DATABASE
+          </button>
+          <button
+            onClick={() => setActiveTab('fleet')}
+            className={`flex items-center gap-2 px-6 py-2 rounded-md transition-all ${activeTab === 'fleet' ? 'bg-sc-blue text-black font-bold' : 'hover:bg-white/5 text-gray-400'}`}
+          >
+            <Layout className="w-4 h-4" /> MY FLEET ({fleet.length})
+          </button>
+        </nav>
+      </header>
+
+      <main className="max-w-7xl mx-auto">
+        {activeTab === 'ships' ? (
+          <ShipList ships={ships} onAddToFleet={addToFleet} />
+        ) : (
+          <FleetList
+            fleet={fleet}
+            ships={ships}
+            onRemove={removeFromFleet}
+            onEdit={(ship) => setEditingShipId(ship.id)}
+          />
+        )}
+      </main>
+
+      {/* Loadout Modal */}
+      {editingShip && (
+        <LoadoutEditor
+          fleetShip={editingShip}
+          ships={ships}
+          items={items}
+          onUpdate={updateLoadout}
+          onClose={() => setEditingShipId(null)}
+        />
+      )}
+    </div>
+  );
+};
+
+export default App;
