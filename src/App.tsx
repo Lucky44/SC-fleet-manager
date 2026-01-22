@@ -96,19 +96,19 @@ const App: React.FC = () => {
           <h1 className="text-4xl font-bold text-sc-blue tracking-tighter flex items-center gap-2">
             <Shield className="w-10 h-10" /> STAR CITIZEN FLEET OPS
           </h1>
-          <p className="text-gray-500 font-mono text-sm mt-1">v4.0.0 // DATALINK: SCUNPACKED</p>
+          <p className="text-gray-500 font-mono text-sm mt-1">v{__APP_VERSION__} // DATALINK: SCUNPACKED</p>
         </div>
 
         <nav className="flex bg-sc-gray rounded-lg p-1 border border-white/5">
           <button
             onClick={() => setActiveTab('ships')}
-            className={`flex items-center gap-2 px-6 py-2 rounded-md transition-all ${activeTab === 'ships' ? 'bg-sc-blue text-black font-bold' : 'hover:bg-white/5 text-gray-400'}`}
+            className={`flex items-center gap-2 px-6 py-2 rounded-md transition-all ${activeTab === 'ships' ? 'bg-sc-blue text-orange-600 font-bold' : 'hover:bg-white/5 text-orange-500'}`}
           >
             <Database className="w-4 h-4" /> SHIP DATABASE
           </button>
           <button
             onClick={() => setActiveTab('fleet')}
-            className={`flex items-center gap-2 px-6 py-2 rounded-md transition-all ${activeTab === 'fleet' ? 'bg-sc-blue text-black font-bold' : 'hover:bg-white/5 text-gray-400'}`}
+            className={`flex items-center gap-2 px-6 py-2 rounded-md transition-all ${activeTab === 'fleet' ? 'bg-sc-blue text-orange-600 font-bold' : 'hover:bg-white/5 text-orange-500'}`}
           >
             <Layout className="w-4 h-4" /> MY FLEET ({fleet.length})
           </button>
