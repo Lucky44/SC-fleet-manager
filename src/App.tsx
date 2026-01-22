@@ -23,7 +23,14 @@ const App: React.FC = () => {
 
         const savedFleet = localStorage.getItem('sc_fleet');
         if (savedFleet) {
-          setFleet(JSON.parse(savedFleet));
+          try {
+            const parsed = JSON.parse(savedFleet);
+            if (Array.isArray(parsed)) {
+              setFleet(parsed);
+            }
+          } catch (e) {
+            console.error("Failed to parse saved fleet:", e);
+          }
         }
       } catch (error) {
         console.error("Error loading data:", error);
@@ -34,9 +41,11 @@ const App: React.FC = () => {
     loadData();
   }, []);
 
+  // Save to local storage whenever fleet changes
   useEffect(() => {
+    if (loading) return; // Don't save while initial data is loading
     localStorage.setItem('sc_fleet', JSON.stringify(fleet));
-  }, [fleet]);
+  }, [fleet, loading]);
 
   const addToFleet = (ship: Ship) => {
     const newShip: FleetShip = {
