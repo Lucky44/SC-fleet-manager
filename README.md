@@ -1,6 +1,7 @@
 # 🚀 SC FLEET LOADOUT MANAGER
+MADE BY THE COMMUNITY by Tripp Robbins
 
-A professional-grade, private, and portable fleet management suite for Star Citizen pilots. 
+A simple, private, and portable fleet management suite for Star Citizen pilots. 
 
 ![Fleet Manager Preview](./public/og-image.png)
 
