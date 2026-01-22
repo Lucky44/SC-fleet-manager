@@ -153,7 +153,19 @@ export const fetchItems = async (): Promise<Item[]> => {
         return true;
     });
 
-    return normalized;
+    // Deduplicate items by Name
+    const uniqueItems = new Map<string, Item>();
+
+    // Sort by ClassName length to keep 'base' versions
+    normalized.sort((a, b) => a.className.length - b.className.length);
+
+    normalized.forEach(item => {
+        if (!uniqueItems.has(item.name)) {
+            uniqueItems.set(item.name, item);
+        }
+    });
+
+    return Array.from(uniqueItems.values());
 };
 
 // Patch specific ships with known issues (e.g. SCUnpacked has "Anvil F8" which is old data)
