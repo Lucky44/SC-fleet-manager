@@ -213,6 +213,12 @@ export const filterItemsForPort = (items: Item[], port: Port): Item[] => {
             const itemType = (item.type || '').toLowerCase();
             const itemSubType = (item.subType || '').toLowerCase();
             const targetType = mainType.toLowerCase();
+            const fullTargetType = type.toLowerCase();
+
+            // Special Case: "WeaponGun.Rocket" (100i missile bay)
+            // This type is technically a "Gun" type but we don't want to match invalid guns to it.
+            // Since we rely on the generic 'weapongun' match at the bottom, we must explicit skip this type.
+            if (fullTargetType.includes('rocket')) return false;
 
             // Broad matching for common component types with aliases
             if ((targetType.includes('shield') || targetType === 'shld') &&
@@ -231,7 +237,8 @@ export const filterItemsForPort = (items: Item[], port: Port): Item[] => {
             // Port Types: WeaponGun, Turret, TurretGun, Wepn
             // Item Types: WeaponGun, WeaponMining, WeaponTractor (but NOT Missile)
             // Note: Exclude "WeaponGun.Rocket" (used on 100i missile bay) to prevent it accepting standard guns
-            const isGunPort = (targetType.includes('weapongun') && !targetType.includes('rocket')) || targetType === 'turret' || targetType.includes('turretgun') || targetType === 'wepn';
+            // MUST use 'type' (full string) because 'targetType' (split) has lost the '.Rocket' suffix
+            const isGunPort = (targetType.includes('weapongun') && !fullTargetType.includes('rocket')) || targetType === 'turret' || targetType.includes('turretgun') || targetType === 'wepn';
             if (isGunPort) {
                 const isGunItem = itemType.includes('weapongun') || itemType.includes('weaponmining') || itemType.includes('weapontractor');
                 // Explicitly exclude missiles even if they matched above logic somehow
