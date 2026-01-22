@@ -230,7 +230,8 @@ export const filterItemsForPort = (items: Item[], port: Port): Item[] => {
             // GUNS: Strict separation from missiles
             // Port Types: WeaponGun, Turret, TurretGun, Wepn
             // Item Types: WeaponGun, WeaponMining, WeaponTractor (but NOT Missile)
-            const isGunPort = targetType.includes('weapongun') || targetType === 'turret' || targetType.includes('turretgun') || targetType === 'wepn';
+            // Note: Exclude "WeaponGun.Rocket" (used on 100i missile bay) to prevent it accepting standard guns
+            const isGunPort = (targetType.includes('weapongun') && !targetType.includes('rocket')) || targetType === 'turret' || targetType.includes('turretgun') || targetType === 'wepn';
             if (isGunPort) {
                 const isGunItem = itemType.includes('weapongun') || itemType.includes('weaponmining') || itemType.includes('weapontractor');
                 // Explicitly exclude missiles even if they matched above logic somehow
