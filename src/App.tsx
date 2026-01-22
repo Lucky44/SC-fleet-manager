@@ -5,6 +5,7 @@ import { ShipList } from './components/ShipList';
 import { FleetList } from './components/FleetList';
 import { LoadoutEditor } from './components/LoadoutEditor';
 import { Rocket, Shield, Database, Layout } from 'lucide-react';
+import { decodeFleet } from './utils/dataEncoding';
 
 const App: React.FC = () => {
   const [ships, setShips] = useState<Ship[]>([]);
@@ -21,12 +22,33 @@ const App: React.FC = () => {
         setShips(shipsData);
         setItems(itemsData);
 
+        // Check for URL-based fleet import
+        const urlParams = new URLSearchParams(window.location.search);
+        const encodedFleet = urlParams.get('fleet');
+
+        if (encodedFleet) {
+          const decoded = decodeFleet(encodedFleet);
+          if (decoded && window.confirm("Detected a shared fleet! Would you like to import it? This will merge with your current fleet.")) {
+            // Remove the param from URL without refreshing
+            const newUrl = window.location.pathname;
+            window.history.replaceState({}, '', newUrl);
+
+            setFleet(prev => {
+              // Simple merge: append imports, but could be smarter (dedupe by ID)
+              const merged = [...prev, ...decoded];
+              return merged;
+            });
+            setActiveTab('fleet');
+          }
+        }
+
         const savedFleet = localStorage.getItem('sc_fleet');
         if (savedFleet) {
           try {
             const parsed = JSON.parse(savedFleet);
             if (Array.isArray(parsed)) {
-              setFleet(parsed);
+              // If we already imported from URL, only set from storage if fleet is currently empty
+              setFleet(current => current.length === 0 ? parsed : current);
             }
           } catch (e) {
             console.error("Failed to parse saved fleet:", e);
@@ -63,6 +85,15 @@ const App: React.FC = () => {
     if (editingShipId === id) setEditingShipId(null);
   };
 
+  const clearFleet = () => {
+    setFleet([]);
+    setEditingShipId(null);
+  };
+
+  const importFleet = (newFleet: FleetShip[]) => {
+    setFleet([...fleet, ...newFleet]);
+  };
+
   const updateLoadout = (id: string, portName: string, itemClassName: string) => {
     setFleet(fleet.map(s => {
       if (s.id === id) {
@@ -94,7 +125,7 @@ const App: React.FC = () => {
       <header className="max-w-7xl mx-auto mb-8 flex flex-col md:flex-row justify-between items-center gap-4">
         <div>
           <h1 className="text-4xl font-bold text-sc-blue tracking-tighter flex items-center gap-2">
-            <Shield className="w-10 h-10" /> STAR CITIZEN FLEET OPS
+            <Shield className="w-10 h-10" /> SC FLEET LOADOUT MANAGER
           </h1>
           <p className="text-gray-500 font-mono text-sm mt-1">v{__APP_VERSION__} // DATALINK: SCUNPACKED</p>
         </div>
@@ -124,6 +155,8 @@ const App: React.FC = () => {
             ships={ships}
             onRemove={removeFromFleet}
             onEdit={(ship) => setEditingShipId(ship.id)}
+            onImport={importFleet}
+            onClear={clearFleet}
           />
         )}
       </main>

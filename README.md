@@ -1,73 +1,38 @@
-# React + TypeScript + Vite
+# 🚀 SC FLEET LOADOUT MANAGER
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional-grade, private, and portable fleet management suite for Star Citizen pilots. 
 
-Currently, two official plugins are available:
+![Fleet Manager Preview](./public/og-image.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **🚢 Comprehensive Ship Database:** Browse and filter every ship in the verse with data powered by [scunpacked.com](https://scunpacked.com).
+- **🔧 Custom Loadouts:** Configure shields, weapons, and components for your specific fleet.
+- **🛰️ Datalink Sync:** Instantly share your fleet between devices (PC to Phone) using unique encoded URLs.
+- **💾 Data Ownership:** Export your fleet as a JSON hard copy or import builds from friends.
+- **🔒 Privacy First:** No accounts, no tracking. Your hangar data stays in your browser's local storage.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📡 Using the Datalink System
 
-## Expanding the ESLint configuration
+### Sharing your Fleet
+1. Go to **MY FLEET**.
+2. Click **SHARE FLEET** to copy a secure Datalink URL to your clipboard.
+3. Send that link to your phone or a friend. When opened, it will auto-detect the shared ships.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Backing up Data
+Click **EXPORT** to download a `.json` backup of your hangar. You can re-import this file at any time to restore your fleet.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Development
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+This project is built with **React**, **TypeScript**, and **Vite**.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Getting Started
+1. Install dependencies: `npm install`
+2. Start dev server: `npm run dev`
+3. Build for production: `npm run build`
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Deployment
+The project is configured to deploy automatically to **GitHub Pages** via the included GitHub Actions workflow.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+*Disclaimer: This is a fan-made tool. Star Citizen, Roberts Space Industries, and Cloud Imperium Games are trademarks of Cloud Imperium Rights LLC.*
