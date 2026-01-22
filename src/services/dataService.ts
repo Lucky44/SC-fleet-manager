@@ -114,9 +114,40 @@ export const fetchItems = async (): Promise<Item[]> => {
         if (item.name.startsWith('@') || item.name.includes('PLACEHOLDER')) return false;
         if (item.name === 'Unknown' || item.name === 'MISSING') return false;
 
-        // Filter out internal controller items and bracketed debug names
-        if (item.name.startsWith('[') && item.name.endsWith(']')) return false;
-        if (item.className.toLowerCase().includes('controller')) return false;
+        // Filter out FPS gear and Props
+        // Use includes() because types can be "WeaponPersonal.Gadget", "Misc.UNDEFINED", etc.
+        const typeLower = (item.type || '').toLowerCase();
+        if (typeLower.includes('weaponpersonal')) return false;
+        if (typeLower.includes('armor')) return false;
+        if (typeLower.includes('gadget')) return false;
+        if (typeLower.includes('misc')) return false;
+        if (typeLower.includes('decal')) return false;
+        if (typeLower.includes('door')) return false;
+        if (typeLower.includes('aimodule')) return false;
+        if (typeLower.includes('mobiglas')) return false;
+        if (typeLower.includes('food')) return false;
+        if (typeLower.includes('drink')) return false;
+
+        // Filter out Weapon Attachments (Scopes, etc) and Missile Racks (for now, to simplify)
+        if (typeLower.includes('weaponattachment')) return false;
+        if (typeLower.includes('missilelauncher')) return false; // This hides racks. User implies they are junk.
+
+        // Filter out generic placeholders
+        const nameLower = item.name.toLowerCase();
+        // Exact name matches for generic technical assets
+        if (nameLower === 'turret') return false;
+        if (nameLower === 'remote turret') return false;
+        if (nameLower === 'manned turret') return false;
+        if (nameLower === 'mannequin') return false;
+
+        // Broad keyword bans for item names
+        if (nameLower.includes('regenpool')) return false;
+        if (nameLower.includes('weaponmount')) return false;
+        if (nameLower.includes('ammobox')) return false;
+
+        const classLower = item.className.toLowerCase();
+        if (classLower.includes('_container')) return false;
+        if (classLower.includes('controller')) return false;
 
         if (!item.className) return false;
         return true;
@@ -184,14 +215,25 @@ export const filterItemsForPort = (items: Item[], port: Port): Item[] => {
             if ((targetType.includes('quantum') || targetType === 'qntm') &&
                 (itemType.includes('quantum') || itemSubType.includes('quantum'))) return true;
 
-            // Weapons: Check both Type and SubType. API often has Type='WeaponGun', SubType='Gun'
-            const isWeaponPort = targetType.includes('weapon') || targetType === 'wepn' || targetType.includes('gun') || targetType === 'turret';
-            const isWeaponItem = itemType.includes('weapon') || itemType.includes('gun') || itemType.includes('missile') || itemSubType.includes('gun') || itemSubType.includes('weapon');
+            // GUNS: Strict separation from missiles
+            // Port Types: WeaponGun, Turret, TurretGun, Wepn
+            // Item Types: WeaponGun, WeaponMining, WeaponTractor (but NOT Missile)
+            const isGunPort = targetType.includes('weapongun') || targetType === 'turret' || targetType.includes('turretgun') || targetType === 'wepn';
+            if (isGunPort) {
+                const isGunItem = itemType.includes('weapongun') || itemType.includes('weaponmining') || itemType.includes('weapontractor');
+                // Explicitly exclude missiles even if they matched above logic somehow
+                const isMissile = itemType.includes('missile');
+                return isGunItem && !isMissile;
+            }
 
-            if (isWeaponPort && isWeaponItem) return true;
-
-            if ((targetType.includes('missile') || targetType === 'mslr') &&
-                (itemType.includes('missile') || itemSubType.includes('missile'))) return true;
+            // MISSILES
+            // Port Types: MissileLauncher, TurretMissile, WeaponMissile, Mslr
+            // Item Types: Missile, WeaponMissile, MissileLauncher
+            const isMissilePort = targetType.includes('missile') || targetType === 'mslr';
+            if (isMissilePort) {
+                const isMissileItem = itemType.includes('missile');
+                return isMissileItem;
+            }
 
             return itemType === targetType || itemType.includes(targetType) || targetType.includes(itemType);
         });
