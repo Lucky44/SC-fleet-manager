@@ -77,7 +77,7 @@ const App: React.FC = () => {
       customLoadout: {}
     };
     setFleet([...fleet, newShip]);
-    setActiveTab('fleet');
+    // setActiveTab('fleet');
   };
 
   const removeFromFleet = (id: string) => {

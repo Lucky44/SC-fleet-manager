@@ -157,12 +157,12 @@ export const LoadoutEditor: React.FC<LoadoutEditorProps> = ({
                 </div>
 
                 <div className="p-6 bg-[#050508] border-t border-white/5 flex justify-between items-center relative z-10">
-                    <div className="text-[10px] font-mono text-gray-700 flex flex-col gap-0.5">
+                    {/* <div className="text-[10px] font-mono text-gray-700 flex flex-col gap-0.5">
                         <p>DEBUG DATA:</p>
                         <p>Total Items Loaded: {items.length}</p>
                         <p>Ports Configured: {ports.length}</p>
                         <p>Ship Class: {fleetShip.shipClass}</p>
-                    </div>
+                    </div> */}
                     <button
                         onClick={onClose}
                         className="bg-sc-blue text-black font-bold px-10 py-3 rounded hover:shadow-[0_0_25px_rgba(0,210,255,0.4)] transition-all hover:scale-105 active:scale-95"
