@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import type { Ship, Item, FleetShip } from './types';
 import { fetchShips, fetchItems } from './services/dataService';
 import { ShipList } from './components/ShipList';
-import { FleetList } from './components/FleetList';
+import { FleetList, DatalinkInfo } from './components/FleetList';
 import { LoadoutEditor } from './components/LoadoutEditor';
 import { Rocket, Shield, Database, Layout, FileText } from 'lucide-react';
 import { decodeFleet } from './utils/dataEncoding';
@@ -14,6 +14,7 @@ const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<'ships' | 'fleet'>('ships');
   const [editingShipId, setEditingShipId] = useState<string | null>(null);
+  const [showDatalinkHelp, setShowDatalinkHelp] = useState(false);
 
   useEffect(() => {
     const loadData = async () => {
@@ -120,45 +121,52 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-sc-dark text-gray-200 font-sans p-4 md:p-8">
-      {/* Header */}
-      <header className="max-w-7xl mx-auto mb-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <div>
-          <h1 className="text-4xl font-bold text-sc-blue tracking-tighter flex items-center gap-2">
-            <Shield className="w-10 h-10" /> SC FLEET LOADOUT MANAGER
-          </h1>
-          <p className="text-gray-500 font-mono text-sm mt-1 flex items-center gap-2">
-            v{__APP_VERSION__} // DATALINK: SCUNPACKED
-            <a
-              href="https://github.com/Lucky44/sc-fleet-loadout-manager/blob/main/README.md"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sc-blue/60 hover:text-sc-blue transition-colors flex items-center gap-1 ml-1"
-              title="View Documentation"
+    <div className="min-h-screen bg-sc-dark text-gray-200 font-sans">
+      {/* Sticky Header Section */}
+      <div className="sticky top-0 z-50 bg-sc-dark/80 backdrop-blur-md border-b border-white/5 pb-4 px-4 md:px-8">
+        <header className="max-w-7xl mx-auto pt-4 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
+          <div>
+            <h1 className="text-4xl font-bold text-sc-blue tracking-tighter flex items-center gap-2">
+              <Shield className="w-10 h-10" /> SC FLEET LOADOUT MANAGER
+            </h1>
+            <p className="text-gray-500 font-mono text-sm mt-1 flex items-center gap-2">
+              v{__APP_VERSION__} // DATALINK: SCUNPACKED
+              <a
+                href="https://github.com/Lucky44/sc-fleet-loadout-manager/blob/main/README.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sc-blue/60 hover:text-sc-blue transition-colors flex items-center gap-1 ml-1"
+                title="View Documentation"
+              >
+                <FileText className="w-3.5 h-3.5" />
+                <span className="text-[10px] uppercase tracking-widest border-b border-sc-blue/30">Docs</span>
+              </a>
+            </p>
+          </div>
+
+          <nav className="flex bg-sc-gray rounded-lg p-1 border border-white/5">
+            <button
+              onClick={() => setActiveTab('ships')}
+              className={`flex items-center gap-2 px-6 py-2 rounded-md transition-all ${activeTab === 'ships' ? 'bg-sc-blue text-orange-600 font-bold' : 'hover:bg-white/5 text-orange-500'}`}
             >
-              <FileText className="w-3.5 h-3.5" />
-              <span className="text-[10px] uppercase tracking-widest border-b border-sc-blue/30">Docs</span>
-            </a>
-          </p>
+              <Database className="w-4 h-4" /> SHIP DATABASE
+            </button>
+            <button
+              onClick={() => setActiveTab('fleet')}
+              className={`flex items-center gap-2 px-6 py-2 rounded-md transition-all ${activeTab === 'fleet' ? 'bg-sc-blue text-orange-600 font-bold' : 'hover:bg-white/5 text-orange-500'}`}
+            >
+              <Layout className="w-4 h-4" /> MY FLEET ({fleet.length})
+            </button>
+          </nav>
+        </header>
+
+        {/* Global Datalink Status - Always visible above content */}
+        <div className="max-w-7xl mx-auto">
+          <DatalinkInfo showHelp={showDatalinkHelp} setShowHelp={setShowDatalinkHelp} />
         </div>
+      </div>
 
-        <nav className="flex bg-sc-gray rounded-lg p-1 border border-white/5">
-          <button
-            onClick={() => setActiveTab('ships')}
-            className={`flex items-center gap-2 px-6 py-2 rounded-md transition-all ${activeTab === 'ships' ? 'bg-sc-blue text-orange-600 font-bold' : 'hover:bg-white/5 text-orange-500'}`}
-          >
-            <Database className="w-4 h-4" /> SHIP DATABASE
-          </button>
-          <button
-            onClick={() => setActiveTab('fleet')}
-            className={`flex items-center gap-2 px-6 py-2 rounded-md transition-all ${activeTab === 'fleet' ? 'bg-sc-blue text-orange-600 font-bold' : 'hover:bg-white/5 text-orange-500'}`}
-          >
-            <Layout className="w-4 h-4" /> MY FLEET ({fleet.length})
-          </button>
-        </nav>
-      </header>
-
-      <main className="max-w-7xl mx-auto">
+      <main className="max-w-7xl mx-auto p-4 md:p-8">
         {activeTab === 'ships' ? (
           <ShipList ships={ships} onAddToFleet={addToFleet} />
         ) : (

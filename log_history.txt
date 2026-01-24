@@ -1,0 +1,31 @@
+commit b98186011cb290e6669dbc2413c9e2b2dcca863e
+Author: Fleet Manager <fleet@manager.local>
+Date:   Fri Jan 23 19:10:07 2026 -0800
+
+    Revert "Add C8R Pisces Rescue and update data service to use local JSON sources"
+    
+    This reverts commit 8f4e1a6d23f4ce8f69f8299f2b1f43774d8c907e.
+
+commit 8f4e1a6d23f4ce8f69f8299f2b1f43774d8c907e
+Author: Fleet Manager <fleet@manager.local>
+Date:   Fri Jan 23 19:00:44 2026 -0800
+
+    Add C8R Pisces Rescue and update data service to use local JSON sources
+
+commit 065c7a9ecf150619dbed90a8b10f5a20f5a8bd25
+Author: Fleet Manager <fleet@manager.local>
+Date:   Thu Jan 22 21:40:37 2026 -0800
+
+    data: incorporate high-resolution ships and items data
+
+commit 8d0e0995edda7c09992101193875d5e31b7c8e39
+Author: Fleet Manager <fleet@manager.local>
+Date:   Thu Jan 22 21:25:42 2026 -0800
+
+    feat: add RSI Meteor, Perseus, and Zeus Mk II; UI refinements and hardpoint logic
+
+commit 87d7521cc980c60ee4a12c31368453de27a60f8f
+Author: Fleet Manager <fleet@manager.local>
+Date:   Thu Jan 22 15:39:58 2026 -0800
+
+    docs: update credits and description in README

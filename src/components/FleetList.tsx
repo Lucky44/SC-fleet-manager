@@ -3,6 +3,55 @@ import type { FleetShip, Ship } from '../types';
 import { Trash2, Settings2, Rocket, Share2, Download, Upload, Trash, Info, ChevronDown, ChevronUp, ShieldCheck, Zap } from 'lucide-react';
 import { generateShareUrl, exportFleetToJson } from '../utils/dataEncoding';
 
+export interface DatalinkInfoProps {
+    showHelp: boolean;
+    setShowHelp: (show: boolean) => void;
+}
+
+export const DatalinkInfo: React.FC<DatalinkInfoProps> = ({ showHelp, setShowHelp }) => (
+    <div className="mb-0 overflow-hidden rounded-2xl border border-sc-blue/20 bg-sc-blue/5">
+        <button
+            onClick={() => setShowHelp(!showHelp)}
+            className="flex w-full items-center justify-between p-4 text-sc-blue transition-colors hover:bg-sc-blue/10"
+        >
+            <div className="flex items-center gap-2 font-bold">
+                <Info className="w-5 h-5" />
+                <span className="text-sm tracking-widest uppercase">Datalink Status: Manual Sync Required</span>
+            </div>
+            {showHelp ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+        </button>
+
+        {showHelp && (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 border-t border-sc-blue/10 bg-black/20">
+                <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-sc-blue font-bold text-xs">
+                        <Zap className="w-4 h-4" /> INSTANT SYNC
+                    </div>
+                    <p className="text-xs text-gray-400 leading-relaxed">
+                        Use <strong>Share Fleet</strong> to generate a secure Datalink URL. Open this link on any device to instantly clone your hangar.
+                    </p>
+                </div>
+                <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-sc-blue font-bold text-xs">
+                        <Download className="w-4 h-4" /> HARD COPY
+                    </div>
+                    <p className="text-xs text-gray-400 leading-relaxed">
+                        <strong>Export</strong> your fleet as a JSON file. Perfect for long-term backups or keeping multiple fleet variants on your PC.
+                    </p>
+                </div>
+                <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-sc-blue font-bold text-xs">
+                        <ShieldCheck className="w-4 h-4" /> PRIVACY FIRST
+                    </div>
+                    <p className="text-xs text-gray-400 leading-relaxed">
+                        No cloud accounts. All data stays in your browser's Local Storage until you choose to share or export it.
+                    </p>
+                </div>
+            </div>
+        )}
+    </div>
+);
+
 interface FleetListProps {
     fleet: FleetShip[];
     ships: Ship[];
@@ -14,7 +63,6 @@ interface FleetListProps {
 
 export const FleetList: React.FC<FleetListProps> = ({ fleet, ships, onRemove, onEdit, onImport, onClear }) => {
     const [isConfirmingClear, setIsConfirmingClear] = React.useState(false);
-    const [showHelp, setShowHelp] = React.useState(false);
     const confirmTimeout = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const handleClearClick = () => {
@@ -60,49 +108,6 @@ export const FleetList: React.FC<FleetListProps> = ({ fleet, ships, onRemove, on
         reader.readAsText(file);
     };
 
-    const DatalinkInfo = () => (
-        <div className="mb-8 overflow-hidden rounded-2xl border border-sc-blue/20 bg-sc-blue/5">
-            <button
-                onClick={() => setShowHelp(!showHelp)}
-                className="flex w-full items-center justify-between p-4 text-sc-blue transition-colors hover:bg-sc-blue/10"
-            >
-                <div className="flex items-center gap-2 font-bold">
-                    <Info className="w-5 h-5" />
-                    <span className="text-sm tracking-widest uppercase">Datalink Status: Manual Sync Required</span>
-                </div>
-                {showHelp ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
-            </button>
-
-            {showHelp && (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 border-t border-sc-blue/10 bg-black/20">
-                    <div className="space-y-2">
-                        <div className="flex items-center gap-2 text-sc-blue font-bold text-xs">
-                            <Zap className="w-4 h-4" /> INSTANT SYNC
-                        </div>
-                        <p className="text-xs text-gray-400 leading-relaxed">
-                            Use <strong>Share Fleet</strong> to generate a secure Datalink URL. Open this link on any device to instantly clone your hangar.
-                        </p>
-                    </div>
-                    <div className="space-y-2">
-                        <div className="flex items-center gap-2 text-sc-blue font-bold text-xs">
-                            <Download className="w-4 h-4" /> HARD COPY
-                        </div>
-                        <p className="text-xs text-gray-400 leading-relaxed">
-                            <strong>Export</strong> your fleet as a JSON file. Perfect for long-term backups or keeping multiple fleet variants on your PC.
-                        </p>
-                    </div>
-                    <div className="space-y-2">
-                        <div className="flex items-center gap-2 text-sc-blue font-bold text-xs">
-                            <ShieldCheck className="w-4 h-4" /> PRIVACY FIRST
-                        </div>
-                        <p className="text-xs text-gray-400 leading-relaxed">
-                            No cloud accounts. All data stays in your browser's Local Storage until you choose to share or export it.
-                        </p>
-                    </div>
-                </div>
-            )}
-        </div>
-    );
 
     const Toolbar = () => (
         <div className="flex flex-wrap items-center gap-3 mb-4 bg-sc-gray/50 p-4 rounded-2xl border border-white/5">
@@ -153,7 +158,6 @@ export const FleetList: React.FC<FleetListProps> = ({ fleet, ships, onRemove, on
     if (fleet.length === 0) {
         return (
             <div className="max-w-4xl mx-auto">
-                <DatalinkInfo />
                 <Toolbar />
                 <div className="flex flex-col items-center justify-center py-20 bg-sc-gray rounded-3xl border border-dashed border-white/10">
                     <Rocket className="w-16 h-16 text-gray-700 mb-4" />
@@ -166,7 +170,6 @@ export const FleetList: React.FC<FleetListProps> = ({ fleet, ships, onRemove, on
 
     return (
         <div className="max-w-full mx-auto">
-            <DatalinkInfo />
             <Toolbar />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {fleet.map(fs => {

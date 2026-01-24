@@ -1,0 +1,28 @@
+--- Verifying C8R Pisces Rescue Implementation Data ---
+Ship: {
+  "ClassName": "ANVL_Pisces_C8R",
+  "Name": "C8R Pisces Rescue",
+  "Size": 1,
+  "Mass": 55000,
+  "Cargo": 0,
+  "Role": "Rescue",
+  "Career": "Medical",
+  "Description": "The Anvil C8R Pisces Rescue is a specialized medical variant of the Pisces, designed to provide emergency medical support and rapid extraction.",
+  "Manufacturer": {
+    "Code": "ANVL",
+    "Name": "Anvil Aerospace"
+  }
+}
+
+Ports Found: 9
+- SUCCESS: Port "weapon_hardpoint_1" found.
+- SUCCESS: Port "weapon_hardpoint_2" found.
+- SUCCESS: Port "missile_rack_1" found.
+- SUCCESS: Port "missile_rack_2" found.
+- SUCCESS: Port "shield_generator_1" found.
+- SUCCESS: Port "power_plant_1" found.
+- SUCCESS: Port "cooler_1" found.
+- SUCCESS: Port "cooler_2" found.
+- SUCCESS: Port "quantum_drive_1" found.
+
+VERIFICATION COMPLETE: C8R Pisces Rescue data is correct.

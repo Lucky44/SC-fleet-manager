@@ -1,0 +1,25 @@
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   src/components/ShipList.tsx
+	modified:   src/services/dataService.ts
+	modified:   src/types.ts
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	check_ship_dupes.js
+	find_pisces.js
+	pisces_output.txt
+	ship-items_utf8.json
+	ships_utf8.json
+	ships_v2.json
+	status.txt
+	verification_output.txt
+	verification_output_js.txt
+	verify_c8r_data.js
+	verify_c8r_logic.ts
+
+no changes added to commit (use "git add" and/or "git commit -a")
