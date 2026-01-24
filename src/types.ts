@@ -37,6 +37,7 @@ export interface Item {
     size: number;
     grade: number;
     name: string;
+    description: string;
     manufacturer?: string;
     stdItem?: {
         Description?: string;
@@ -44,6 +45,11 @@ export interface Item {
             Name: string;
         }
     };
+    damage_per_shot?: number;
+    fire_rate?: number;
+    max_shield_health?: number;
+    regeneration_rate?: number;
+    drive_speed?: number;
 }
 
 export interface FleetShip {
