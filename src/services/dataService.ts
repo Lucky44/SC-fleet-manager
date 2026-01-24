@@ -115,6 +115,20 @@ const applyPortPatches = (className: string, ports: Port[]): Port[] => {
         ];
         return [...weaponPorts, ...torpedoPorts, ...componentPorts];
     }
+
+    if (className === 'ANVL_Pisces_C8R') {
+        return [
+            { Name: 'weapon_hardpoint_1', DisplayName: 'Weapon S1', MaxSize: 1, MinSize: 1, Types: ['WeaponGun'] },
+            { Name: 'weapon_hardpoint_2', DisplayName: 'Weapon S1', MaxSize: 1, MinSize: 1, Types: ['WeaponGun'] },
+            { Name: 'missile_rack_1', DisplayName: 'Missile Rack S1', MaxSize: 1, MinSize: 1, Types: ['MissileLauncher'] },
+            { Name: 'missile_rack_2', DisplayName: 'Missile Rack S1', MaxSize: 1, MinSize: 1, Types: ['MissileLauncher'] },
+            { Name: 'shield_generator_1', MaxSize: 1, MinSize: 1, Types: ['Shield.ShieldGenerator'] },
+            { Name: 'power_plant_1', MaxSize: 1, MinSize: 1, Types: ['PowerPlant.PowerPlant'] },
+            { Name: 'cooler_1', MaxSize: 1, MinSize: 1, Types: ['Cooler.Cooler'] },
+            { Name: 'cooler_2', MaxSize: 1, MinSize: 1, Types: ['Cooler.Cooler'] },
+            { Name: 'quantum_drive_1', MaxSize: 1, MinSize: 1, Types: ['QuantumDrive.QuantumDrive'] },
+        ];
+    }
     return ports;
 };
 
@@ -167,6 +181,8 @@ const applyShipPatches = (ships: Ship[]): Ship[] => {
         }
         return ship;
     });
+
+    const c8rExists = ships.some(s => s.ClassName === 'ANVL_Pisces_C8R' || s.Name.toLowerCase().includes('c8r pisces rescue'));
 
     const polaris: Ship = {
         ClassName: 'RSI_Polaris',
@@ -240,7 +256,23 @@ const applyShipPatches = (ships: Ship[]): Ship[] => {
         Manufacturer: { Code: 'RSI', Name: 'Roberts Space Industries' }
     };
 
-    return [...patched, polaris, perseus, zeusES, zeusMR, zeusCL, meteor];
+    const manualShips: Ship[] = [polaris, perseus, zeusES, zeusMR, zeusCL, meteor];
+
+    if (!c8rExists) {
+        manualShips.push({
+            ClassName: 'ANVL_Pisces_C8R',
+            Name: 'Anvil C8R Pisces Rescue',
+            Size: 1,
+            Mass: 55000,
+            Cargo: 0,
+            Role: 'Rescue',
+            Career: 'Medical',
+            Description: 'The Anvil C8R Pisces Rescue is a specialized medical variant of the Pisces, designed to provide emergency medical support and rapid extraction.',
+            Manufacturer: { Code: 'ANVL', Name: 'Anvil Aerospace' }
+        });
+    }
+
+    return [...patched, ...manualShips];
 };
 
 export const filterItemsForPort = (items: Item[], port: Port): Item[] => {
