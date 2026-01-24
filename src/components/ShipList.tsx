@@ -11,10 +11,23 @@ export const ShipList: React.FC<ShipListProps> = ({ ships, onAddToFleet }) => {
     const [search, setSearch] = useState('');
     const [roleFilter, setRoleFilter] = useState('');
 
+    const cleanShipName = (ship: Ship): string => {
+        const parts = ship.Name.split(' ');
+        if (parts.length <= 1) return ship.Name;
+
+        const firstWord = parts[0];
+        // If first word matches code (e.g. RSI) or is in manufacturer name (e.g. Aegis), strip it
+        if (firstWord.toUpperCase() === ship.Manufacturer.Code.toUpperCase() ||
+            ship.Manufacturer.Name.includes(firstWord)) {
+            return parts.slice(1).join(' ');
+        }
+        return ship.Name;
+    };
+
     const filteredShips = ships.filter(ship =>
         ship.Name.toLowerCase().includes(search.toLowerCase()) &&
         (roleFilter === '' || ship.Role === roleFilter)
-    ).sort((a, b) => a.Name.localeCompare(b.Name));
+    ).sort((a, b) => cleanShipName(a).localeCompare(cleanShipName(b)));
 
     const roles = Array.from(new Set(ships.map(s => s.Role))).sort();
 
@@ -71,7 +84,14 @@ const ShipCard: React.FC<{ ship: Ship; onAddToFleet: (ship: Ship) => void }> = (
 
 
                 <h3 className="text-lg font-bold mb-1 text-blue-400 transition-colors">
-                    {ship.Name}
+                    {(() => {
+                        const parts = ship.Name.split(' ');
+                        const firstWord = parts[0];
+                        if (parts.length > 1 && (firstWord.toUpperCase() === ship.Manufacturer.Code.toUpperCase() || ship.Manufacturer.Name.includes(firstWord))) {
+                            return parts.slice(1).join(' ');
+                        }
+                        return ship.Name;
+                    })()}
                 </h3>
 
                 <div className="flex-1"></div>
