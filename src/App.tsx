@@ -15,6 +15,7 @@ const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'ships' | 'fleet'>('ships');
   const [editingShipId, setEditingShipId] = useState<string | null>(null);
   const [showDatalinkHelp, setShowDatalinkHelp] = useState(false);
+  const [toast, setToast] = useState<{ message: string; visible: boolean }>({ message: '', visible: false });
 
   useEffect(() => {
     const loadData = async () => {
@@ -70,6 +71,16 @@ const App: React.FC = () => {
     localStorage.setItem('sc_fleet', JSON.stringify(fleet));
   }, [fleet, loading]);
 
+  // Handle toast timeout
+  useEffect(() => {
+    if (toast.visible) {
+      const timer = setTimeout(() => {
+        setToast(prev => ({ ...prev, visible: false }));
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [toast.visible]);
+
   const addToFleet = (ship: Ship) => {
     const newShip: FleetShip = {
       id: crypto.randomUUID(),
@@ -78,6 +89,7 @@ const App: React.FC = () => {
       customLoadout: {}
     };
     setFleet([...fleet, newShip]);
+    setToast({ message: `${ship.Name.toUpperCase()} ADDED TO FLEET`, visible: true });
     // setActiveTab('fleet');
   };
 
@@ -191,6 +203,30 @@ const App: React.FC = () => {
           onClose={() => setEditingShipId(null)}
         />
       )}
+      {/* Toast Notification */}
+      <div className={`fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] transition-all duration-500 transform ${toast.visible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95 pointer-events-none'}`}>
+        <div className="bg-[#0b0c15] border-2 border-orange-500/50 rounded-xl px-8 py-4 shadow-[0_0_50px_rgba(249,115,22,0.2)] flex items-center gap-4 relative overflow-hidden backdrop-blur-xl">
+          {/* Decorative scanner line */}
+          <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent animate-pulse"></div>
+
+          <div className="w-8 h-8 rounded border border-orange-500/30 flex items-center justify-center bg-orange-500/5">
+            <Rocket className="w-4 h-4 text-orange-500" />
+          </div>
+
+          <div className="flex flex-col">
+            <span className="text-[10px] font-mono text-orange-500/50 uppercase tracking-[0.2em] leading-none mb-1">Datalink Transmission</span>
+            <span className="text-orange-500 font-black italic tracking-tighter text-lg leading-none">
+              {toast.message}
+            </span>
+          </div>
+
+          <div className="ml-4 pl-4 border-l border-white/10 flex flex-col items-end gap-0.5 opacity-40">
+            <div className="w-12 h-1 bg-orange-500/30"></div>
+            <div className="w-8 h-1 bg-orange-500/20"></div>
+            <div className="w-10 h-1 bg-orange-500/30"></div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
