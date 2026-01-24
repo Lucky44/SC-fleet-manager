@@ -204,8 +204,8 @@ const App: React.FC = () => {
         />
       )}
       {/* Toast Notification */}
-      <div className={`fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] transition-all duration-500 transform ${toast.visible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95 pointer-events-none'}`}>
-        <div className="bg-[#0b0c15] border-2 border-orange-500/50 rounded-xl px-8 py-4 shadow-[0_0_50px_rgba(249,115,22,0.2)] flex items-center gap-4 relative overflow-hidden backdrop-blur-xl">
+      <div className={`fixed inset-0 pointer-events-none z-[100] flex items-center justify-center transition-all duration-500 ${toast.visible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+        <div className="bg-[#0b0c15]/90 border-2 border-orange-500/50 rounded-xl px-12 py-6 shadow-[0_0_80px_rgba(249,115,22,0.3)] flex flex-col items-center gap-4 relative overflow-hidden backdrop-blur-2xl">
           {/* Decorative scanner line */}
           <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent animate-pulse"></div>
 
@@ -213,17 +213,17 @@ const App: React.FC = () => {
             <Rocket className="w-4 h-4 text-orange-500" />
           </div>
 
-          <div className="flex flex-col">
-            <span className="text-[10px] font-mono text-orange-500/50 uppercase tracking-[0.2em] leading-none mb-1">Datalink Transmission</span>
-            <span className="text-orange-500 font-black italic tracking-tighter text-lg leading-none">
+          <div className="flex flex-col items-center">
+            <span className="text-[12px] font-mono text-orange-500/50 uppercase tracking-[0.3em] leading-none mb-2">Datalink Transmission</span>
+            <span className="text-orange-500 font-black italic tracking-tighter text-2xl leading-none">
               {toast.message}
             </span>
           </div>
 
-          <div className="ml-4 pl-4 border-l border-white/10 flex flex-col items-end gap-0.5 opacity-40">
-            <div className="w-12 h-1 bg-orange-500/30"></div>
-            <div className="w-8 h-1 bg-orange-500/20"></div>
-            <div className="w-10 h-1 bg-orange-500/30"></div>
+          <div className="flex items-center gap-2 opacity-40">
+            <div className="w-8 h-1 bg-orange-500/30"></div>
+            <div className="w-12 h-1 bg-orange-500/50"></div>
+            <div className="w-8 h-1 bg-orange-500/30"></div>
           </div>
         </div>
       </div>
