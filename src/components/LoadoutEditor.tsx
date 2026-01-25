@@ -241,7 +241,7 @@ const PortSelector: React.FC<{
                             </p>
                             <div className="flex items-center gap-2">
                                 <span className={`font-bold truncate ${currentItem ? 'text-gray-100' : 'text-gray-500 italic'}`}>
-                                    {currentItem ? cleanName(currentItem.Name) : 'EMPTY SLOT'}
+                                    {currentItem ? cleanName(currentItem.Name, currentItem.ClassName) : 'EMPTY SLOT'}
                                 </span>
                                 {currentItem && (
                                     <span className="text-[10px] px-1.5 py-px border border-white/10 rounded text-gray-400 bg-white/5">
@@ -310,7 +310,7 @@ const PortSelector: React.FC<{
                                     <div className="flex-1">
                                         <div className="flex items-center gap-2 mb-1">
                                             <span className={`text-sm font-bold ${isSelected ? 'text-sc-blue' : 'text-gray-200'}`}>
-                                                {cleanName(item.name)}
+                                                {cleanName(item.name, item.className)}
                                             </span>
                                             <span className="text-[10px] font-mono text-gray-500 bg-white/5 px-1 rounded">S{item.size}</span>
                                         </div>

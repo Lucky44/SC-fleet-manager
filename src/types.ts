@@ -22,6 +22,7 @@ export interface Port {
     MaxSize: number;
     MinSize: number;
     Types: string[];
+    Turret?: boolean;
     InstalledItem?: {
         Name: string;
         ClassName: string;

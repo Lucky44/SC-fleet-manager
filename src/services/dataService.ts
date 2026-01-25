@@ -168,6 +168,38 @@ const applyPortPatches = (className: string, ports: Port[]): Port[] => {
     return ports;
 };
 
+const WEAPON_NAME_MAP: Record<string, string> = {
+    // Behring Laser Cannons
+    'BEHR_LaserCannon_S1': 'M3A Laser Cannon',
+    'BEHR_LaserCannon_S2': 'M4A Laser Cannon',
+    'BEHR_LaserCannon_S3': 'M5A Laser Cannon',
+    'BEHR_LaserCannon_S4': 'M6A Laser Cannon',
+    'BEHR_LaserCannon_S5': 'M7A Laser Cannon',
+    'BEHR_LaserCannon_S6': 'M8A Laser Cannon',
+    'BEHR_LaserCannon_S7': 'M9A Laser Cannon',
+
+    // Klaus & Werner Laser Repeaters
+    'KLWE_LaserRepeater_S1': 'Bulldog Repeater',
+    'KLWE_LaserRepeater_S2': 'Badger Repeater',
+    'KLWE_LaserRepeater_S3': 'Panther Repeater',
+    'KLWE_LaserRepeater_S4': 'Rhino Repeater',
+
+    // Behring Ballistic Gatlings
+    'BEHR_BallisticGatling_S4': 'AD4B Gatling',
+    'BEHR_BallisticGatling_S5': 'AD5B Gatling',
+
+    // Omnisky Laser Cannons
+    'AMRS_LaserCannon_S1': 'Omnisky III',
+    'AMRS_LaserCannon_S2': 'Omnisky VI',
+    'AMRS_LaserCannon_S3': 'Omnisky IX',
+    'AMRS_LaserCannon_S4': 'Omnisky XII',
+
+    // FL series
+    'AMRS_LaserCannon_Fixed_S1': 'FL-11 Cannon',
+    'AMRS_LaserCannon_Fixed_S2': 'FL-22 Cannon',
+    'AMRS_LaserCannon_Fixed_S3': 'FL-33 Cannon'
+};
+
 export const fetchItems = async (): Promise<Item[]> => {
     const response = await fetch(`${BASE_URL}/items.json`);
     if (!response.ok) throw new Error('Failed to fetch items');
@@ -184,7 +216,7 @@ export const fetchItems = async (): Promise<Item[]> => {
         if (typeLower.includes('weapontractor')) return false;
         if (typeLower.includes('missilelauncher')) return false;
 
-        const nameLower = item.name.toLowerCase();
+        const nameLower = (item.name || '').toLowerCase();
         if (nameLower === 'turret' || nameLower === 'remote turret' || nameLower === 'manned turret' || nameLower === 'mannequin') return false;
         if (nameLower.includes('regenpool') || nameLower.includes('weaponmount') || nameLower.includes('ammobox')) return false;
 
@@ -192,7 +224,7 @@ export const fetchItems = async (): Promise<Item[]> => {
         if (nameLower.includes('bespoke') || nameLower.includes('limited') || nameLower.includes('interior')) return false;
         if (nameLower.includes('idris') || nameLower.includes('javelin') || nameLower.includes('kraken')) return false;
 
-        const classLower = item.className.toLowerCase();
+        const classLower = (item.className || '').toLowerCase();
         if (classLower.includes('_container') || classLower.includes('controller')) return false;
         if (classLower.includes('bespoke') || classLower.includes('massive')) return false;
 
@@ -200,10 +232,13 @@ export const fetchItems = async (): Promise<Item[]> => {
     });
 
     const uniqueItems = new Map<string, Item>();
+    // Sort by className length - shorter usually means the "base" item/template
     normalized.sort((a: Item, b: Item) => a.className.length - b.className.length);
+
     normalized.forEach((item: Item) => {
-        if (!uniqueItems.has(item.name)) {
-            uniqueItems.set(item.name, item);
+        // DEDUPE BY CLASSNAME to ensure we don't lose specific models sharing generic names
+        if (!uniqueItems.has(item.className)) {
+            uniqueItems.set(item.className, item);
         }
     });
 
@@ -386,16 +421,25 @@ export const filterItemsForPort = (items: Item[], port: Port): Item[] => {
     });
 };
 
-export const cleanName = (name: string): string => {
-    if (!name) return 'Unknown Item';
-    return name
+export const cleanName = (name: string, className?: string): string => {
+    if (!name && !className) return 'Unknown Item';
+
+    // 1. Check our manual brand/model mapping first
+    if (className && WEAPON_NAME_MAP[className]) {
+        return WEAPON_NAME_MAP[className];
+    }
+
+    // 2. Clean up raw names
+    let clean = (name || '')
         .replace(/@[\w\s]*Name[ _]?|@LOC_PLACEHOLDER_|@item_Name_/gi, '')
         .replace(/itemName/gi, '')
         .replace(/Name([A-Z])/g, '$1') // Handle NameBEHR -> BEHR
         .replace(/_/g, ' ')
         .replace(/\(.*\)/g, '')
-        .replace(/Laswer/gi, 'Laser') // Fix common typo in data if it exists
-        .trim() || 'Unknown Item';
+        .replace(/Laswer/gi, 'Laser') // Fix common typo in data
+        .trim();
+
+    return clean || className || 'Unknown Item';
 };
 
 export const getItemStats = (item: Item & { [key: string]: any }) => {
