@@ -281,7 +281,7 @@ export const fetchItems = async (): Promise<Item[]> => {
     normalized.sort((a: Item, b: Item) => a.className.length - b.className.length);
 
     normalized.forEach((item: Item) => {
-        // DEDUPE BY CLASSNAME to ensure we don't lose specific models sharing generic names
+        // Use className for deduping to ensure all valid variations are kept
         if (!uniqueItems.has(item.className)) {
             uniqueItems.set(item.className, item);
         }
@@ -467,21 +467,25 @@ export const filterItemsForPort = (items: Item[], port: Port): Item[] => {
 };
 
 export const cleanName = (name: string, className?: string): string => {
-    if (!name && !className) return 'Unknown Item';
-
-    // 1. Check our manual brand/model mapping first
+    // 1. Check our manual brand/model mapping first (highest priority)
     if (className && WEAPON_NAME_MAP[className]) {
         return WEAPON_NAME_MAP[className];
     }
 
-    // 2. Clean up raw names
+    // 2. Exact string fallbacks for common technical strings
+    if (name === '@item_NameHRST_LaserRepeater_S4') return 'Attrition-4 Repeater';
+    if (name === '@item_NameBEHR_LaserCannon_S4') return 'M6A Laser Cannon';
+
+    if (!name && !className) return 'Unknown Item';
+
+    // 3. Clean up raw technical names
     let clean = (name || '')
         .replace(/@[\w\s]*Name[ _]?|@LOC_PLACEHOLDER_|@item_Name_/gi, '')
         .replace(/itemName/gi, '')
         .replace(/Name([A-Z])/g, '$1') // Handle NameBEHR -> BEHR
         .replace(/_/g, ' ')
         .replace(/\(.*\)/g, '')
-        .replace(/Laswer/gi, 'Laser') // Fix common typo in data
+        .replace(/Laswer/gi, 'Laser')
         .trim();
 
     return clean || className || 'Unknown Item';
