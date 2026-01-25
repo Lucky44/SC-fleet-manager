@@ -135,23 +135,22 @@ const applyPortPatches = (className: string, ports: Port[]): Port[] => {
     }
 
     if (className.startsWith('ANVL_Carrack')) {
-        let mannedCount = 0;
-        let remoteCount = 0;
-
+        let turretIndex = 0;
         return ports
-            .filter(p => !p.Name.toLowerCase().includes('radar') && !p.Name.toLowerCase().includes('surveyor'))
+            .filter(p => {
+                const name = (p.Name || '').toLowerCase();
+                return !name.includes('radar') && !name.includes('surveyor');
+            })
             .map(p => {
-                const isTurret = p.Name.toLowerCase().includes('turret');
+                const isTurret = (p.Name || '').toLowerCase().includes('turret') || p.Turret === true;
                 if (isTurret) {
-                    let displayName = p.DisplayName || p.Name;
-
-                    // Assign specific names as requested (2x Manned, 2x Remote)
-                    if (displayName.toLowerCase().includes('remote') || remoteCount >= 2) {
-                        remoteCount++;
-                        displayName = `Remote Turret S4 (${remoteCount})`;
+                    turretIndex++;
+                    let displayName = '';
+                    // Force 2 Manned, 2 Remote as requested
+                    if (turretIndex <= 2) {
+                        displayName = `Manned Turret S4 (${turretIndex})`;
                     } else {
-                        mannedCount++;
-                        displayName = `Manned Turret S4 (${mannedCount})`;
+                        displayName = `Remote Turret S4 (${turretIndex - 2})`;
                     }
 
                     return {
@@ -159,7 +158,8 @@ const applyPortPatches = (className: string, ports: Port[]): Port[] => {
                         DisplayName: displayName,
                         MaxSize: 4,
                         MinSize: 4,
-                        Types: [...(p.Types || []), 'WeaponGun']
+                        Types: ['WeaponGun'], // Force as weapon port for gun selection
+                        InstalledItem: p.InstalledItem ? { ...p.InstalledItem, Size: 4 } : undefined
                     };
                 }
                 return p;
