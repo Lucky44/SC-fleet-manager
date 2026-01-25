@@ -14,19 +14,22 @@ export const fetchShips = async (): Promise<Ship[]> => {
         return true;
     });
 
+    // Apply patches BEFORE deduplication so we can fix names
+    const patchedData = applyShipPatches(filteredData);
+
     // Deduplicate: If multiple ships have the same Name, keep the one with the shortest ClassName
     const uniqueShips = new Map<string, Ship>();
 
     // Sort by ClassName length ascending to ensure we process the 'base' version first
-    filteredData.sort((a: { ClassName: string }, b: { ClassName: string }) => a.ClassName.length - b.ClassName.length);
+    patchedData.sort((a: { ClassName: string }, b: { ClassName: string }) => a.ClassName.length - b.ClassName.length);
 
-    filteredData.forEach((ship: Ship) => {
+    patchedData.forEach((ship: Ship) => {
         if (!uniqueShips.has(ship.Name)) {
             uniqueShips.set(ship.Name, ship);
         }
     });
 
-    return applyShipPatches(Array.from(uniqueShips.values()));
+    return Array.from(uniqueShips.values());
 };
 
 export const fetchShipPorts = async (className: string): Promise<Port[]> => {
@@ -171,6 +174,7 @@ export const fetchItems = async (): Promise<Item[]> => {
 
 const applyShipPatches = (ships: Ship[]): Ship[] => {
     const patched = ships.map(ship => {
+        // Handle F8C naming
         if (ship.ClassName === 'ANVL_Lightning_F8') {
             return {
                 ...ship,
@@ -179,6 +183,19 @@ const applyShipPatches = (ships: Ship[]): Ship[] => {
                 Description: 'The F8C Lightning is the civilian variant of the heavy space superiority fighter used by the UEE Navy.',
             };
         }
+
+        // Handle Hornet Mk I / Mk II naming
+        if (ship.ClassName.startsWith('ANVL_Hornet_F7')) {
+            let name = ship.Name;
+            if (ship.ClassName.includes('_Mk2') || ship.ClassName.includes('_MkII')) {
+                if (!name.includes('Mk II')) name += ' Mk II';
+            } else {
+                // Assume anything else is Mk I for now if not explicitly named
+                if (!name.includes('Mk I') && !name.includes('Mk II')) name += ' Mk I';
+            }
+            return { ...ship, Name: name };
+        }
+
         return ship;
     });
 

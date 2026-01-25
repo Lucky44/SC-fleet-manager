@@ -174,7 +174,37 @@ export const FleetList: React.FC<FleetListProps> = ({ fleet, ships, onRemove, on
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {fleet.map(fs => {
                     const shipData = ships.find(s => s.ClassName === fs.shipClass);
-                    if (!shipData) return null;
+
+                    if (!shipData) {
+                        return (
+                            <div key={fs.id} className="relative bg-red-950/20 border border-red-500/30 rounded-2xl overflow-hidden p-6 shadow-xl backdrop-blur-sm">
+                                <div className="absolute top-0 right-0 p-4">
+                                    <button
+                                        onClick={() => onRemove(fs.id)}
+                                        className="p-2 hover:bg-red-500/20 hover:text-red-500 rounded-lg transition-all text-red-500/50"
+                                        title="Remove Corrupted Entry"
+                                    >
+                                        <Trash2 className="w-5 h-5" />
+                                    </button>
+                                </div>
+
+                                <div className="mb-4">
+                                    <span className="text-[10px] font-mono text-red-500 tracking-tighter bg-red-500/10 px-2 py-0.5 rounded border border-red-500/20 animate-pulse">
+                                        DATALINK ERROR
+                                    </span>
+                                </div>
+
+                                <h3 className="text-xl font-bold mb-1 text-red-100 italic">CORRUPTED SHIP DATA</h3>
+                                <p className="text-[10px] text-red-400 font-mono mb-6 uppercase tracking-widest">CLASS: {fs.shipClass}</p>
+
+                                <div className="p-4 bg-red-500/5 rounded-xl border border-red-500/10 mb-2">
+                                    <p className="text-[10px] text-red-200/60 leading-relaxed italic">
+                                        "Warning: Terminal unable to sync with local hangar database for this hull. Datalink may be outdated or ship data was removed. Manual cleanup required."
+                                    </p>
+                                </div>
+                            </div>
+                        );
+                    }
 
                     return (
                         <div key={fs.id} className="relative bg-sc-gray border border-white/5 rounded-2xl overflow-hidden p-6 shadow-xl">
