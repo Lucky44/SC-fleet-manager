@@ -135,19 +135,35 @@ const applyPortPatches = (className: string, ports: Port[]): Port[] => {
     }
 
     if (className.startsWith('ANVL_Carrack')) {
-        return ports.map(p => {
-            const isTurret = p.Name.toLowerCase().includes('turret');
-            if (isTurret) {
-                return {
-                    ...p,
-                    MaxSize: 4,
-                    MinSize: 4,
-                    // Ensure it's treated as a weapon port so we see guns
-                    Types: [...(p.Types || []), 'WeaponGun']
-                };
-            }
-            return p;
-        });
+        let mannedCount = 0;
+        let remoteCount = 0;
+
+        return ports
+            .filter(p => !p.Name.toLowerCase().includes('radar') && !p.Name.toLowerCase().includes('surveyor'))
+            .map(p => {
+                const isTurret = p.Name.toLowerCase().includes('turret');
+                if (isTurret) {
+                    let displayName = p.DisplayName || p.Name;
+
+                    // Assign specific names as requested (2x Manned, 2x Remote)
+                    if (displayName.toLowerCase().includes('remote') || remoteCount >= 2) {
+                        remoteCount++;
+                        displayName = `Remote Turret S4 (${remoteCount})`;
+                    } else {
+                        mannedCount++;
+                        displayName = `Manned Turret S4 (${mannedCount})`;
+                    }
+
+                    return {
+                        ...p,
+                        DisplayName: displayName,
+                        MaxSize: 4,
+                        MinSize: 4,
+                        Types: [...(p.Types || []), 'WeaponGun']
+                    };
+                }
+                return p;
+            });
     }
     return ports;
 };
