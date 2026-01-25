@@ -76,7 +76,7 @@ const App: React.FC = () => {
     if (toast.visible) {
       const timer = setTimeout(() => {
         setToast(prev => ({ ...prev, visible: false }));
-      }, 4000);
+      }, 3000);
       return () => clearTimeout(timer);
     }
   }, [toast.visible]);
