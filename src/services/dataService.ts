@@ -132,6 +132,22 @@ const applyPortPatches = (className: string, ports: Port[]): Port[] => {
             { Name: 'quantum_drive_1', MaxSize: 1, MinSize: 1, Types: ['QuantumDrive.QuantumDrive'] },
         ];
     }
+
+    if (className === 'ANVL_Carrack') {
+        return ports.map(p => {
+            const isTurret = p.Name.toLowerCase().includes('turret');
+            if (isTurret) {
+                return {
+                    ...p,
+                    MaxSize: 4,
+                    MinSize: 4,
+                    // Ensure it's treated as a weapon port so we see guns
+                    Types: [...(p.Types || []), 'WeaponGun']
+                };
+            }
+            return p;
+        });
+    }
     return ports;
 };
 
@@ -155,8 +171,13 @@ export const fetchItems = async (): Promise<Item[]> => {
         if (nameLower === 'turret' || nameLower === 'remote turret' || nameLower === 'manned turret' || nameLower === 'mannequin') return false;
         if (nameLower.includes('regenpool') || nameLower.includes('weaponmount') || nameLower.includes('ammobox')) return false;
 
+        // Filter out "bespoke" or ship-specific massive items
+        if (nameLower.includes('bespoke') || nameLower.includes('limited') || nameLower.includes('interior')) return false;
+        if (nameLower.includes('idris') || nameLower.includes('javelin') || nameLower.includes('kraken')) return false;
+
         const classLower = item.className.toLowerCase();
         if (classLower.includes('_container') || classLower.includes('controller')) return false;
+        if (classLower.includes('bespoke') || classLower.includes('massive')) return false;
 
         return !!item.className;
     });
