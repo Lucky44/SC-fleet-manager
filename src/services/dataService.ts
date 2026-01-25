@@ -169,7 +169,7 @@ const applyPortPatches = (className: string, ports: Port[]): Port[] => {
 };
 
 const WEAPON_NAME_MAP: Record<string, string> = {
-    // Behring Laser Cannons
+    // Behring Laser Cannons (M-Series)
     'BEHR_LaserCannon_S1': 'M3A Laser Cannon',
     'BEHR_LaserCannon_S2': 'M4A Laser Cannon',
     'BEHR_LaserCannon_S3': 'M5A Laser Cannon',
@@ -183,21 +183,66 @@ const WEAPON_NAME_MAP: Record<string, string> = {
     'KLWE_LaserRepeater_S2': 'Badger Repeater',
     'KLWE_LaserRepeater_S3': 'Panther Repeater',
     'KLWE_LaserRepeater_S4': 'Rhino Repeater',
+    'KLWE_LaserRepeater_S5': 'Galdereen Repeater',
+    'KLWE_LaserRepeater_S6': 'Mammoth Repeater',
 
-    // Behring Ballistic Gatlings
+    // Behring Ballistic Gatlings (AD-Series)
     'BEHR_BallisticGatling_S4': 'AD4B Gatling',
     'BEHR_BallisticGatling_S5': 'AD5B Gatling',
+    'BEHR_BallisticGatling_S6': 'AD6B Gatling',
 
-    // Omnisky Laser Cannons
+    // Amon & Reese Omnisky Laser Cannons
     'AMRS_LaserCannon_S1': 'Omnisky III',
     'AMRS_LaserCannon_S2': 'Omnisky VI',
     'AMRS_LaserCannon_S3': 'Omnisky IX',
     'AMRS_LaserCannon_S4': 'Omnisky XII',
+    'AMRS_LaserCannon_S5': 'Omnisky XV',
+    'AMRS_LaserCannon_S6': 'Omnisky XVIII',
 
-    // FL series
-    'AMRS_LaserCannon_Fixed_S1': 'FL-11 Cannon',
-    'AMRS_LaserCannon_Fixed_S2': 'FL-22 Cannon',
-    'AMRS_LaserCannon_Fixed_S3': 'FL-33 Cannon'
+    // Kronig FL series
+    'KRON_LaserCannon_S1': 'FL-11 Cannon',
+    'KRON_LaserCannon_S2': 'FL-22 Cannon',
+    'KRON_LaserCannon_S3': 'FL-33 Cannon',
+
+    // Hurston Dynamics Attrition
+    'HRST_LaserRepeater_S1': 'Attrition-1',
+    'HRST_LaserRepeater_S2': 'Attrition-2',
+    'HRST_LaserRepeater_S3': 'Attrition-3',
+    'HRST_LaserRepeater_S4': 'Attrition-4',
+    'HRST_LaserRepeater_S5': 'Attrition-5',
+    'HRST_LaserRepeater_S6': 'Attrition-6',
+
+    // Hurston Dynamics Dominance
+    'HRST_LaserScatterGun_S1': 'Dominance-1',
+    'HRST_LaserScatterGun_S2': 'Dominance-2',
+    'HRST_LaserScatterGun_S3': 'Dominance-3',
+
+    // Esperia Deadbolt Ballistic Cannons
+    'ESPR_BallisticCannon_S2': 'Deadbolt II',
+    'ESPR_BallisticCannon_S3': 'Deadbolt III',
+    'ESPR_BallisticCannon_S4': 'Deadbolt IV',
+    'ESPR_BallisticCannon_S5': 'Deadbolt V',
+
+    // Aegis Dynamics Revenant/Draugar
+    'APAR_BallisticGatling_S4': 'Revenant Gatling',
+    'APAR_BallisticGatling_S6': 'Draugar Gatling',
+
+    // Behring Combine
+    'BEHR_BallisticCannon_S4': 'C-788 Combine',
+
+    // Gallenson Tactical Tarantula
+    'GATS_BallisticCannon_S1': 'Tarantula GT-870 Mark 1',
+    'GATS_BallisticCannon_S2': 'Tarantula GT-870 Mark 2',
+    'GATS_BallisticCannon_S3': 'Tarantula GT-870 Mark 3',
+
+    // Gallenson Tactical Gatlings
+    'GATS_BallisticGatling_S1': 'YellowJacket GT-210',
+    'GATS_BallisticGatling_S2': 'Scorpion GT-215',
+    'GATS_BallisticGatling_S3': 'Mantis GT-220',
+
+    // Preacher Distortion
+    'PRAR_DistortionScatterGun_S4': 'Salvation Scattergun',
+    'PRAR_DistortionScatterGun_S5': 'Absolution Scattergun'
 };
 
 export const fetchItems = async (): Promise<Item[]> => {

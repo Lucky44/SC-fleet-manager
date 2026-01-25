@@ -193,10 +193,13 @@ const PortSelector: React.FC<{
     // Derived filtering based on search
     const filteredItems = React.useMemo(() => {
         if (!search) return compatibleItems;
-        return compatibleItems.filter(item =>
-            item.name.toLowerCase().includes(search.toLowerCase()) ||
-            item.manufacturer?.toLowerCase().includes(search.toLowerCase())
-        );
+        return compatibleItems.filter(item => {
+            const cleanedName = cleanName(item.name, item.className).toLowerCase();
+            const searchLower = search.toLowerCase();
+            return cleanedName.includes(searchLower) ||
+                item.manufacturer?.toLowerCase().includes(searchLower) ||
+                item.className.toLowerCase().includes(searchLower);
+        });
     }, [compatibleItems, search]);
 
     const currentItem = port.InstalledItem;
