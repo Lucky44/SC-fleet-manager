@@ -387,9 +387,14 @@ export const filterItemsForPort = (items: Item[], port: Port): Item[] => {
 };
 
 export const cleanName = (name: string): string => {
+    if (!name) return 'Unknown Item';
     return name
-        .replace(/@item_Name_|@LOC_PLACEHOLDER_|\(.*\)/g, '')
+        .replace(/@[\w\s]*Name[ _]?|@LOC_PLACEHOLDER_|@item_Name_/gi, '')
+        .replace(/itemName/gi, '')
+        .replace(/Name([A-Z])/g, '$1') // Handle NameBEHR -> BEHR
         .replace(/_/g, ' ')
+        .replace(/\(.*\)/g, '')
+        .replace(/Laswer/gi, 'Laser') // Fix common typo in data if it exists
         .trim() || 'Unknown Item';
 };
 
