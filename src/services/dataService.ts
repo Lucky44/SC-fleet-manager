@@ -205,12 +205,12 @@ const WEAPON_NAME_MAP: Record<string, string> = {
     'KRON_LASERCANNON_S3': 'FL-33 Cannon',
 
     // Hurston Dynamics Attrition
-    'HRST_LASERREPEATER_S1': 'Attrition-1',
-    'HRST_LASERREPEATER_S2': 'Attrition-2',
-    'HRST_LASERREPEATER_S3': 'Attrition-3',
-    'HRST_LASERREPEATER_S4': 'Attrition-4',
-    'HRST_LASERREPEATER_S5': 'Attrition-5',
-    'HRST_LASERREPEATER_S6': 'Attrition-6',
+    'HRST_LASERREPEATER_S1': 'Attrition-1 Repeater',
+    'HRST_LASERREPEATER_S2': 'Attrition-2 Repeater',
+    'HRST_LASERREPEATER_S3': 'Attrition-3 Repeater',
+    'HRST_LASERREPEATER_S4': 'Attrition-4 Repeater',
+    'HRST_LASERREPEATER_S5': 'Attrition-5 Repeater',
+    'HRST_LASERREPEATER_S6': 'Attrition-6 Repeater',
 
     // Hurston Dynamics Dominance
     'HRST_LASERSCATTERGUN_S1': 'Dominance-1',
@@ -493,42 +493,49 @@ export const filterItemsForPort = (items: Item[], port: Port): Item[] => {
 };
 
 export const cleanName = (name: string, className?: string): string => {
-    // 1. Map Lookup (Case-Insensitive & Suffix Stripping)
-    if (className) {
-        const normalized = className.toUpperCase();
-        if (WEAPON_NAME_MAP[normalized]) return WEAPON_NAME_MAP[normalized];
+    if (!name && !className) return 'Unknown Item';
 
-        // Try stripping common suffixes (_S1, _TURRET, _LOWPOLY, etc)
-        const stripped = normalized.replace(/(_S\d|_TURRET|_LOWPOLY|_DUMMY|_VNG|_VANDUUL|_B_|_A_).*/gi, '');
-        if (WEAPON_NAME_MAP[stripped]) return WEAPON_NAME_MAP[stripped];
-    }
-
-    // 2. Exact fallback matches for reported issues or technical strings
+    // 1. Initial Cleaning (Remove technical prefixes to allow matching)
     const raw = (name || '').trim();
-    if (raw === 'ESPR Laser Cannon' || raw === 'ESPR LaserCannon S4' || raw.includes('ESPR_LaserCannon')) return 'Lightstrike IV Cannon';
-    if (raw === 'KLWE LaserRepeater S4' || raw === 'KLWE Laser Repeater S4') return 'Rhino Repeater';
-    if (raw === 'APAR BallisticGatling S4' || raw === 'APAR Ballistic Gatling S4' || raw.includes('APAR_BallisticGatling')) return 'Revenant Gatling';
-
-    // 3. Handle placeholders - if name is a placeholder, try to clean the className
-    if (raw.includes('PLACEHOLDER') || raw.includes('<=') || raw === 'itemName' || raw.includes('@LOC')) {
-        if (className) {
-            return className
-                .replace(/(_S\d|_TURRET|_LOWPOLY|_DUMMY|_VNG|_VANDUUL|_B_|_A_).*/gi, '')
-                .replace(/_/g, ' ')
-                .trim();
-        }
-        return 'Unknown Item';
-    }
-
-    // 4. General technical name cleaning
     let clean = raw
         .replace(/@[\w\s]*Name[ _]?|@LOC_PLACE_HOLDER_|@LOC_PLACEHOLDER_|@item_Name_|@LOC /gi, '')
         .replace(/itemName/gi, '')
-        .replace(/Name([A-Z])/g, '$1') // Handle NameBEHR -> BEHR
+        .replace(/Name([A-Z])/g, '$1')
         .replace(/_/g, ' ')
         .replace(/\(.*\)/g, '')
         .replace(/Laswer/gi, 'Laser')
         .trim();
+
+    // 2. Explicit Overrides for reported strings
+    if (clean === 'HRST LaserRepeater S4' || clean.includes('HRST_LaserRepeater_S4')) return 'Attrition-4 Repeater';
+    if (clean === 'KLWE LaserRepeater S4' || clean.includes('KLWE_LaserRepeater_S4')) return 'Rhino Repeater';
+    if (clean === 'ESPR Laser Cannon' || clean === 'ESPR LaserCannon S4' || clean.includes('ESPR_LaserCannon')) return 'Lightstrike IV Cannon';
+    if (clean === 'APAR BallisticGatling S4' || clean.includes('APAR_BallisticGatling_S4')) return 'Revenant Gatling';
+
+    // 3. Map Lookup via ClassName (High Precision)
+    if (className) {
+        const normalized = className.toUpperCase().replace(/^NAME/i, '');
+        if (WEAPON_NAME_MAP[normalized]) return WEAPON_NAME_MAP[normalized];
+
+        // Match after stripping technical suffixes BUT preserving Size
+        const stripped = normalized.replace(/(_TURRET|_LOWPOLY|_DUMMY|_VNG|_VANDUUL|_B_|_A_).*/gi, '');
+        if (WEAPON_NAME_MAP[stripped]) return WEAPON_NAME_MAP[stripped];
+
+        // Match after stripping everything after Size
+        const sizeStripped = normalized.replace(/(_S\d).*/gi, '$1');
+        if (WEAPON_NAME_MAP[sizeStripped]) return WEAPON_NAME_MAP[sizeStripped];
+    }
+
+    // 4. Fallback: Try to map the cleaned name to a key
+    const mappingKey = clean.toUpperCase().replace(/\s/g, '_');
+    if (WEAPON_NAME_MAP[mappingKey]) return WEAPON_NAME_MAP[mappingKey];
+
+    // 5. Placeholder handling
+    if (raw.includes('PLACEHOLDER') || raw.includes('<=') || raw.includes('@LOC')) {
+        if (className) {
+            return className.replace(/^NAME/i, '').replace(/(_TURRET|_LOWPOLY|_DUMMY|_VNG|_VANDUUL|_B_|_A_).*/gi, '').replace(/_/g, ' ').trim();
+        }
+    }
 
     return clean || className || 'Unknown Item';
 };
