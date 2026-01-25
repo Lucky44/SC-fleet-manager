@@ -1,0 +1,1118 @@
+[
+  {
+    "className": "test_gats_gattlings_s3",
+    "name": "<= PLACEHOLDER =>",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "RSI_Constellation_Taurus_Tractor_Beam",
+    "name": "SureGrip TH2 Tractor Beam",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "HRST_LaserScatterGun_S1",
+    "name": "Dominance-1 Scattergun",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "VNCL_NeutronCannon_S5",
+    "name": "'WAR' Cannon",
+    "type": "WeaponGun",
+    "size": 5
+  },
+  {
+    "className": "BEHR_BallisticGatling_Hornet_Bespoke",
+    "name": "TMSB-5 Gatling",
+    "type": "WeaponGun",
+    "size": 4
+  },
+  {
+    "className": "VNCL_Gen2_PlasmaCannon_S2",
+    "name": "<= PLACEHOLDER =>",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "BEHR_BallisticRepeater_VNG_S2",
+    "name": "BRVS Repeater",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "KLWE_LaserRepeater_S5_LowPoly",
+    "name": "CF-557 Galdereen Repeater",
+    "type": "WeaponGun",
+    "size": 5
+  },
+  {
+    "className": "KLWE_LaserRepeater_S1_ATLS",
+    "name": "CF-117 Bulldog Repeater",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "VNCL_LaserCannon_S1",
+    "name": "'WEAK' Repeater",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "GLSN_BallisticGatling_S4",
+    "name": "Breakneck S4 Gatling",
+    "type": "WeaponGun",
+    "size": 4
+  },
+  {
+    "className": "BANU_TachyonCannon_S1",
+    "name": "Singe Cannon (S1)",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "APAR_BallisticGatling_S4_LowPoly",
+    "name": "Revenant Gatling",
+    "type": "WeaponGun",
+    "size": 4
+  },
+  {
+    "className": "HRST_LaserScatterGun_S2",
+    "name": "Dominance-2 Scattergun",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "BANU_TachyonCannon_S3",
+    "name": "Singe Cannon (S3)",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "BEHR_DistortionRepeater_VNG_S2",
+    "name": "ATVS Repeater",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "VNCL_LaserCannon_S2",
+    "name": "'WASP' Repeater",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "BANU_TachyonCannon_S2",
+    "name": "Singe Cannon (S2)",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "BEHR_LaserCannon_SF7E_S7_Collector",
+    "name": "SF7E Cannon",
+    "type": "WeaponGun",
+    "size": 7
+  },
+  {
+    "className": "HRST_LaserScatterGun_S3",
+    "name": "Dominance-3 Scattergun",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "HRST_Nova_BallisticCannon_S5",
+    "name": "Slayer Cannon",
+    "type": "WeaponGun",
+    "size": 5
+  },
+  {
+    "className": "TOAG_LaserRepeater_S3",
+    "name": "YengΓÇÖtu Repeater",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "Bengal_BallisticCannon_S8",
+    "name": "Tarantula GT-870 Mark 3 Cannon",
+    "type": "WeaponGun",
+    "size": 8
+  },
+  {
+    "className": "Krig_LaserRepeater_Bespoke_S4",
+    "name": "Axiom L-22 Repeater",
+    "type": "WeaponGun",
+    "size": 4
+  },
+  {
+    "className": "VNCL_Gen2_PlasmaCannon_S4",
+    "name": "<= PLACEHOLDER =>",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "ASAD_DistortionRepeater_S1",
+    "name": "DR Model-XJ1 Repeater",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "GATS_BallisticCannon_S2",
+    "name": "Tarantula GT-870 Mark 2 Cannon",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "GATS_BallisticCannon_S3",
+    "name": "Tarantula GT-870 Mark 3 Cannon",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "MXOX_NeutronCannon_S1",
+    "name": "NN-13 Cannon",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "VNCL_Gen2_PlasmaCannon_S5",
+    "name": "'WRATH' Cannon",
+    "type": "WeaponGun",
+    "size": 5
+  },
+  {
+    "className": "BEHR_LaserCannon_S7_LowPoly",
+    "name": "M9A Cannon",
+    "type": "WeaponGun",
+    "size": 7
+  },
+  {
+    "className": "BEHR_MassDriver_S12",
+    "name": "M9A Cannon",
+    "type": "WeaponGun",
+    "size": 12
+  },
+  {
+    "className": "APAR_MassDriver_S2",
+    "name": "Strife Mass Driver Cannon",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "MXOX_NeutronCannon_S3",
+    "name": "NN-14 Cannon",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "ASAD_DistortionRepeater_S2",
+    "name": "DR Model-XJ2 Repeater",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "GATS_BallisticCannon_S1",
+    "name": "Tarantula GT-870 Mark 1 Cannon",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "KLWE_MassDriver_S10",
+    "name": "Destroyer Mass Driver Cannon",
+    "type": "WeaponGun",
+    "size": 10
+  },
+  {
+    "className": "ASAD_DistortionRepeater_S3",
+    "name": "DR Model-XJ3 Repeater",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "MXOX_NeutronCannon_S2",
+    "name": "NN-14 Cannon",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "KLWE_MassDriver_S10_LowPoly",
+    "name": "Destroyer Mass Driver Cannon",
+    "type": "WeaponGun",
+    "size": 10
+  },
+  {
+    "className": "NONE_LaserRepeater_S3",
+    "name": "Ardor-3 Salvaged Repeater",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "ESPR_LaserCannon_S2",
+    "name": "Lightstrike II Cannon",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "KLWE_LaserRepeater_S5_Idris_M",
+    "name": "CF-557 Galdereen Repeater",
+    "type": "WeaponGun",
+    "size": 5
+  },
+  {
+    "className": "KLWE_MassDriver_S2",
+    "name": "Sledge II Mass Driver Cannon",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "HRST_LaserRepeater_S3",
+    "name": "Attrition-3 Repeater",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "KRIG_BallisticGatling_S2",
+    "name": "Tigerstrike T-19P",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "MXOX_NeutronRepeater_S1",
+    "name": "NDB-26 Repeater",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "BEHR_LaserCannon_S7",
+    "name": "M9A Cannon",
+    "type": "WeaponGun",
+    "size": 7
+  },
+  {
+    "className": "BEHR_BallisticGatling_S6",
+    "name": "AD6B Ballistic Gatling",
+    "type": "WeaponGun",
+    "size": 6
+  },
+  {
+    "className": "BEHR_BallisticGatling_S7",
+    "name": "SF7B Gatling",
+    "type": "WeaponGun",
+    "size": 7
+  },
+  {
+    "className": "APAR_BallisticGatling_S6",
+    "name": "Draugar Gatling",
+    "type": "WeaponGun",
+    "size": 6
+  },
+  {
+    "className": "BEHR_LaserCannon_S6",
+    "name": "M8A Cannon",
+    "type": "WeaponGun",
+    "size": 6
+  },
+  {
+    "className": "KBAR_BallisticCannon_S1",
+    "name": "9-Series Longsword Cannon",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "KRIG_BallisticGatling_S3",
+    "name": "Tigerstrike T-21 Gatling",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "HRST_LaserRepeater_S2",
+    "name": "Attrition-2 Repeater",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "KLWE_MassDriver_S3",
+    "name": "Sledge III Mass Driver Cannon",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "BEHR_BallisticGatling_S7_Collector",
+    "name": "SF7B Gatling",
+    "type": "WeaponGun",
+    "size": 7
+  },
+  {
+    "className": "ESPR_LaserCannon_S3",
+    "name": "Lightstrike III Cannon",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "NONE_LaserRepeater_S2",
+    "name": "Ardor-2 Salvaged Repeater",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "ESPR_LaserCannon_S1",
+    "name": "Lightstrike I Cannon",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "KLWE_MassDriver_S1",
+    "name": "Sledge I Mass Driver Cannon",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "Krig_BallisticGatling_Bespoke_S4",
+    "name": "Relentless L-21 Gatling",
+    "type": "WeaponGun",
+    "size": 4
+  },
+  {
+    "className": "MXOX_NeutronRepeater_S2",
+    "name": "NDB-28 Repeater",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "KBAR_BallisticCannon_S3",
+    "name": "11-Series Broadsword Cannon",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "APAR_BallisticGatling_S4",
+    "name": "Revenant Gatling",
+    "type": "WeaponGun",
+    "size": 4
+  },
+  {
+    "className": "BEHR_LaserCannon_S4",
+    "name": "M6A Cannon",
+    "type": "WeaponGun",
+    "size": 4
+  },
+  {
+    "className": "BEHR_BallisticGatling_S5",
+    "name": "AD5B Ballistic Gatling",
+    "type": "WeaponGun",
+    "size": 5
+  },
+  {
+    "className": "BEHR_LaserCannon_SF7E_S7",
+    "name": "SF7E Cannon",
+    "type": "WeaponGun",
+    "size": 7
+  },
+  {
+    "className": "BEHR_BallisticGatling_S4",
+    "name": "AD4B Ballistic Gatling",
+    "type": "WeaponGun",
+    "size": 4
+  },
+  {
+    "className": "BRRA_LaserCannon_AP_AutomatedTurret",
+    "name": "<= PLACEHOLDER =>",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "BEHR_LaserCannon_S5",
+    "name": "M7A Cannon",
+    "type": "WeaponGun",
+    "size": 5
+  },
+  {
+    "className": "KBAR_BallisticCannon_S2",
+    "name": "10-Series Greatsword Cannon",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "MXOX_NeutronRepeater_S3",
+    "name": "NDB-30 Repeater",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "HRST_LaserRepeater_S1",
+    "name": "Attrition-1 Repeater",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "NONE_LaserRepeater_S1",
+    "name": "Ardor-1 Salvaged Repeater",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "BEHR_LaserCannon_S7_Turret",
+    "name": "M9A Cannon",
+    "type": "WeaponGun",
+    "size": 7
+  },
+  {
+    "className": "ESPR_LaserCannon_S4",
+    "name": "Lightstrike IV Cannon",
+    "type": "WeaponGun",
+    "size": 4
+  },
+  {
+    "className": "HRST_LaserRepeater_S5",
+    "name": "Attrition-5 Repeater",
+    "type": "WeaponGun",
+    "size": 5
+  },
+  {
+    "className": "KLWE_LaserRepeater_S5_Turret",
+    "name": "CF-557 Galdereen Repeater",
+    "type": "WeaponGun",
+    "size": 5
+  },
+  {
+    "className": "JOKR_DistortionCannon_S2",
+    "name": "Suckerpunch-L Cannon",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "BEHR_LaserCannon_S6_SecurityNetwork",
+    "name": "M8A Cannon",
+    "type": "WeaponGun",
+    "size": 6
+  },
+  {
+    "className": "BEHR_LaserCannon_S7_Idris_M",
+    "name": "M9A Cannon",
+    "type": "WeaponGun",
+    "size": 7
+  },
+  {
+    "className": "BEHR_LaserCannon_S1",
+    "name": "M3A Cannon",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "KRON_LaserCannon_S2",
+    "name": "FL-22 Cannon",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "KRON_LaserCannon_S3",
+    "name": "FL-33 Cannon",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "AMRS_AAgun_CC_S3",
+    "name": "PyroBurst Scattergun",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "BEHR_JavelinBallisticCannon_S7_LowPoly",
+    "name": "M9A Cannon",
+    "type": "WeaponGun",
+    "size": 7
+  },
+  {
+    "className": "JOKR_DistortionCannon_S3",
+    "name": "Suckerpunch-XL Cannon",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "HRST_LaserRepeater_S4",
+    "name": "Attrition-4 Repeater",
+    "type": "WeaponGun",
+    "size": 4
+  },
+  {
+    "className": "ESPR_LaserCannon_S5",
+    "name": "Lightstrike V Cannon",
+    "type": "WeaponGun",
+    "size": 5
+  },
+  {
+    "className": "HRST_Storm_LaserRepeater_S3",
+    "name": "Reign-3 Repeater",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "HRST_LaserRepeater_S6",
+    "name": "Attrition-6 Repeater",
+    "type": "WeaponGun",
+    "size": 6
+  },
+  {
+    "className": "JOKR_DistortionCannon_S1",
+    "name": "Suckerpunch Cannon",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "BEHR_LaserCannon_S2",
+    "name": "M4A Cannon",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "KLWE_LaserRepeater_S6_LowPoly",
+    "name": "CF-667 Mammoth Repeater",
+    "type": "WeaponGun",
+    "size": 6
+  },
+  {
+    "className": "KRON_LaserCannon_S1",
+    "name": "FL-11 Cannon",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "BANU_EnergyRepeater_S2",
+    "name": "CF-227 Badger Repeater",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "AMRS_ScatterGun_S3",
+    "name": "PyroBurst Scattergun",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "BEHR_LaserCannon_S7_Idris_M_Dummy",
+    "name": "M9A Cannon",
+    "type": "WeaponGun",
+    "size": 7
+  },
+  {
+    "className": "BEHR_JavelinBallisticCannon_S7",
+    "name": "M9A Cannon",
+    "type": "WeaponGun",
+    "size": 7
+  },
+  {
+    "className": "APAR_BallisticScatterGun_S1_Shark",
+    "name": "Havoc Scattergun Sharkmouth Edition",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "BEHR_LaserCannon_S3",
+    "name": "M5A Cannon",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "RPOD_S2_THCN_8x_S2",
+    "name": "Liberator Prime",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "RPOD_S2_FSKI_6x_S3",
+    "name": "Yebira II",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "RPOD_S1_HRST_6x_S1",
+    "name": "Jericho",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "RPOD_S3_HRST_18x_S1",
+    "name": "Jericho XL",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "RPOD_S3_THCN_12x_S2",
+    "name": "Liberator Ultra",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "RPOD_S2_HRST_12x_S1",
+    "name": "Jericho X",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "RPOD_S1_FSKI_3x_S3",
+    "name": "Yebira I",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "RPOD_S3_FSKI_9x_S3",
+    "name": "Jericho XL",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "RPOD_S1_THCN_4x_S2",
+    "name": "Liberator",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "ESPR_LaserCannon_S6",
+    "name": "Lightstrike VI Cannon",
+    "type": "WeaponGun",
+    "size": 6
+  },
+  {
+    "className": "VNCL_PlasmaCannon_S2",
+    "name": "'WHIP' Cannon",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "GATS_BallisticGatling_S3",
+    "name": "Mantis GT-220 Gatling",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "Bengal_Turret_BallisticCannon_S8",
+    "name": "Slayer Cannon",
+    "type": "WeaponGun",
+    "size": 5
+  },
+  {
+    "className": "GATS_BallisticGatling_S2",
+    "name": "Scorpion GT-215 Gatling",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "VNCL_PlasmaCannon_S3",
+    "name": "'WARLORD' Cannon",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "GLSN_LaserRepeater_S3",
+    "name": "Tormenter S3 Repeater",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "BEHR_LaserRepeater_S10_SecurityNetwork_Weak",
+    "name": "GVSR Repeater",
+    "type": "WeaponGun",
+    "size": 10
+  },
+  {
+    "className": "BEHR_LaserRepeater_S10_SecurityNetwork",
+    "name": "GVSR Repeater",
+    "type": "WeaponGun",
+    "size": 10
+  },
+  {
+    "className": "APAR_BallisticScatterGun_S6",
+    "name": "<= PLACEHOLDER =>",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "GATS_BallisticGatling_S1",
+    "name": "YellowJacket GT-210 Gatling",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "TOAG_LaserGatling_S2",
+    "name": "Thlilye Laser Gatling",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "BEHR_DistortionCannon_VNG_S2",
+    "name": "EVSD Cannon",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "BEHR_LaserCannon_S8",
+    "name": "M9A Cannon",
+    "type": "WeaponGun",
+    "size": 8
+  },
+  {
+    "className": "BEHR_BallisticRepeater_S1",
+    "name": "SW16BR1 ΓÇ£BuzzsawΓÇ¥ Repeater",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "APAR_BallisticScatterGun_S2",
+    "name": "Hellion┬áScattergun",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "PRAR_DistortionScatterGun_S5",
+    "name": "Absolution Distortion Scattergun",
+    "type": "WeaponGun",
+    "size": 5
+  },
+  {
+    "className": "PRAR_DistortionScatterGun_S4",
+    "name": "Salvation Distortion Scattergun",
+    "type": "WeaponGun",
+    "size": 4
+  },
+  {
+    "className": "APAR_BallisticScatterGun_S3",
+    "name": "Predator Scattergun",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "BEHR_LaserCannon_S9",
+    "name": "M9A Cannon",
+    "type": "WeaponGun",
+    "size": 9
+  },
+  {
+    "className": "VNCL_PlasmaCannon_S5",
+    "name": "'WRATH' Cannon",
+    "type": "WeaponGun",
+    "size": 5
+  },
+  {
+    "className": "RSI_Perseus_BallisticCannon_B_S8",
+    "name": "RSI Medusa Cannon",
+    "type": "WeaponGun",
+    "size": 8
+  },
+  {
+    "className": "APAR_BallisticScatterGun_S2_Shark",
+    "name": "Hellion Scattergun Sharkmouth Edition",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "KLWE_LaserRepeater_S4_LowPoly",
+    "name": "CF-447 Rhino Repeater",
+    "type": "WeaponGun",
+    "size": 4
+  },
+  {
+    "className": "BEHR_BallisticRepeater_S2",
+    "name": "SW16BR2 ΓÇ£SawbuckΓÇ¥ Repeater",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "APAR_BallisticScatterGun_S1",
+    "name": "Havoc Scattergun",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "PRAR_DistortionScatterGun_S6",
+    "name": "Condemnation Distortion Scattergun",
+    "type": "WeaponGun",
+    "size": 6
+  },
+  {
+    "className": "BEHR_BallisticRepeater_S3",
+    "name": "SW16BR3 ΓÇ£ShredderΓÇ¥ Repeater",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "BEHR_LaserRepeater_VNG_S2",
+    "name": "GVSR Repeater",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "BEHR_LaserCannon_VNG_S2",
+    "name": "MVSA Cannon",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "BEHR_Nova_BallisticGatling_S5",
+    "name": "NV57 Ballistic Gatling",
+    "type": "WeaponGun",
+    "size": 5
+  },
+  {
+    "className": "RSI_Bespoke_BallisticCannon_A",
+    "name": "Maris Cannon",
+    "type": "WeaponGun",
+    "size": 6
+  },
+  {
+    "className": "Bengal_BallisticCannon_S7",
+    "name": "Tarantula GT-870 Mark 3 Cannon",
+    "type": "WeaponGun",
+    "size": 7
+  },
+  {
+    "className": "BEHR_BallisticGatling_PDC_S1",
+    "name": "MRX \"Torrent\"",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "AMRS_LaserCannon_S1",
+    "name": "Omnisky III Cannon",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "ESPR_BallisticCannon_S3",
+    "name": "Deadbolt III Cannon",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "ESPR_BallisticCannon_S2",
+    "name": "Deadbolt II Cannon",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "HRST_LaserRepeater_S4_Turret",
+    "name": "Attrition-4 Repeater",
+    "type": "WeaponGun",
+    "size": 4
+  },
+  {
+    "className": "BEHR_LaserCannon_S9_LowPoly",
+    "name": "M9A Cannon",
+    "type": "WeaponGun",
+    "size": 9
+  },
+  {
+    "className": "RSI_BallisticCannon_S5_Meteor_Bespoke",
+    "name": "Leonids Cannon",
+    "type": "WeaponGun",
+    "size": 5
+  },
+  {
+    "className": "Bengal_BallisticGatling_S6",
+    "name": "Revenant Gatling",
+    "type": "WeaponGun",
+    "size": 6
+  },
+  {
+    "className": "KLWE_LaserRepeater_S6",
+    "name": "CF-667 Mammoth Repeater",
+    "type": "WeaponGun",
+    "size": 6
+  },
+  {
+    "className": "KLWE_LaserRepeater_S4",
+    "name": "CF-447 Rhino Repeater",
+    "type": "WeaponGun",
+    "size": 4
+  },
+  {
+    "className": "BEHR_JavelinBallisticCannon_S7_Dummy",
+    "name": "M9A Cannon",
+    "type": "WeaponGun",
+    "size": 7
+  },
+  {
+    "className": "BEHR_BallisticCannon_S7_Idris",
+    "name": "Conqueror-7",
+    "type": "WeaponGun",
+    "size": 7
+  },
+  {
+    "className": "AMRS_LaserCannon_S2",
+    "name": "Omnisky VI Cannon",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "KLWE_LaserRepeater_PDC_S2",
+    "name": "CF-227 Badger Repeater",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "ESPR_BallisticCannon_S1",
+    "name": "Deadbolt I Cannon",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "BEHR_LaserRepeater_S10",
+    "name": "GVSR Repeater",
+    "type": "WeaponGun",
+    "size": 10
+  },
+  {
+    "className": "AMRS_LaserCannon_S3",
+    "name": "Omnisky IX Cannon",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "BEHR_BallisticCannon_S4",
+    "name": "C-788 Cannon",
+    "type": "WeaponGun",
+    "size": 4
+  },
+  {
+    "className": "ANVL_BallisticGatling_Bespoke",
+    "name": "Revenant Gatling",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "KLWE_LaserRepeater_S5",
+    "name": "CF-557 Galdereen Repeater",
+    "type": "WeaponGun",
+    "size": 5
+  },
+  {
+    "className": "KLWE_LaserRepeater_S1",
+    "name": "CF-117 Bulldog Repeater",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "BEHR_LaserRepeater_PDC_S1",
+    "name": "M2C \"Swarm\"",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "ESPR_BallisticCannon_S5",
+    "name": "Deadbolt V Cannon",
+    "type": "WeaponGun",
+    "size": 5
+  },
+  {
+    "className": "ESPR_BallisticCannon_S4",
+    "name": "Deadbolt IV Cannon",
+    "type": "WeaponGun",
+    "size": 4
+  },
+  {
+    "className": "AMRS_LaserCannon_S6",
+    "name": "Omnisky XVIII Cannon",
+    "type": "WeaponGun",
+    "size": 6
+  },
+  {
+    "className": "KLWE_LaserRepeater_S2",
+    "name": "CF-227 Badger Repeater",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "HRST_LaserBeam_Bespoke",
+    "name": "Exodus-10 Laser Beam",
+    "type": "WeaponGun",
+    "size": 10
+  },
+  {
+    "className": "AMRS_LaserCannon_S4",
+    "name": "Omnisky XII Cannon",
+    "type": "WeaponGun",
+    "size": 4
+  },
+  {
+    "className": "APAR_BallisticScatterGun_S3_Shark",
+    "name": "Predator Scattergun Sharkmouth Edition",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "KRIG_LaserCannon_S3",
+    "name": "Quarreler Cannon",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "ESPR_BallisticCannon_S6",
+    "name": "Deadbolt VI Cannon",
+    "type": "WeaponGun",
+    "size": 6
+  },
+  {
+    "className": "AMRS_LaserCannon_S5",
+    "name": "Omnisky XV Cannon",
+    "type": "WeaponGun",
+    "size": 5
+  },
+  {
+    "className": "BEHR_LaserCannon_S6_Turret",
+    "name": "M8A Cannon",
+    "type": "WeaponGun",
+    "size": 6
+  },
+  {
+    "className": "BEHR_BallisticCannon_VNG_S2",
+    "name": "CVSA Cannon",
+    "type": "WeaponGun",
+    "size": 2
+  },
+  {
+    "className": "KLWE_LaserRepeater_S3",
+    "name": "CF-337 Panther Repeater",
+    "type": "WeaponGun",
+    "size": 3
+  },
+  {
+    "className": "GATS_BallisticGatling_Mounted_S1_DRAK_Cutlass_Steel",
+    "name": "YellowJacket GT-210 Gatling",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "GATS_BallisticGatling_Mounted_S1_fps_balance",
+    "name": "YellowJacket GT-210 Gatling",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "GATS_BallisticGatling_Mounted_S1_FakeHologram",
+    "name": "YellowJacket GT-210 Gatling",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "GATS_BallisticGatling_Mounted_S1",
+    "name": "YellowJacket GT-210 Gatling",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "RN_Light_Basic",
+    "name": "<= PLACEHOLDER =>",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "RN_Resource_Relay",
+    "name": "<= PLACEHOLDER =>",
+    "type": "WeaponGun",
+    "size": 1
+  },
+  {
+    "className": "RN_WindTurbine",
+    "name": "<= PLACEHOLDER =>",
+    "type": "WeaponGun",
+    "size": 1
+  }
+]

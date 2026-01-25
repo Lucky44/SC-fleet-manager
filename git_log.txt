@@ -1,0 +1,22 @@
+358e2c7 Fix Carrack turret sizing to S4 and filter bespoke items
+498b4e6 Remove C.O. prefix from ship names
+2bb72b2 Remove MISC prefix from MISC ship names
+05a825e Correct Hornet Mk I/II identification for F7A
+7dea108 Fix Hornet naming (Mk I/Mk II) and add fallback UI for ghost ships
+ba63ce5 Update toast notification duration to 3 seconds
+56bfae3 Center the ship addition toast notification
+a45f312 Implement orange sci-fi toast notification for added ships
+32334af Implement sticky header and refactor DatalinkInfo
+c6749e4 Restore API data source and fix C8R Pisces Rescue integration
+origin	https://github.com/Lucky44/sc-fleet-loadout-manager.git (fetch)
+origin	https://github.com/Lucky44/sc-fleet-loadout-manager.git (push)
+* main
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	debug_carrack.js
+	git_log.txt
+
+nothing added to commit but untracked files present (use "git add" to track)

@@ -170,79 +170,105 @@ const applyPortPatches = (className: string, ports: Port[]): Port[] => {
 
 const WEAPON_NAME_MAP: Record<string, string> = {
     // Behring Laser Cannons (M-Series)
-    'BEHR_LaserCannon_S1': 'M3A Laser Cannon',
-    'BEHR_LaserCannon_S2': 'M4A Laser Cannon',
-    'BEHR_LaserCannon_S3': 'M5A Laser Cannon',
-    'BEHR_LaserCannon_S4': 'M6A Laser Cannon',
-    'BEHR_LaserCannon_S5': 'M7A Laser Cannon',
-    'BEHR_LaserCannon_S6': 'M8A Laser Cannon',
-    'BEHR_LaserCannon_S7': 'M9A Laser Cannon',
+    'BEHR_LASERCANNON_S1': 'M3A Laser Cannon',
+    'BEHR_LASERCANNON_S2': 'M4A Laser Cannon',
+    'BEHR_LASERCANNON_S3': 'M5A Laser Cannon',
+    'BEHR_LASERCANNON_S4': 'M6A Laser Cannon',
+    'BEHR_LASERCANNON_S5': 'M7A Laser Cannon',
+    'BEHR_LASERCANNON_S6': 'M8A Laser Cannon',
+    'BEHR_LASERCANNON_S7': 'M9A Laser Cannon',
 
     // Klaus & Werner Laser Repeaters
-    'KLWE_LaserRepeater_S1': 'Bulldog Repeater',
-    'KLWE_LaserRepeater_S2': 'Badger Repeater',
-    'KLWE_LaserRepeater_S3': 'Panther Repeater',
-    'KLWE_LaserRepeater_S4': 'Rhino Repeater',
-    'KLWE_LaserRepeater_S5': 'Galdereen Repeater',
-    'KLWE_LaserRepeater_S6': 'Mammoth Repeater',
+    'KLWE_LASERREPEATER_S1': 'Bulldog Repeater',
+    'KLWE_LASERREPEATER_S2': 'Badger Repeater',
+    'KLWE_LASERREPEATER_S3': 'Panther Repeater',
+    'KLWE_LASERREPEATER_S4': 'Rhino Repeater',
+    'KLWE_LASERREPEATER_S5': 'Galdereen Repeater',
+    'KLWE_LASERREPEATER_S6': 'Mammoth Repeater',
 
     // Behring Ballistic Gatlings (AD-Series)
-    'BEHR_BallisticGatling_S4': 'AD4B Gatling',
-    'BEHR_BallisticGatling_S5': 'AD5B Gatling',
-    'BEHR_BallisticGatling_S6': 'AD6B Gatling',
+    'BEHR_BALLISTICGATLING_S4': 'AD4B Gatling',
+    'BEHR_BALLISTICGATLING_S5': 'AD5B Gatling',
+    'BEHR_BALLISTICGATLING_S6': 'AD6B Gatling',
 
     // Amon & Reese Omnisky Laser Cannons
-    'AMRS_LaserCannon_S1': 'Omnisky III',
-    'AMRS_LaserCannon_S2': 'Omnisky VI',
-    'AMRS_LaserCannon_S3': 'Omnisky IX',
-    'AMRS_LaserCannon_S4': 'Omnisky XII',
-    'AMRS_LaserCannon_S5': 'Omnisky XV',
-    'AMRS_LaserCannon_S6': 'Omnisky XVIII',
+    'AMRS_LASERCANNON_S1': 'Omnisky III',
+    'AMRS_LASERCANNON_S2': 'Omnisky VI',
+    'AMRS_LASERCANNON_S3': 'Omnisky IX',
+    'AMRS_LASERCANNON_S4': 'Omnisky XII',
+    'AMRS_LASERCANNON_S5': 'Omnisky XV',
+    'AMRS_LASERCANNON_S6': 'Omnisky XVIII',
 
     // Kronig FL series
-    'KRON_LaserCannon_S1': 'FL-11 Cannon',
-    'KRON_LaserCannon_S2': 'FL-22 Cannon',
-    'KRON_LaserCannon_S3': 'FL-33 Cannon',
+    'KRON_LASERCANNON_S1': 'FL-11 Cannon',
+    'KRON_LASERCANNON_S2': 'FL-22 Cannon',
+    'KRON_LASERCANNON_S3': 'FL-33 Cannon',
 
     // Hurston Dynamics Attrition
-    'HRST_LaserRepeater_S1': 'Attrition-1',
-    'HRST_LaserRepeater_S2': 'Attrition-2',
-    'HRST_LaserRepeater_S3': 'Attrition-3',
-    'HRST_LaserRepeater_S4': 'Attrition-4',
-    'HRST_LaserRepeater_S5': 'Attrition-5',
-    'HRST_LaserRepeater_S6': 'Attrition-6',
+    'HRST_LASERREPEATER_S1': 'Attrition-1',
+    'HRST_LASERREPEATER_S2': 'Attrition-2',
+    'HRST_LASERREPEATER_S3': 'Attrition-3',
+    'HRST_LASERREPEATER_S4': 'Attrition-4',
+    'HRST_LASERREPEATER_S5': 'Attrition-5',
+    'HRST_LASERREPEATER_S6': 'Attrition-6',
 
     // Hurston Dynamics Dominance
-    'HRST_LaserScatterGun_S1': 'Dominance-1',
-    'HRST_LaserScatterGun_S2': 'Dominance-2',
-    'HRST_LaserScatterGun_S3': 'Dominance-3',
+    'HRST_LASERSCATTERGUN_S1': 'Dominance-1',
+    'HRST_LASERSCATTERGUN_S2': 'Dominance-2',
+    'HRST_LASERSCATTERGUN_S3': 'Dominance-3',
 
     // Esperia Deadbolt Ballistic Cannons
-    'ESPR_BallisticCannon_S2': 'Deadbolt II',
-    'ESPR_BallisticCannon_S3': 'Deadbolt III',
-    'ESPR_BallisticCannon_S4': 'Deadbolt IV',
-    'ESPR_BallisticCannon_S5': 'Deadbolt V',
+    'ESPR_BALLISTICCANNON_S2': 'Deadbolt II',
+    'ESPR_BALLISTICCANNON_S3': 'Deadbolt III',
+    'ESPR_BALLISTICCANNON_S4': 'Deadbolt IV',
+    'ESPR_BALLISTICCANNON_S5': 'Deadbolt V',
 
     // Aegis Dynamics Revenant/Draugar
-    'APAR_BallisticGatling_S4': 'Revenant Gatling',
-    'APAR_BallisticGatling_S6': 'Draugar Gatling',
+    'APAR_BALLISTICGATLING_S4': 'Revenant Gatling',
+    'APAR_BALLISTICGATLING_S6': 'Draugar Gatling',
 
     // Behring Combine
-    'BEHR_BallisticCannon_S4': 'C-788 Combine',
+    'BEHR_BALLISTICCANNON_S4': 'C-788 Combine',
 
     // Gallenson Tactical Tarantula
-    'GATS_BallisticCannon_S1': 'Tarantula GT-870 Mark 1',
-    'GATS_BallisticCannon_S2': 'Tarantula GT-870 Mark 2',
-    'GATS_BallisticCannon_S3': 'Tarantula GT-870 Mark 3',
+    'GATS_BALLISTICCANNON_S1': 'Tarantula GT-870 Mark 1',
+    'GATS_BALLISTICCANNON_S2': 'Tarantula GT-870 Mark 2',
+    'GATS_BALLISTICCANNON_S3': 'Tarantula GT-870 Mark 3',
 
     // Gallenson Tactical Gatlings
-    'GATS_BallisticGatling_S1': 'YellowJacket GT-210',
-    'GATS_BallisticGatling_S2': 'Scorpion GT-215',
-    'GATS_BallisticGatling_S3': 'Mantis GT-220',
+    'GATS_BALLISTICGATLING_S1': 'YellowJacket GT-210',
+    'GATS_BALLISTICGATLING_S2': 'Scorpion GT-215',
+    'GATS_BALLISTICGATLING_S3': 'Mantis GT-220',
 
     // Preacher Distortion
-    'PRAR_DistortionScatterGun_S4': 'Salvation Scattergun',
-    'PRAR_DistortionScatterGun_S5': 'Absolution Scattergun'
+    'PRAR_DISTORTIONSCATTERGUN_S4': 'Salvation Scattergun',
+    'PRAR_DISTORTIONSCATTERGUN_S5': 'Absolution Scattergun',
+
+    // Esperia Lightstrike Laser Cannons
+    'ESPR_LASERCANNON_S1': 'Lightstrike I Cannon',
+    'ESPR_LASERCANNON_S2': 'Lightstrike II Cannon',
+    'ESPR_LASERCANNON_S3': 'Lightstrike III Cannon',
+    'ESPR_LASERCANNON_S4': 'Lightstrike IV Cannon',
+    'ESPR_LASERCANNON_S5': 'Lightstrike V Cannon',
+    'ESPR_LASERCANNON_S6': 'Lightstrike VI Cannon',
+
+    // Banu Singe Tachyon Cannons
+    'BANU_TACHYONCANNON_S1': 'Singe Cannon (S1)',
+    'BANU_TACHYONCANNON_S2': 'Singe Cannon (S2)',
+    'BANU_TACHYONCANNON_S3': 'Singe Cannon (S3)',
+
+    // MaxOx NN-Series Neutron Cannons
+    'MXOX_NEUTRONCANNON_S1': 'NN-13 Cannon',
+    'MXOX_NEUTRONCANNON_S2': 'NN-14 Cannon',
+    'MXOX_NEUTRONCANNON_S3': 'NN-15 Cannon',
+
+    // Vanduul Weapons
+    'VNCL_LASERCANNON_S1': 'WASP Cannon',
+    'VNCL_LASERCANNON_S2': 'WASP Cannon',
+    'VNCL_PLASMACANNON_S2': 'WHIP Plasma Cannon',
+    'VNCL_PLASMACANNON_S3': 'WARLORD Plasma Cannon',
+    'VNCL_PLASMACANNON_S5': 'WRATH Plasma Cannon',
+    'VNCL_NEUTRONCANNON_S5': 'WAR Plasma Cannon'
 };
 
 export const fetchItems = async (): Promise<Item[]> => {
@@ -467,20 +493,36 @@ export const filterItemsForPort = (items: Item[], port: Port): Item[] => {
 };
 
 export const cleanName = (name: string, className?: string): string => {
-    // 1. Check our manual brand/model mapping first (highest priority)
-    if (className && WEAPON_NAME_MAP[className]) {
-        return WEAPON_NAME_MAP[className];
+    // 1. Map Lookup (Case-Insensitive & Suffix Stripping)
+    if (className) {
+        const normalized = className.toUpperCase();
+        if (WEAPON_NAME_MAP[normalized]) return WEAPON_NAME_MAP[normalized];
+
+        // Try stripping common suffixes (_S1, _TURRET, _LOWPOLY, etc)
+        const stripped = normalized.replace(/(_S\d|_TURRET|_LOWPOLY|_DUMMY|_VNG|_VANDUUL|_B_|_A_).*/gi, '');
+        if (WEAPON_NAME_MAP[stripped]) return WEAPON_NAME_MAP[stripped];
     }
 
-    // 2. Exact string fallbacks for common technical strings
-    if (name === '@item_NameHRST_LaserRepeater_S4') return 'Attrition-4 Repeater';
-    if (name === '@item_NameBEHR_LaserCannon_S4') return 'M6A Laser Cannon';
+    // 2. Exact fallback matches for reported issues or technical strings
+    const raw = (name || '').trim();
+    if (raw === 'ESPR Laser Cannon' || raw === 'ESPR LaserCannon S4' || raw.includes('ESPR_LaserCannon')) return 'Lightstrike IV Cannon';
+    if (raw === 'KLWE LaserRepeater S4' || raw === 'KLWE Laser Repeater S4') return 'Rhino Repeater';
+    if (raw === 'APAR BallisticGatling S4' || raw === 'APAR Ballistic Gatling S4' || raw.includes('APAR_BallisticGatling')) return 'Revenant Gatling';
 
-    if (!name && !className) return 'Unknown Item';
+    // 3. Handle placeholders - if name is a placeholder, try to clean the className
+    if (raw.includes('PLACEHOLDER') || raw.includes('<=') || raw === 'itemName' || raw.includes('@LOC')) {
+        if (className) {
+            return className
+                .replace(/(_S\d|_TURRET|_LOWPOLY|_DUMMY|_VNG|_VANDUUL|_B_|_A_).*/gi, '')
+                .replace(/_/g, ' ')
+                .trim();
+        }
+        return 'Unknown Item';
+    }
 
-    // 3. Clean up raw technical names
-    let clean = (name || '')
-        .replace(/@[\w\s]*Name[ _]?|@LOC_PLACEHOLDER_|@item_Name_/gi, '')
+    // 4. General technical name cleaning
+    let clean = raw
+        .replace(/@[\w\s]*Name[ _]?|@LOC_PLACE_HOLDER_|@LOC_PLACEHOLDER_|@item_Name_|@LOC /gi, '')
         .replace(/itemName/gi, '')
         .replace(/Name([A-Z])/g, '$1') // Handle NameBEHR -> BEHR
         .replace(/_/g, ' ')

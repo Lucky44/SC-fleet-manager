@@ -1,0 +1,87 @@
+[
+  {
+    "className": "BEHR_BallisticGatling_Hornet_Bespoke",
+    "name": "TMSB-5 Gatling",
+    "type": "WeaponGun"
+  },
+  {
+    "className": "GLSN_BallisticGatling_S4",
+    "name": "Breakneck S4 Gatling",
+    "type": "WeaponGun"
+  },
+  {
+    "className": "APAR_BallisticGatling_S4_LowPoly",
+    "name": "Revenant Gatling",
+    "type": "WeaponGun"
+  },
+  {
+    "className": "Krig_LaserRepeater_Bespoke_S4",
+    "name": "Axiom L-22 Repeater",
+    "type": "WeaponGun"
+  },
+  {
+    "className": "Krig_BallisticGatling_Bespoke_S4",
+    "name": "Relentless L-21 Gatling",
+    "type": "WeaponGun"
+  },
+  {
+    "className": "APAR_BallisticGatling_S4",
+    "name": "Revenant Gatling",
+    "type": "WeaponGun"
+  },
+  {
+    "className": "BEHR_LaserCannon_S4",
+    "name": "M6A Cannon",
+    "type": "WeaponGun"
+  },
+  {
+    "className": "BEHR_BallisticGatling_S4",
+    "name": "AD4B Ballistic Gatling",
+    "type": "WeaponGun"
+  },
+  {
+    "className": "ESPR_LaserCannon_S4",
+    "name": "Lightstrike IV Cannon",
+    "type": "WeaponGun"
+  },
+  {
+    "className": "HRST_LaserRepeater_S4",
+    "name": "Attrition-4 Repeater",
+    "type": "WeaponGun"
+  },
+  {
+    "className": "PRAR_DistortionScatterGun_S4",
+    "name": "Salvation Distortion Scattergun",
+    "type": "WeaponGun"
+  },
+  {
+    "className": "KLWE_LaserRepeater_S4_LowPoly",
+    "name": "CF-447 Rhino Repeater",
+    "type": "WeaponGun"
+  },
+  {
+    "className": "HRST_LaserRepeater_S4_Turret",
+    "name": "Attrition-4 Repeater",
+    "type": "WeaponGun"
+  },
+  {
+    "className": "KLWE_LaserRepeater_S4",
+    "name": "CF-447 Rhino Repeater",
+    "type": "WeaponGun"
+  },
+  {
+    "className": "BEHR_BallisticCannon_S4",
+    "name": "C-788 Cannon",
+    "type": "WeaponGun"
+  },
+  {
+    "className": "ESPR_BallisticCannon_S4",
+    "name": "Deadbolt IV Cannon",
+    "type": "WeaponGun"
+  },
+  {
+    "className": "AMRS_LaserCannon_S4",
+    "name": "Omnisky XII Cannon",
+    "type": "WeaponGun"
+  }
+]
