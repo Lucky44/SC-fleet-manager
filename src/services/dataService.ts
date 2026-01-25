@@ -134,7 +134,7 @@ const applyPortPatches = (className: string, ports: Port[]): Port[] => {
         ];
     }
 
-    if (className === 'ANVL_Carrack') {
+    if (className.startsWith('ANVL_Carrack')) {
         return ports.map(p => {
             const isTurret = p.Name.toLowerCase().includes('turret');
             if (isTurret) {
