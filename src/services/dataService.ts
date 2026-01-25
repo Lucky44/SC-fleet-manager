@@ -187,10 +187,14 @@ const applyShipPatches = (ships: Ship[]): Ship[] => {
         // Handle Hornet Mk I / Mk II naming
         if (ship.ClassName.startsWith('ANVL_Hornet_F7')) {
             let name = ship.Name;
-            if (ship.ClassName.includes('_Mk2') || ship.ClassName.includes('_MkII')) {
+            const isMk2 = ship.ClassName.includes('_Mk2') ||
+                ship.ClassName.includes('_MkII') ||
+                ship.ClassName === 'ANVL_Hornet_F7A'; // Special case for Mk II F7A
+
+            if (isMk2) {
                 if (!name.includes('Mk II')) name += ' Mk II';
             } else {
-                // Assume anything else is Mk I for now if not explicitly named
+                // Assume anything else is Mk I (including F7A_Mk1 and base F7C variants)
                 if (!name.includes('Mk I') && !name.includes('Mk II')) name += ' Mk I';
             }
             return { ...ship, Name: name };
