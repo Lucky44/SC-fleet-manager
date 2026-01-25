@@ -200,9 +200,12 @@ const applyShipPatches = (ships: Ship[]): Ship[] => {
             return { ...ship, Name: name };
         }
 
-        // Remove "MISC " prefix if present
+        // Remove "MISC " and "C.O. " prefixes if present
         if (ship.Name.toUpperCase().startsWith('MISC ')) {
-            return { ...ship, Name: ship.Name.substring(5).trim() };
+            ship = { ...ship, Name: ship.Name.substring(5).trim() };
+        }
+        if (ship.Name.toUpperCase().startsWith('C.O. ')) {
+            ship = { ...ship, Name: ship.Name.substring(5).trim() };
         }
 
         return ship;
