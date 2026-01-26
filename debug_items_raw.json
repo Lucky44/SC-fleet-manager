@@ -1,0 +1,283 @@
+{
+  "badger": {
+    "className": "KLWE_LaserRepeater_S2",
+    "reference": "5453a817-dfd4-4143-aa11-840ca428540c",
+    "itemName": "klwe_laserrepeater_s2",
+    "type": "WeaponGun",
+    "subType": "Gun",
+    "tags": "KLWE LaserRepeater flightReady weaponMountUsable",
+    "size": 2,
+    "grade": 1,
+    "name": "@item_NameKLWE_LaserRepeater_S2",
+    "manufacturer": "KLA",
+    "classification": "Ship.Weapon.Gun",
+    "stdItem": {
+      "ClassName": "KLWE_LaserRepeater_S2",
+      "Size": 2,
+      "Grade": 1,
+      "Type": "WeaponGun.Gun",
+      "Classification": "Ship.Weapon.Gun",
+      "Name": "CF-227 Badger Repeater",
+      "Description": "Manufacturer: Klaus & Werner\nItem Type: Laser Repeater\nSize: 2\n\nThe CF-227 Badger is Klaus & Werner’s dependable size two repeating laser. Its increased output and high rate of fire make it a solid contender in any fight.",
+      "Manufacturer": {
+        "Code": "KLA",
+        "Name": "Klaus & Werner"
+      },
+      "Tags": [
+        "KLWE",
+        "LaserRepeater",
+        "flightReady",
+        "weaponMountUsable"
+      ],
+      "Durability": {
+        "Health": 850,
+        "Lifetime": 20
+      },
+      "PowerConnection": {
+        "PowerBase": 190,
+        "PowerDraw": 190
+      },
+      "HeatConnection": {
+        "ThermalEnergyBase": 100,
+        "ThermalEnergyDraw": 200,
+        "CoolingRate": 100.95
+      },
+      "Weapon": {
+        "Ammunition": {
+          "Speed": 1400,
+          "Range": 1540.0000000000002,
+          "Size": 2,
+          "Capacity": 0,
+          "ImpactDamage": {
+            "Energy": 40
+          }
+        },
+        "Modes": [
+          {
+            "Name": "Single",
+            "LocalisedName": "[SEMI]",
+            "RoundsPerMinute": 600,
+            "FireType": "sequence",
+            "AmmoPerShot": 1,
+            "PelletsPerShot": 1,
+            "DamagePerShot": {
+              "Energy": 40
+            },
+            "DamagePerSecond": {
+              "Energy": 400
+            }
+          }
+        ],
+        "Consumption": {
+          "RequestedRegenPerSec": 2000,
+          "Cooldown": 1,
+          "CostPerBullet": 40,
+          "RequestedAmmoLoad": 12000
+        }
+      },
+      "Ammunition": {
+        "Speed": 1400,
+        "Range": 1540.0000000000002,
+        "Size": 2,
+        "Capacity": 0,
+        "ImpactDamage": {
+          "Energy": 40
+        }
+      },
+      "Ports": [
+        {
+          "PortName": "BAR1",
+          "Size": 1,
+          "Types": [
+            "WeaponAttachment.Barrel"
+          ]
+        },
+        {
+          "PortName": "MEC",
+          "Size": 1,
+          "Types": [
+            "WeaponAttachment.FiringMechanism"
+          ]
+        },
+        {
+          "PortName": "POW",
+          "Size": 1,
+          "Types": [
+            "WeaponAttachment.PowerArray"
+          ]
+        },
+        {
+          "PortName": "VEN",
+          "Size": 1,
+          "Types": [
+            "WeaponAttachment.Ventilation"
+          ]
+        }
+      ]
+    }
+  },
+  "m6a": {
+    "className": "BEHR_LaserCannon_S4",
+    "reference": "52c1793e-5610-4daa-aafe-a8cf55e60283",
+    "itemName": "behr_lasercannon_s4",
+    "type": "WeaponGun",
+    "subType": "Gun",
+    "tags": "BEHR LaserCannon flightReady weaponMountUsable",
+    "size": 4,
+    "grade": 1,
+    "name": "@item_NameBEHR_LaserCannon_S4",
+    "manufacturer": "BEH",
+    "classification": "Ship.Weapon.Gun",
+    "stdItem": {
+      "ClassName": "BEHR_LaserCannon_S4",
+      "Size": 4,
+      "Grade": 1,
+      "Type": "WeaponGun.Gun",
+      "Classification": "Ship.Weapon.Gun",
+      "Name": "M6A Cannon",
+      "Description": "Manufacturer: Behring\nItem Type: Laser Cannon\nSize: 4\n\nBehring's M6A is a versatile high velocity energy autocannon, designed to provide to keep your enemy at range without sacrificing your stopping power.",
+      "Manufacturer": {
+        "Code": "BEH",
+        "Name": "Behring"
+      },
+      "Tags": [
+        "BEHR",
+        "LaserCannon",
+        "flightReady",
+        "weaponMountUsable"
+      ],
+      "Durability": {
+        "Health": 1650,
+        "Lifetime": 20
+      },
+      "PowerConnection": {
+        "PowerBase": 250,
+        "PowerDraw": 250
+      },
+      "HeatConnection": {
+        "ThermalEnergyBase": 100,
+        "ThermalEnergyDraw": 200,
+        "CoolingRate": 248.947
+      },
+      "Weapon": {
+        "Ammunition": {
+          "Speed": 700,
+          "Range": 1225,
+          "Size": 4,
+          "Capacity": 0,
+          "ImpactDamage": {
+            "Energy": 210
+          }
+        },
+        "Modes": [
+          {
+            "Name": "Single",
+            "LocalisedName": "[AUTO]",
+            "RoundsPerMinute": 180,
+            "FireType": "sequence",
+            "AmmoPerShot": 1,
+            "PelletsPerShot": 1,
+            "DamagePerShot": {
+              "Energy": 210
+            },
+            "DamagePerSecond": {
+              "Energy": 630
+            }
+          }
+        ],
+        "Consumption": {
+          "RequestedRegenPerSec": 3150,
+          "Cooldown": 1.5,
+          "CostPerBullet": 105,
+          "RequestedAmmoLoad": 18900
+        }
+      },
+      "Ammunition": {
+        "Speed": 700,
+        "Range": 1225,
+        "Size": 4,
+        "Capacity": 0,
+        "ImpactDamage": {
+          "Energy": 210
+        }
+      },
+      "Ports": [
+        {
+          "PortName": "magazine_attach",
+          "Size": 0
+        }
+      ]
+    }
+  },
+  "shield": {
+    "className": "SHLD_ASAS_S01_Cloak_SCItem",
+    "reference": "48e2b865-a936-4346-a621-582568ebd008",
+    "itemName": "shld_asas_s01_cloak_scitem",
+    "type": "Shield",
+    "subType": "UNDEFINED",
+    "tags": "",
+    "size": 1,
+    "grade": 4,
+    "name": "@item_NameSHLD_ASAS_S01_Cloak",
+    "manufacturer": "ASAS",
+    "classification": "Ship.Shield",
+    "stdItem": {
+      "ClassName": "SHLD_ASAS_S01_Cloak_SCItem",
+      "Size": 1,
+      "Grade": 4,
+      "Type": "Shield.UNDEFINED",
+      "Classification": "Ship.Shield",
+      "Name": "Cloak",
+      "Description": "Item Type: Shield Generator\nManufacturer: Ascension Astro\nSize: 1\nGrade: D\nClass: Stealth\n\nDiscreet security is within your reach thanks to this small shield generator from Ascension Astro. With a lower signature then many other generators in its class, the Cloak provides protection without drawing unnecessary attention.",
+      "Manufacturer": {
+        "Code": "ASAS",
+        "Name": "Ascension Astro"
+      },
+      "Shield": {
+        "Health": 1350,
+        "Regeneration": 340,
+        "DownedDelay": 5,
+        "DamagedDelay": 5,
+        "Absorption": {
+          "Physical": {
+            "Minimum": 0.5,
+            "Maximum": 0.95
+          },
+          "Energy": {
+            "Minimum": 1,
+            "Maximum": 1
+          },
+          "Distortion": {
+            "Minimum": 1,
+            "Maximum": 1
+          },
+          "Thermal": {
+            "Minimum": 1,
+            "Maximum": 1
+          },
+          "Biochemical": {
+            "Minimum": 1,
+            "Maximum": 1
+          },
+          "Stun": {
+            "Minimum": 1,
+            "Maximum": 1
+          }
+        }
+      },
+      "Durability": {
+        "Health": 81.25,
+        "Lifetime": 13
+      },
+      "PowerConnection": {
+        "PowerBase": 200,
+        "PowerDraw": 250
+      },
+      "HeatConnection": {
+        "ThermalEnergyBase": 2178.015,
+        "ThermalEnergyDraw": 6360,
+        "CoolingRate": 25.89821
+      }
+    }
+  }
+}

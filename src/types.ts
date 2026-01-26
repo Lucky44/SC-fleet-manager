@@ -40,6 +40,7 @@ export interface Item {
     name: string;
     manufacturer?: string;
     stdItem?: {
+        Name?: string;
         Description?: string;
         Manufacturer?: {
             Name: string;

@@ -628,10 +628,12 @@ export const fetchItems = async (): Promise<Item[]> => {
     // Sort by className length - shorter usually means the "base" item/template
     normalized.sort((a: Item, b: Item) => a.className.length - b.className.length);
 
-    normalized.forEach((item: Item) => {
+    normalized.forEach((item: any) => {
         // Use className for deduping to ensure all valid variations are kept
         if (!uniqueItems.has(item.className)) {
-            uniqueItems.set(item.className, item);
+            // Resolve the best name during fetch
+            const resolvedName = item.stdItem?.Name || item.name;
+            uniqueItems.set(item.className, { ...item, name: resolvedName });
         }
     });
 
