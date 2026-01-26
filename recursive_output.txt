@@ -1,0 +1,8 @@
+RECURSIVE PORT TEST:
+Port: hardpoint_cheek_weapon_left                   | Display: Cheek Weapon Left
+Port: hardpoint_cheek_weapon_left > hardpoint_class_2 | Display: Cheek Weapon Left
+Port: hardpoint_shield_generator_a                  | Display: Shield Generator
+
+NAME CLEANING TEST:
+'5CA Akura' (SHLD_BEHR_S03_5CA_SCItem) -> Akura
+'M6A Cannon' (BEHR_LaserCannon_S4_SCItem) -> M6A Cannon

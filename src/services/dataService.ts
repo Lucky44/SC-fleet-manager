@@ -42,18 +42,41 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
         const data = await response.json();
         const rawPorts = Object.values(data).flat() as any[];
 
-        const normalizedPorts = rawPorts.map(p => {
-            const rawName = p.PortName || p.Name;
-            return {
-                ...p,
-                Name: rawName,
-                DisplayName: p.DisplayName || cleanPortName(rawName),
-                Types: p.Types || [],
-                MinSize: p.MinSize ?? p.Size ?? p.InstalledItem?.Size ?? 0,
-                MaxSize: p.MaxSize ?? p.Size ?? p.InstalledItem?.Size ?? 10,
-            };
-        });
+        const extractPorts = (portList: any[], parentName: string = ''): Port[] => {
+            let extracted: Port[] = [];
+            portList.forEach(p => {
+                const rawName = p.PortName || p.Name;
+                const uniqueName = parentName ? `${parentName} > ${rawName}` : rawName;
 
+                const normalizedPort = {
+                    ...p,
+                    Name: uniqueName,
+                    DisplayName: p.DisplayName || (parentName ? cleanPortName(parentName) : cleanPortName(rawName)),
+                    Types: p.Types || [],
+                    MinSize: p.MinSize ?? p.Size ?? p.InstalledItem?.Size ?? 0,
+                    MaxSize: p.MaxSize ?? p.Size ?? p.InstalledItem?.Size ?? 10,
+                };
+
+                // If this is a gimbal/rack, we prioritize its children for UI configuration
+                // but we still include the gimbal itself just in case
+                extracted.push(normalizedPort);
+
+                if (p.InstalledItem?.Ports && Array.isArray(p.InstalledItem.Ports)) {
+                    // Extract weapon/missile ports from gimbals/racks
+                    const childPorts = p.InstalledItem.Ports.filter((cp: any) => {
+                        const types = (cp.Types || []).join(',').toLowerCase();
+                        return types.includes('gun') || types.includes('missile') || types.includes('torpedo');
+                    });
+
+                    if (childPorts.length > 0) {
+                        extracted.push(...extractPorts(childPorts, rawName));
+                    }
+                }
+            });
+            return extracted;
+        };
+
+        const normalizedPorts = extractPorts(rawPorts);
         return applyPortPatches(className, normalizedPorts);
     } catch (error) {
         console.error(`Error fetching ports for ${className}:`, error);
@@ -842,22 +865,25 @@ export const cleanName = (name: string, className?: string): string => {
             .replace(new RegExp(`^(${manufacturers.join('|')})_`, 'i'), '')
             .replace(/_?S\d+_?/gi, '') // More aggressive size stripping
             .replace(/_/g, ' ')
-            .trim();
-
-        // Final manufacturer strip if it leaked through
         manufacturers.forEach(m => {
             const mRegex = new RegExp(`^${m}\\s`, 'i');
             finalClean = finalClean.replace(mRegex, '');
         });
     }
+    // 6. Map to Master Dictionary (Final check with suffix stripping)
+    const rawClass = (className || '').toUpperCase().replace(/_SCITEM$|_SCITEM$/gi, '');
+    const mapped = COMPONENT_NAME_MAP[rawClass] || WEAPON_NAME_MAP[rawClass];
 
-    return finalClean || clean || className || 'Unknown Item';
+    return mapped || finalClean || clean || className || 'Unknown Item';
 };
 
 export const cleanPortName = (name: string): string => {
     if (!name) return '';
 
-    let clean = name.toUpperCase()
+    // Strip parent prefix if present from recursive extraction
+    const targetName = name.split('>').pop()?.trim() || name;
+
+    let clean = targetName.toUpperCase()
         .replace(/HARDPOINT_/gi, '')
         .replace(/SCITEM_/gi, '')
         .replace(/_/g, ' ')
@@ -880,7 +906,6 @@ export const cleanPortName = (name: string): string => {
     // Replace specific phrases
     Object.entries(maps).forEach(([tech, friendly]) => {
         if (clean.includes(tech)) {
-            // Replace the technical part with friendly part but keep surrounding context (like "Tail" in "Tail Turret")
             const regex = new RegExp(tech, 'gi');
             clean = clean.replace(regex, friendly);
         }
@@ -888,8 +913,8 @@ export const cleanPortName = (name: string): string => {
 
     // Special cleanups
     clean = clean
-        .replace(/\s[A-Z]$/g, '') // Remove trailing single letters (A, B, C) from HARDPOINT_COOLER_A
-        .replace(/\s\d+$/g, '')   // Remove trailing numbers if generic
+        .replace(/\s[A-Z]$/g, '')
+        .replace(/\s\d+$/g, '')
         .trim();
 
     // Title Case conversion
