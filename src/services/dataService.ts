@@ -46,31 +46,59 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
             let extracted: Port[] = [];
             portList.forEach(p => {
                 const rawName = p.PortName || p.Name;
-                const uniqueName = parentName ? `${parentName} > ${rawName}` : rawName;
+                const item = p.InstalledItem;
+                const itemType = (item?.Type || '').toLowerCase();
 
-                const normalizedPort = {
-                    ...p,
-                    Name: uniqueName,
-                    DisplayName: p.DisplayName || (parentName ? cleanPortName(parentName) : cleanPortName(rawName)),
-                    Types: p.Types || [],
-                    MinSize: p.MinSize ?? p.Size ?? p.InstalledItem?.Size ?? 0,
-                    MaxSize: p.MaxSize ?? p.Size ?? p.InstalledItem?.Size ?? 10,
-                };
+                // Identify if this is a mount that should be consolidated
+                // (Gimbals and Missile Racks)
+                const isGimbal = itemType.includes('turret.gunturret') || (item?.Tags || []).includes('gimbalMount');
+                const isRack = itemType.includes('missilelauncher') || itemType.includes('missilerack');
+                const isMount = isGimbal || isRack;
 
-                // If this is a gimbal/rack, we prioritize its children for UI configuration
-                // but we still include the gimbal itself just in case
-                extracted.push(normalizedPort);
-
-                if (p.InstalledItem?.Ports && Array.isArray(p.InstalledItem.Ports)) {
-                    // Extract weapon/missile ports from gimbals/racks
-                    const childPorts = p.InstalledItem.Ports.filter((cp: any) => {
+                let childPorts: any[] = [];
+                if (isMount && item?.Ports && Array.isArray(item.Ports)) {
+                    childPorts = item.Ports.filter((cp: any) => {
                         const types = (cp.Types || []).join(',').toLowerCase();
                         return types.includes('gun') || types.includes('missile') || types.includes('torpedo');
                     });
+                }
 
-                    if (childPorts.length > 0) {
-                        extracted.push(...extractPorts(childPorts, rawName));
-                    }
+                if (childPorts.length > 0) {
+                    // PROMOTE CHILDREN: Show the weapons directly, use parent's location for the label
+                    childPorts.forEach((cp, index) => {
+                        const childRawName = cp.PortName || cp.Name;
+                        let displayName = cleanPortName(rawName);
+
+                        // Add positioning context if multiple weapons on one mount (e.g. Dual Racks)
+                        if (childPorts.length > 1) {
+                            const cn = childRawName.toLowerCase();
+                            if (cn.includes('left')) displayName += ' (L)';
+                            else if (cn.includes('right')) displayName += ' (R)';
+                            else if (cn.includes('top')) displayName += ' (T)';
+                            else if (cn.includes('bottom')) displayName += ' (B)';
+                            else displayName += ` (${index + 1})`;
+                        }
+
+                        extracted.push({
+                            ...cp,
+                            Name: `${rawName} > ${childRawName}`,
+                            DisplayName: displayName,
+                            MinSize: cp.MinSize ?? cp.Size ?? cp.InstalledItem?.Size ?? 0,
+                            MaxSize: cp.MaxSize ?? cp.Size ?? cp.InstalledItem?.Size ?? 10,
+                            Types: cp.Types || (isGimbal ? ['WeaponGun.Gun'] : ['Missile.Missile']),
+                        });
+                    });
+                } else {
+                    // Standard port or non-consolidated item
+                    const uniqueName = parentName ? `${parentName} > ${rawName}` : rawName;
+                    extracted.push({
+                        ...p,
+                        Name: uniqueName,
+                        DisplayName: p.DisplayName || (parentName ? cleanPortName(parentName) : cleanPortName(rawName)),
+                        Types: p.Types || [],
+                        MinSize: p.MinSize ?? p.Size ?? p.InstalledItem?.Size ?? 0,
+                        MaxSize: p.MaxSize ?? p.Size ?? p.InstalledItem?.Size ?? 10,
+                    });
                 }
             });
             return extracted;
