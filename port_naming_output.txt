@@ -1,0 +1,6 @@
+HARDPOINT_SHIELD_GENERATOR_A -> Shield Generator
+HARDPOINT_COOLER_B -> Cooler
+HARDPOINT_TAIL_TURRET -> Tail Turret
+SCITEM_POWER_PLANT_1 -> Power Plant
+weapon_hardpoint_wing_left -> Weapon Wing Left
+MISSILE_RACK_UNDERWING -> Missile Rack Underwing

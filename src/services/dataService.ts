@@ -42,13 +42,17 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
         const data = await response.json();
         const rawPorts = Object.values(data).flat() as any[];
 
-        const normalizedPorts = rawPorts.map(p => ({
-            ...p,
-            Name: p.PortName || p.Name,
-            Types: p.Types || [],
-            MinSize: p.MinSize ?? p.Size ?? p.InstalledItem?.Size ?? 0,
-            MaxSize: p.MaxSize ?? p.Size ?? p.InstalledItem?.Size ?? 10,
-        }));
+        const normalizedPorts = rawPorts.map(p => {
+            const rawName = p.PortName || p.Name;
+            return {
+                ...p,
+                Name: rawName,
+                DisplayName: p.DisplayName || cleanPortName(rawName),
+                Types: p.Types || [],
+                MinSize: p.MinSize ?? p.Size ?? p.InstalledItem?.Size ?? 0,
+                MaxSize: p.MaxSize ?? p.Size ?? p.InstalledItem?.Size ?? 10,
+            };
+        });
 
         return applyPortPatches(className, normalizedPorts);
     } catch (error) {
@@ -848,6 +852,50 @@ export const cleanName = (name: string, className?: string): string => {
     }
 
     return finalClean || clean || className || 'Unknown Item';
+};
+
+export const cleanPortName = (name: string): string => {
+    if (!name) return '';
+
+    let clean = name.toUpperCase()
+        .replace(/HARDPOINT_/gi, '')
+        .replace(/SCITEM_/gi, '')
+        .replace(/_/g, ' ')
+        .trim();
+
+    // Map common items
+    const maps: Record<string, string> = {
+        'SHIELD GENERATOR': 'Shield Generator',
+        'POWER PLANT': 'Power Plant',
+        'QUANTUM DRIVE': 'Quantum Drive',
+        'COOLER': 'Cooler',
+        'TURRET': 'Turret',
+        'WEAPON': 'Weapon',
+        'MISSILE': 'Missile',
+        'TORPEDO': 'Torpedo',
+        'GIMBAL': 'Gimbal',
+        'RADAR': 'Radar'
+    };
+
+    // Replace specific phrases
+    Object.entries(maps).forEach(([tech, friendly]) => {
+        if (clean.includes(tech)) {
+            // Replace the technical part with friendly part but keep surrounding context (like "Tail" in "Tail Turret")
+            const regex = new RegExp(tech, 'gi');
+            clean = clean.replace(regex, friendly);
+        }
+    });
+
+    // Special cleanups
+    clean = clean
+        .replace(/\s[A-Z]$/g, '') // Remove trailing single letters (A, B, C) from HARDPOINT_COOLER_A
+        .replace(/\s\d+$/g, '')   // Remove trailing numbers if generic
+        .trim();
+
+    // Title Case conversion
+    return clean.split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join(' ');
 };
 
 export const getItemStats = (item: Item & { [key: string]: any }) => {
