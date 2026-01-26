@@ -271,6 +271,36 @@ const WEAPON_NAME_MAP: Record<string, string> = {
     'VNCL_NEUTRONCANNON_S5': 'WAR Plasma Cannon'
 };
 
+const COMPONENT_NAME_MAP: Record<string, string> = {
+    // Shield Overrides
+    'SHLD_BEHR_S1_6SA': 'Arbiter',
+    'SHLD_BEHR_S2_5MA': 'Chimalli',
+    'SHLD_BEHR_S3_7CA': 'Nargun',
+    'SHLD_ASAS_S2_SHROUD': 'Shroud',
+    'SHLD_BASL_S0_CASTRA': 'Castra',
+    'SHLD_BASL_S1_STEWARD': 'Steward',
+    'SHLD_BASL_S3_WARD': 'Ward',
+
+    // Power Plant Overrides
+    'POWR_AMRS_S1_JS300': 'JS-300',
+    'POWR_AMRS_S2_JS400': 'JS-400',
+    'POWR_ACOM_S1_SUNFLARE': 'SunFlare',
+    'POWR_ACOM_S2_SOLARFLARE': 'SolarFlare',
+
+    // Quantum Drive Overrides
+    'QDRV_RSI_S1_ATLAS': 'Atlas',
+    'QDRV_WETK_S2_CROSSFIELD': 'Crossfield',
+    'QDRV_ARCC_S3_IMPULSE': 'Impulse',
+    'QDRV_TARS_S3_WANDERER': 'Wanderer',
+    'QDRV_TARS_S3_RANGER': 'Ranger',
+    'QDRV_ARCC_S3_ECHO': 'Echo',
+
+    // Cooler Overrides
+    'COOL_AEGS_S1_GLACIER': 'Glacier',
+    'COOL_AEGS_S2_BOREAL': 'Boreal',
+    'COOL_JSPN_S1_WINTERSTAR': 'Winter-Star'
+};
+
 export const fetchItems = async (): Promise<Item[]> => {
     const response = await fetch(`${BASE_URL}/items.json`);
     if (!response.ok) throw new Error('Failed to fetch items');
@@ -527,28 +557,53 @@ export const cleanName = (name: string, className?: string): string => {
     if (className) {
         const normalized = className.toUpperCase().replace(/^NAME/i, '');
         if (WEAPON_NAME_MAP[normalized]) return WEAPON_NAME_MAP[normalized];
+        if (COMPONENT_NAME_MAP[normalized]) return COMPONENT_NAME_MAP[normalized];
 
         // Match after stripping technical suffixes BUT preserving Size
-        const stripped = normalized.replace(/(_TURRET|_LOWPOLY|_DUMMY|_VNG|_VANDUUL|_B_|_A_).*/gi, '');
+        const stripped = normalized.replace(/(_SCITEM|_TURRET|_LOWPOLY|_DUMMY|_VNG|_VANDUUL|_B_|_A_).*/gi, '');
         if (WEAPON_NAME_MAP[stripped]) return WEAPON_NAME_MAP[stripped];
+        if (COMPONENT_NAME_MAP[stripped]) return COMPONENT_NAME_MAP[stripped];
 
         // Match after stripping everything after Size
         const sizeStripped = normalized.replace(/(_S\d).*/gi, '$1');
         if (WEAPON_NAME_MAP[sizeStripped]) return WEAPON_NAME_MAP[sizeStripped];
+        if (COMPONENT_NAME_MAP[sizeStripped]) return COMPONENT_NAME_MAP[sizeStripped];
     }
 
     // 4. Fallback: Try to map the cleaned name to a key
     const mappingKey = clean.toUpperCase().replace(/\s/g, '_');
     if (WEAPON_NAME_MAP[mappingKey]) return WEAPON_NAME_MAP[mappingKey];
+    if (COMPONENT_NAME_MAP[mappingKey]) return COMPONENT_NAME_MAP[mappingKey];
 
-    // 5. Placeholder handling
-    if (raw.includes('PLACEHOLDER') || raw.includes('<=') || raw.includes('@LOC')) {
-        if (className) {
-            return className.replace(/^NAME/i, '').replace(/(_TURRET|_LOWPOLY|_DUMMY|_VNG|_VANDUUL|_B_|_A_).*/gi, '').replace(/_/g, ' ').trim();
-        }
+    // 5. Advanced Cleaning for components
+    const componentsPrefixes = ['SHLD', 'COOL', 'POWR', 'QDRV', 'ITEM', 'TRNS'];
+    const manufacturers = ['AEGS', 'JUST', 'WCPR', 'JSPN', 'TYDT', 'LPLT', 'AMRS', 'ACOM', 'SASU', 'TARS', 'RACO', 'RSI', 'WETK', 'ARCC', 'ASAS', 'BASL', 'GODI', 'BEHR', 'KLWE', 'ESPR', 'APAR', 'GATS', 'PRAR', 'MXOX', 'VNCL'];
+
+    let finalClean = clean;
+
+    // If name is just the className or technical, aggressively clean it
+    if (clean.includes('_') || clean === className || raw.includes('@LOC')) {
+        finalClean = (className || clean)
+            .replace(/(_SCITEM|_TURRET|_LOWPOLY|_DUMMY|_VNG|_VANDUUL|_B_|_A_).*/gi, '')
+            .replace(new RegExp(`^(${componentsPrefixes.join('|')})_`, 'i'), '')
+            .replace(new RegExp(`^(${manufacturers.join('|')})_`, 'i'), '')
+            .replace(/_S\d+/gi, '')
+            .replace(/_/g, ' ')
+            .trim();
+
+        // Final manufacturer strip if it leaked through (e.g. AEGS S1 Glacier -> Glacier)
+        manufacturers.forEach(m => {
+            const mRegex = new RegExp(`^${m}\\s`, 'i');
+            finalClean = finalClean.replace(mRegex, '');
+        });
     }
 
-    return clean || className || 'Unknown Item';
+    // Special fix for Arbiter/Chimalli series naming in API
+    if (finalClean.includes("'")) {
+        finalClean = finalClean.replace(/.*'(.*)'.*/, '$1');
+    }
+
+    return finalClean || clean || className || 'Unknown Item';
 };
 
 export const getItemStats = (item: Item & { [key: string]: any }) => {

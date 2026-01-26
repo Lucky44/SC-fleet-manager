@@ -1,0 +1,42 @@
+[
+  {
+    "className": "SHLD_ASAS_S02_Shroud_SCItem",
+    "name": "Shroud"
+  },
+  {
+    "className": "SHLD_BEHR_S01_6SA_SCItem",
+    "name": "6SA 'Arbiter'"
+  },
+  {
+    "className": "SHLD_BASL_S00_Castra_SCItem",
+    "name": "Castra"
+  },
+  {
+    "className": "SHLD_BANU_S02_Placeholder_SCItem",
+    "name": "Sukoran"
+  },
+  {
+    "className": "SHLD_BASL_S01_Steward_SCItem",
+    "name": "Steward"
+  },
+  {
+    "className": "SHLD_BEHR_S03_7CA_SCItem",
+    "name": "7CA 'Nargun'"
+  },
+  {
+    "className": "SHLD_BASL_S03_Ward_SCItem",
+    "name": "Ward"
+  },
+  {
+    "className": "SHLD_GODI_S02_SecureShield_SCItem",
+    "name": "SecureShield"
+  },
+  {
+    "className": "SHLD_BANU_S01_Placeholder_SCItem",
+    "name": "Suldrath"
+  },
+  {
+    "className": "SHLD_BEHR_S02_5MA_SCItem",
+    "name": "5MA 'Chimalli'"
+  }
+]

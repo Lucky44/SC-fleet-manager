@@ -1,0 +1,129 @@
+{
+  "ShieldGenerator": [],
+  "Cooler": [
+    {
+      "className": "COOL_AEGS_S01_Glacier_SCItem",
+      "name": "Glacier"
+    },
+    {
+      "className": "COOL_JUST_S03_Hydropulse_SCItem",
+      "name": "Hydropulse"
+    },
+    {
+      "className": "COOL_WCPR_S00_Fridan_SCItem",
+      "name": "Fridan"
+    },
+    {
+      "className": "COOL_JSPN_S01_WinterStar_SCItem",
+      "name": "Winter-Star"
+    },
+    {
+      "className": "COOL_TYDT_S02_NightFall_SCItem",
+      "name": "NightFall"
+    },
+    {
+      "className": "COOL_LPLT_S02_FullFrost_SCItem",
+      "name": "FullFrost"
+    },
+    {
+      "className": "COOL_AEGS_S02_Boreal_SCItem",
+      "name": "Boreal"
+    },
+    {
+      "className": "COOL_WCPR_S01_Berian_SCItem",
+      "name": "Berian"
+    },
+    {
+      "className": "COOL_JUST_S01_Thermax_SCItem",
+      "name": "Thermax"
+    },
+    {
+      "className": "COOL_JSPN_S00_FrostStarSL_SCItem",
+      "name": "Frost-Star SL"
+    }
+  ],
+  "PowerPlant": [
+    {
+      "className": "test_RN_powerplant_no_fuel",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "POWR_AMRS_S01_OverDrive_SCItem",
+      "name": "OverDrive"
+    },
+    {
+      "className": "POWR_JUST_S01_Fortitude_SCItem",
+      "name": "Fortitude"
+    },
+    {
+      "className": "POWR_ACOM_S01_SunFlare_SCItem",
+      "name": "SunFlare"
+    },
+    {
+      "className": "POWR_TYDT_S02_Cirrus_SCItem",
+      "name": "Cirrus"
+    },
+    {
+      "className": "POWR_ACOM_S02_SolarFlare_SCItem",
+      "name": "SolarFlare"
+    },
+    {
+      "className": "POWR_SASU_S01_MagnaBloom_SCItem",
+      "name": "MagnaBloom"
+    },
+    {
+      "className": "POWR_LPLT_S00_DuraJet_SCItem",
+      "name": "DuraJet"
+    },
+    {
+      "className": "POWR_JUST_S03_Durango_SCItem",
+      "name": "Durango"
+    },
+    {
+      "className": "POWR_AMRS_S02_JS400_SCItem",
+      "name": "JS-400"
+    }
+  ],
+  "QuantumDrive": [
+    {
+      "className": "QDRV_TARS_S01_Expedition_SCItem",
+      "name": "Expedition"
+    },
+    {
+      "className": "QDRV_TARS_S03_Wanderer_SCItem",
+      "name": "Wanderer"
+    },
+    {
+      "className": "QDRV_RACO_S02_Nova_SCItem",
+      "name": "Nova"
+    },
+    {
+      "className": "QDRV_JUST_S01_Vulcan_SCItem",
+      "name": "Vulcan"
+    },
+    {
+      "className": "QDRV_RSI_S01_Atlas_SCItem",
+      "name": "Atlas"
+    },
+    {
+      "className": "QDRV_S02_Template",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "QDRV_WETK_S02_Crossfield_SCItem",
+      "name": "Crossfield"
+    },
+    {
+      "className": "QDRV_ARCC_S03_Impulse_SCItem",
+      "name": "Impulse"
+    },
+    {
+      "className": "QDRV_TARS_S03_Ranger_SCItem",
+      "name": "Ranger"
+    },
+    {
+      "className": "QDRV_ARCC_S03_Echo_SCItem",
+      "name": "Echo"
+    }
+  ]
+}
