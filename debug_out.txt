@@ -1,0 +1,90 @@
+Processing 79 ports...
+[PROMOTING] hardpoint_cheek_weapon_left (turret.gunturret) has 1 children
+[PROMOTING] hardpoint_cheek_weapon_right (turret.gunturret) has 1 children
+[PROMOTING] hardpoint_chin_weapon_right (turret.gunturret) has 1 children
+[PROMOTING] hardpoint_chin_weapon_left (turret.gunturret) has 1 children
+[PROMOTING] hardpoint_weapon_wing_top (turret.gunturret) has 1 children
+[PROMOTING] hardpoint_weapon_wing_bottom (turret.gunturret) has 1 children
+[PROMOTING] hardpoint_manned_turret_left (turretbase.mannedturret) has 2 children
+[PROMOTING] hardpoint_manned_turret_right (turretbase.mannedturret) has 2 children
+[PROMOTING] hardpoint_tail_turret (turret.topturret) has 2 children
+[PROMOTING] hardpoint_wing_right_missile_mount_a (missilelauncher.missilerack) has 2 children
+[PROMOTING] hardpoint_wing_right_missile_mount_b (missilelauncher.missilerack) has 2 children
+[PROMOTING] hardpoint_wing_right_missile_mount_c (missilelauncher.missilerack) has 2 children
+[PROMOTING] hardpoint_wing_right_missile_mount_d (missilelauncher.missilerack) has 2 children
+[KEEPING] hardpoint_cm_launcher_left (weapondefensive.countermeasurelauncher)
+[KEEPING] hardpoint_cm_launcher_right (weapondefensive.countermeasurelauncher)
+[KEEPING] hardpoint_shield_generator_a (shield.undefined)
+[KEEPING] hardpoint_power_plant_b (powerplant.power)
+[KEEPING] hardpoint_power_plant_a (powerplant.power)
+[KEEPING] hardpoint_cooler_b (cooler.undefined)
+[KEEPING] hardpoint_cooler_a (cooler.undefined)
+[KEEPING] hardpoint_quantum_drive (quantumdrive.undefined)
+[KEEPING] hardpoint_quantum_fuel_tank_a (quantumfueltank.quantumfuel)
+[KEEPING] hardpoint_quantum_fuel_tank_b (quantumfueltank.quantumfuel)
+[KEEPING] hardpoint_main_thruster_a_left (mainthruster.undefined)
+[KEEPING] hardpoint_main_thruster_c_left (mainthruster.undefined)
+[KEEPING] hardpoint_main_thruster_b_left (mainthruster.undefined)
+[KEEPING] hardpoint_main_thruster_b_right (mainthruster.undefined)
+[KEEPING] hardpoint_main_thruster_a_right (mainthruster.undefined)
+[KEEPING] hardpoint_main_thruster_c_right (mainthruster.undefined)
+[KEEPING] hardpoint_retro_thruster_a_left (manneuverthruster.undefined)
+[KEEPING] hardpoint_retro_thruster_b_left (manneuverthruster.undefined)
+[KEEPING] hardpoint_retro_thruster_c_left (manneuverthruster.undefined)
+[KEEPING] hardpoint_retro_thruster_a_right (manneuverthruster.undefined)
+[KEEPING] hardpoint_retro_thruster_b_right (manneuverthruster.undefined)
+[KEEPING] hardpoint_retro_thruster_c_right (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_body_left_bottom (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_body_left_bottom_side (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_body_right_bottom (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_body_right_bottom_side (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_nose_left_bottom (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_nose_left_bottom_side (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_nose_left_top (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_nose_left_top_side (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_nose_right_bottom (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_nose_right_bottom_side (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_nose_right_top (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_nose_right_top_side (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_nacelle_left_bottom (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_nacelle_left_top (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_nacelle_right_bottom (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_nacelle_right_top (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_tail_left_bottom_side (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_tail_left_bottom (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_tail_left_top_side (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_tail_left_top (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_tail_right_top (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_tail_right_top_side (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_tail_right_bottom_side (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_tail_right_bottom (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_body_left_top (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_body_right_top_side (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_body_right_top (manneuverthruster.undefined)
+[KEEPING] hardpoint_thruster_mav_body_left_top_side (manneuverthruster.undefined)
+[KEEPING] hardpoint_fuel_tank_a (fueltank.fuel)
+[KEEPING] hardpoint_fuel_tank_b (fueltank.fuel)
+[KEEPING] hardpoint_fuel_intake_left (fuelintake.fuel)
+[KEEPING] hardpoint_fuel_intake_right (fuelintake.fuel)
+[KEEPING] hardpoint_personal_storage_01 (cargo.undefined)
+[KEEPING] hardpoint_personal_storage_02 (cargo.undefined)
+[KEEPING] hardpoint_personal_storage_03 (cargo.undefined)
+[KEEPING] hardpoint_personal_storage_04 (cargo.undefined)
+[KEEPING] hardpoint_cargo_grid (cargo.undefined)
+[KEEPING] hardpoint_radar_turret_left (radar.midrangeradar)
+[KEEPING] hardpoint_radar_turret_right (radar.midrangeradar)
+[KEEPING] hardpoint_ping (ping.undefined)
+[KEEPING] hardpoint_radar (radar.midrangeradar)
+[KEEPING] hardpoint_radar_co_pilot (radar.midrangeradar)
+[KEEPING] hardpoint_scanner (scanner.undefined)
+[KEEPING] hardpoint_transponder (No Item)
+
+Results for Turrets:
+Port: Manned Turret Left (1)         | Item: CF-227 Badger Repeater
+Port: Manned Turret Left (2)         | Item: CF-227 Badger Repeater
+Port: Manned Turret Right (1)        | Item: CF-227 Badger Repeater
+Port: Manned Turret Right (2)        | Item: CF-227 Badger Repeater
+Port: Tail Turret (1)                | Item: CF-227 Badger Repeater
+Port: Tail Turret (2)                | Item: CF-227 Badger Repeater
+Port: Radar Turret Left              | Item: Chernykh
+Port: Radar Turret Right             | Item: Chernykh

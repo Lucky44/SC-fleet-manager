@@ -1,0 +1,81 @@
+Keys in data: [
+  'PilotHardpoints',        'MannedTurrets',
+  'RemoteTurrets',          'MiningTurrets',
+  'UtilityTurrets',         'MiningHardpoints',
+  'UtilityHardpoints',      'MissileRacks',
+  'Countermeasures',        'Shields',
+  'PowerPlants',            'Coolers',
+  'QuantumDrives',          'QuantumFuelTanks',
+  'MainThrusters',          'RetroThrusters',
+  'VtolThrusters',          'ManeuveringThrusters',
+  'HydrogenFuelTanks',      'HydogenFuelIntakes',
+  'InterdictionHardpoints', 'CargoGrids',
+  'Avionics'
+]
+Total ports found: 79
+[PROMOTING] hardpoint_cheek_weapon_left (turret.gunturret) has 1 children
+[PROMOTING] hardpoint_cheek_weapon_right (turret.gunturret) has 1 children
+[PROMOTING] hardpoint_chin_weapon_right (turret.gunturret) has 1 children
+[PROMOTING] hardpoint_chin_weapon_left (turret.gunturret) has 1 children
+[PROMOTING] hardpoint_weapon_wing_top (turret.gunturret) has 1 children
+[PROMOTING] hardpoint_weapon_wing_bottom (turret.gunturret) has 1 children
+[PROMOTING] hardpoint_manned_turret_left (turretbase.mannedturret) has 2 children
+[PROMOTING] hardpoint_manned_turret_right (turretbase.mannedturret) has 2 children
+[PROMOTING] hardpoint_tail_turret (turret.topturret) has 2 children
+[PROMOTING] hardpoint_wing_right_missile_mount_a (missilelauncher.missilerack) has 2 children
+[PROMOTING] hardpoint_wing_right_missile_mount_b (missilelauncher.missilerack) has 2 children
+[PROMOTING] hardpoint_wing_right_missile_mount_c (missilelauncher.missilerack) has 2 children
+[PROMOTING] hardpoint_wing_right_missile_mount_d (missilelauncher.missilerack) has 2 children
+
+Sample Results (First 5):
+[
+  {
+    Name: 'hardpoint_cheek_weapon_left > hardpoint_class_2',
+    Item: 'M6A Cannon'
+  },
+  {
+    Name: 'hardpoint_cheek_weapon_right > hardpoint_class_2',
+    Item: 'M6A Cannon'
+  },
+  {
+    Name: 'hardpoint_chin_weapon_right > hardpoint_class_2',
+    Item: 'M6A Cannon'
+  },
+  {
+    Name: 'hardpoint_chin_weapon_left > hardpoint_class_2',
+    Item: 'M6A Cannon'
+  },
+  {
+    Name: 'hardpoint_weapon_wing_top > hardpoint_class_2',
+    Item: 'M5A Cannon'
+  }
+]
+
+Turret Search:
+Turrets found in results: 8
+{
+  Name: 'hardpoint_manned_turret_left > hardpoint_weapon_left',
+  Item: 'CF-227 Badger Repeater'
+}
+{
+  Name: 'hardpoint_manned_turret_left > hardpoint_weapon_right',
+  Item: 'CF-227 Badger Repeater'
+}
+{
+  Name: 'hardpoint_manned_turret_right > hardpoint_weapon_left',
+  Item: 'CF-227 Badger Repeater'
+}
+{
+  Name: 'hardpoint_manned_turret_right > hardpoint_weapon_right',
+  Item: 'CF-227 Badger Repeater'
+}
+{
+  Name: 'hardpoint_tail_turret > hardpoint_weapon_left',
+  Item: 'CF-227 Badger Repeater'
+}
+{
+  Name: 'hardpoint_tail_turret > hardpoint_weapon_right',
+  Item: 'CF-227 Badger Repeater'
+}
+{ Name: 'hardpoint_radar_turret_left', Item: 'Chernykh' }
+{ Name: 'hardpoint_radar_turret_right', Item: 'Chernykh' }

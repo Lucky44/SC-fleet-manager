@@ -45,21 +45,21 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
         const extractPorts = (portList: any[], parentName: string = ''): Port[] => {
             let extracted: Port[] = [];
             portList.forEach(p => {
-                const rawName = p.PortName || p.Name;
+                const rawName = p.PortName || p.Name || '';
                 const item = p.InstalledItem;
                 const itemType = (item?.Type || item?.type || '').toLowerCase();
-                const itemTags = item?.Tags || item?.tags || [];
-                const rawPorts = item?.Ports || item?.ports || [];
+                const itemTags = (item?.Tags || item?.tags || []).map((t: any) => String(t).toLowerCase());
+                const nestedPorts = item?.Ports || item?.ports || [];
 
-                // Identify if this is a mount that should be consolidated
+                // Aggressive mount identification
                 const isTurret = itemType.includes('turret');
-                const isRack = itemType.includes('missilelauncher') || itemType.includes('missilerack');
-                const isGimbal = isTurret || itemTags.some((t: any) => String(t).toLowerCase().includes('gimbal'));
+                const isRack = itemType.includes('missilelauncher') || itemType.includes('missilerack') || itemType.includes('missile.rack');
+                const isGimbal = isTurret || itemTags.includes('gimbalmount') || itemTags.includes('gimbal') || itemType.includes('gimbal');
                 const isMount = isGimbal || isRack;
 
                 let childPorts: any[] = [];
-                if (isMount && Array.isArray(rawPorts)) {
-                    childPorts = rawPorts.filter((cp: any) => {
+                if (isMount && Array.isArray(nestedPorts)) {
+                    childPorts = nestedPorts.filter((cp: any) => {
                         const types = (cp.Types || cp.types || []).join(',').toLowerCase();
                         const category = (cp.Category || cp.category || '').toLowerCase();
                         return types.includes('gun') || types.includes('missile') || types.includes('torpedo') ||
@@ -68,14 +68,15 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
                 }
 
                 if (childPorts.length > 0) {
-                    // PROMOTE CHILDREN: Show the weapons directly, use parent's location for the label
-                    childPorts.forEach((cp, index) => {
-                        const childRawName = cp.PortName || cp.Name;
+                    // Recurse into children to handle gimbals-on-turrets (e.g. Carrack, Corsair pilot guns)
+                    const promotedChildren = extractPorts(childPorts, rawName);
+
+                    promotedChildren.forEach((cp, index) => {
                         let displayName = cleanPortName(rawName);
 
-                        // Add positioning context if multiple weapons on one mount (e.g. Dual Racks)
-                        if (childPorts.length > 1) {
-                            const cn = childRawName.toLowerCase();
+                        // Add context if multiple items promoted from the same mount
+                        if (promotedChildren.length > 1) {
+                            const cn = (cp.Name || '').toLowerCase();
                             if (cn.includes('left')) displayName += ' (L)';
                             else if (cn.includes('right')) displayName += ' (R)';
                             else if (cn.includes('top')) displayName += ' (T)';
@@ -85,21 +86,17 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
 
                         extracted.push({
                             ...cp,
-                            Name: `${rawName} > ${childRawName}`,
-                            DisplayName: displayName,
-                            MinSize: cp.MinSize ?? cp.Size ?? cp.InstalledItem?.Size ?? 0,
-                            MaxSize: cp.MaxSize ?? cp.Size ?? cp.InstalledItem?.Size ?? 10,
-                            Types: cp.Types || (isGimbal ? ['WeaponGun.Gun'] : ['Missile.Missile']),
+                            DisplayName: displayName
                         });
                     });
                 } else {
-                    // Standard port or non-consolidated item
+                    // Standard port or mount with no removable children
                     const uniqueName = parentName ? `${parentName} > ${rawName}` : rawName;
                     extracted.push({
                         ...p,
                         Name: uniqueName,
                         DisplayName: p.DisplayName || (parentName ? cleanPortName(parentName) : cleanPortName(rawName)),
-                        Types: p.Types || [],
+                        Types: p.Types || p.types || [],
                         MinSize: p.MinSize ?? p.Size ?? p.InstalledItem?.Size ?? 0,
                         MaxSize: p.MaxSize ?? p.Size ?? p.InstalledItem?.Size ?? 10,
                     });
