@@ -1,0 +1,31 @@
+[
+  {
+    "className": "GLSN_BallisticGatling_S4",
+    "name": "Breakneck S4 Gatling",
+    "expected": "Breakneck Gatling",
+    "cleaned": "Breakneck Gatling",
+    "success": true
+  },
+  {
+    "className": "BANU_TachyonCannon_S1",
+    "name": "Singe Cannon (S1)",
+    "expected": "Singe Cannon",
+    "cleaned": "Singe Cannon",
+    "success": true
+  },
+  {
+    "className": "VNCL_NeutronCannon_S5",
+    "name": "'WAR' Cannon",
+    "expected": "WAR Cannon",
+    "cleaned": "WAR Cannon",
+    "success": true
+  },
+  {
+    "className": "VNCL_LaserCannon_S1",
+    "name": "'WEAK' Repeater",
+    "expected": "WEAK Repeater",
+    "cleaned": "WEAK Repeater",
+    "success": true
+  }
+]
+Phase 4 Failure Count: 0

@@ -1,0 +1,924 @@
+{
+  "PowerPlant": [
+    {
+      "className": "test_RN_powerplant_no_fuel",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "POWR_AMRS_S01_OverDrive_SCItem",
+      "name": "OverDrive"
+    },
+    {
+      "className": "POWR_JUST_S01_Fortitude_SCItem",
+      "name": "Fortitude"
+    },
+    {
+      "className": "POWR_ACOM_S01_SunFlare_SCItem",
+      "name": "SunFlare"
+    },
+    {
+      "className": "POWR_TYDT_S02_Cirrus_SCItem",
+      "name": "Cirrus"
+    },
+    {
+      "className": "POWR_ACOM_S02_SolarFlare_SCItem",
+      "name": "SolarFlare"
+    },
+    {
+      "className": "POWR_SASU_S01_MagnaBloom_SCItem",
+      "name": "MagnaBloom"
+    },
+    {
+      "className": "POWR_LPLT_S00_DuraJet_SCItem",
+      "name": "DuraJet"
+    },
+    {
+      "className": "POWR_JUST_S03_Durango_SCItem",
+      "name": "Durango"
+    },
+    {
+      "className": "POWR_AMRS_S02_JS400_SCItem",
+      "name": "JS-400"
+    },
+    {
+      "className": "POWR_LPLT_S03_IonSurgePro_SCItem",
+      "name": "IonSurge Pro"
+    },
+    {
+      "className": "POWR_LPLT_S00_Radix_SCItem_SM_TE",
+      "name": "Radix"
+    },
+    {
+      "className": "POWR_ACOM_S01_StarHeart_SCItem",
+      "name": "StarHeart"
+    },
+    {
+      "className": "POWR_JUST_S01_Endurance_SCItem",
+      "name": "Endurance"
+    },
+    {
+      "className": "POWR_SASU_S01_LightBlossom_SCItem",
+      "name": "LightBlossom"
+    },
+    {
+      "className": "POWR_AEGS_S03_Fulgur_SCItem",
+      "name": "Fulgur"
+    },
+    {
+      "className": "POWR_JUST_S00_Defiant_SCItem",
+      "name": "Defiant"
+    },
+    {
+      "className": "POWR_JUST_S02_Diligence_SCItem",
+      "name": "Diligence"
+    },
+    {
+      "className": "POWR_JUST_S02_Genoa_SCItem",
+      "name": "Genoa"
+    },
+    {
+      "className": "POWR_LPLT_S03_SparkJetPro_SCItem",
+      "name": "SparkJet Pro"
+    },
+    {
+      "className": "POWR_TYDT_S02_Eclipse_SCItem",
+      "name": "Eclipse"
+    },
+    {
+      "className": "POWR_LPLT_S01_PowerBolt_SCItem",
+      "name": "PowerBolt"
+    },
+    {
+      "className": "POWR_LPLT_S02_FullForce_SCItem",
+      "name": "FullForce"
+    },
+    {
+      "className": "POWR_ACOM_S02_StarBurn_SCItem",
+      "name": "StarBurn"
+    },
+    {
+      "className": "POWR_RSI_S04_Bengal_SCItem",
+      "name": "Main Powerplant"
+    },
+    {
+      "className": "POWR_LPLT_S00_IonWave_SCItem",
+      "name": "IonWave"
+    },
+    {
+      "className": "POWR_AEGS_S04_Reclaimer_SCItem",
+      "name": "Main Powerplant"
+    },
+    {
+      "className": "POWR_S02_Template",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "POWR_SASU_S03_NewDawn_SCItem",
+      "name": "NewDawn"
+    },
+    {
+      "className": "POWR_AMRS_S02_UltraFlux_SCItem",
+      "name": "UltraFlux"
+    },
+    {
+      "className": "POWR_AMRS_S03_SuperDrive_SCItem",
+      "name": "SuperDrive"
+    },
+    {
+      "className": "POWR_AMRS_S02_ExoGen_SCItem",
+      "name": "ExoGen"
+    },
+    {
+      "className": "POWR_AEGS_S03_Drassik_SCItem",
+      "name": "Drassik"
+    },
+    {
+      "className": "POWR_TYDT_S02_GammaMax_SCItem",
+      "name": "GammaMax"
+    },
+    {
+      "className": "POWR_AEGS_S01_Quadracell_SCItem",
+      "name": "QuadraCell"
+    },
+    {
+      "className": "POWR_TYDT_S01_Slipstream_SCItem",
+      "name": "Slipstream"
+    },
+    {
+      "className": "POWR_LPLT_S03_FullForcePro_SCItem",
+      "name": "FullForce Pro"
+    },
+    {
+      "className": "POWR_AMRS_S01_HyperGen_SCItem",
+      "name": "HyperGen"
+    },
+    {
+      "className": "POWR_SASU_S03_TigerLilly_SCItem",
+      "name": "TigerLilly"
+    },
+    {
+      "className": "POWR_AMRS_S03_JS500_SCItem",
+      "name": "JS-500"
+    },
+    {
+      "className": "POWR_AMRS_S02_TurboDrive_SCItem",
+      "name": "TurboDrive"
+    },
+    {
+      "className": "POWR_S03_Template",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "POWR_S04_Template",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "POWR_SASU_S01_WhiteRose_SCItem",
+      "name": "WhiteRose"
+    },
+    {
+      "className": "POWR_JUST_S02_Trommel_SCItem",
+      "name": "Trommel"
+    },
+    {
+      "className": "POWR_RSI_S04_Polaris_SCItem",
+      "name": "Stellate"
+    },
+    {
+      "className": "POWR_JUST_S03_Ginzel_SCItem",
+      "name": "Ginzel"
+    },
+    {
+      "className": "POWR_AEGS_S02_QuadracellMT_SCItem",
+      "name": "QuadraCell MT"
+    },
+    {
+      "className": "POWR_AEGS_S02_Bolide_SCItem",
+      "name": "Bolide"
+    },
+    {
+      "className": "POWR_SASU_S02_DayBreak_SCItem",
+      "name": "DayBreak"
+    },
+    {
+      "className": "POWR_AMRS_S01_DynaFlux_SCItem",
+      "name": "DynaFlux"
+    },
+    {
+      "className": "POWR_AEGS_S03_QuadracellMX_SCItem",
+      "name": "QuadraCell MX"
+    },
+    {
+      "className": "POWR_ACOM_S02_LuxCore_SCItem",
+      "name": "LuxCore"
+    },
+    {
+      "className": "POWR_JUST_S02_Sedulity_SCItem",
+      "name": "Sedulity"
+    },
+    {
+      "className": "POWR_AEGS_S03_Centurion_SCItem",
+      "name": "Centurion"
+    },
+    {
+      "className": "POWR_AMRS_S03_SmartGen_SCItem",
+      "name": "SmartGen"
+    },
+    {
+      "className": "POWR_LPLT_S02_SparkJet_SCItem",
+      "name": "SparkJet"
+    },
+    {
+      "className": "POWR_LPLT_S02_IonSurge_SCItem",
+      "name": "IonSurge"
+    },
+    {
+      "className": "POWR_SASU_S02_Radiance_SCItem",
+      "name": "Radiance"
+    },
+    {
+      "className": "POWR_LPLT_S01_IonBurst_SCItem",
+      "name": "IonBurst"
+    },
+    {
+      "className": "POWR_S01_Template",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "POWR_AEGS_S01_Regulus_SCItem",
+      "name": "Regulus"
+    },
+    {
+      "className": "POWR_SASU_S03_Celestial_SCItem",
+      "name": "Celestial"
+    },
+    {
+      "className": "POWR_AEGS_S04_Idris_SCItem",
+      "name": "Main Powerplant"
+    },
+    {
+      "className": "POWR_JUST_S00_SteadFast_SCItem",
+      "name": "Steadfast"
+    },
+    {
+      "className": "POWR_LPLT_S01_ZapJet_SCItem",
+      "name": "ZapJet"
+    },
+    {
+      "className": "POWR_JUST_S01_Roughneck_SCItem",
+      "name": "Roughneck"
+    },
+    {
+      "className": "POWR_AEGS_S01_Charger_SCItem",
+      "name": "Charger"
+    },
+    {
+      "className": "POWR_ACOM_S01_LumaCore_SCItem",
+      "name": "LumaCore"
+    },
+    {
+      "className": "POWR_PyroOutpost",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "POWR_JUST_S03_Reliance_SCItem",
+      "name": "Reliance"
+    },
+    {
+      "className": "POWR_TYDT_S01_SonicLite_SCItem",
+      "name": "SonicLite"
+    },
+    {
+      "className": "POWR_AEGS_S02_Maelstrom_SCItem",
+      "name": "Maelstrom"
+    },
+    {
+      "className": "POWR_AEGS_S02_Vortex_SCItem",
+      "name": "Vortex"
+    },
+    {
+      "className": "POWR_AMRS_S01_JS300_SCItem",
+      "name": "JS-300"
+    },
+    {
+      "className": "POWR_AEGS_S01_FierellCascade_SCItem",
+      "name": "Fierell Cascade"
+    },
+    {
+      "className": "POWR_SASU_S02_Lotus_SCItem",
+      "name": "Lotus"
+    },
+    {
+      "className": "POWR_JUST_S01_Breton_SCItem",
+      "name": "Breton"
+    },
+    {
+      "className": "POWR_TYDT_S01_DeltaMax_SCItem",
+      "name": "DeltaMax"
+    },
+    {
+      "className": "POWR_AMRS_S03_MegaFlux_SCItem",
+      "name": "MegaFlux"
+    },
+    {
+      "className": "POWR_ORIG_S04_890J_SCItem",
+      "name": "Stellate"
+    },
+    {
+      "className": "POWR_JUST_S00_Jennet_SCItem",
+      "name": "Jennet"
+    },
+    {
+      "className": "POWR_LPLT_S00_Radix_SCItem",
+      "name": "Radix"
+    },
+    {
+      "className": "Power_Chemline_Generator",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "MASTER_PowerPlant",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "test_station_power_plant",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "satellite_power_plant_test",
+      "name": "<= PLACEHOLDER =>"
+    }
+  ],
+  "Cooler": [
+    {
+      "className": "COOL_AEGS_S01_Glacier_SCItem",
+      "name": "Glacier"
+    },
+    {
+      "className": "COOL_JUST_S03_Hydropulse_SCItem",
+      "name": "Hydropulse"
+    },
+    {
+      "className": "COOL_WCPR_S00_Fridan_SCItem",
+      "name": "Fridan"
+    },
+    {
+      "className": "COOL_JSPN_S01_WinterStar_SCItem",
+      "name": "Winter-Star"
+    },
+    {
+      "className": "COOL_TYDT_S02_NightFall_SCItem",
+      "name": "NightFall"
+    },
+    {
+      "className": "COOL_LPLT_S02_FullFrost_SCItem",
+      "name": "FullFrost"
+    },
+    {
+      "className": "COOL_AEGS_S02_Boreal_SCItem",
+      "name": "Boreal"
+    },
+    {
+      "className": "COOL_WCPR_S01_Berian_SCItem",
+      "name": "Berian"
+    },
+    {
+      "className": "COOL_JUST_S01_Thermax_SCItem",
+      "name": "Thermax"
+    },
+    {
+      "className": "COOL_JSPN_S00_FrostStarSL_SCItem",
+      "name": "Frost-Star SL"
+    },
+    {
+      "className": "COOL_JSPN_S00_WinterStarSL_SCItem",
+      "name": "Winter-Star SL"
+    },
+    {
+      "className": "COOL_WCPR_S00_Kelvid_SCItem",
+      "name": "Kelvid"
+    },
+    {
+      "className": "COOL_JSPN_S02_FrostStarEX_SCItem",
+      "name": "Frost-Star EX"
+    },
+    {
+      "className": "COOL_ACOM_S01_IcePlunge_SCItem",
+      "name": "IcePlunge"
+    },
+    {
+      "className": "COOL_JUST_S01_Hydrocel_SCItem",
+      "name": "Hydrocel"
+    },
+    {
+      "className": "COOL_AEGS_S02_Arctic_SCItem",
+      "name": "Arctic"
+    },
+    {
+      "className": "COOL_S04_Template",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "COOL_S03_Template",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "COOL_AEGS_S01_Tundra_SCItem",
+      "name": "Tundra"
+    },
+    {
+      "className": "COOL_TYDT_S02_HeatSink_SCItem",
+      "name": "HeatSink"
+    },
+    {
+      "className": "COOL_JUST_S02_Hydrojet_SCItem",
+      "name": "HydroJet"
+    },
+    {
+      "className": "COOL_WCPR_S03_Kragen_SCItem",
+      "name": "Kragen"
+    },
+    {
+      "className": "COOL_AEGS_S02_Permafrost_SCItem",
+      "name": "Permafrost"
+    },
+    {
+      "className": "COOL_JUST_S01_UltraFlow_SCItem",
+      "name": "Ultra-Flow"
+    },
+    {
+      "className": "COOL_LPLT_S01_BlastChill_SCItem",
+      "name": "BlastChill"
+    },
+    {
+      "className": "COOL_JSPN_S01_CryoStar_SCItem",
+      "name": "Cryo-Star"
+    },
+    {
+      "className": "COOL_WCPR_S03_Draug_SCItem",
+      "name": "Draug"
+    },
+    {
+      "className": "COOL_S02_Template",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "COOL_WCPR_S03_Elsen_SCItem",
+      "name": "Elsen"
+    },
+    {
+      "className": "COOL_AEGS_S03_Tempest_SCItem",
+      "name": "Tempest"
+    },
+    {
+      "className": "COOL_RSI_S04_Bengal_SCItem",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "COOL_WCPR_S00_Tepilo_SCItem",
+      "name": "Tepilo"
+    },
+    {
+      "className": "COOL_RSI_S04_Polaris_SCItem",
+      "name": "Serac"
+    },
+    {
+      "className": "COOL_LPLT_S02_WhiteOut_SCItem",
+      "name": "WhiteOut"
+    },
+    {
+      "className": "COOL_LPLT_S03_FrostBite_SCItem",
+      "name": "FrostBite"
+    },
+    {
+      "className": "COOL_WCPR_S01_Gelid_SCItem",
+      "name": "Gelid"
+    },
+    {
+      "className": "COOL_JSPN_S00_CryoStarSL_SCItem",
+      "name": "Cryo-Star SL"
+    },
+    {
+      "className": "COOL_WCPR_S02_Aufeis_SCItem",
+      "name": "Aufeis"
+    },
+    {
+      "className": "COOL_AEGS_S04_Idris_SCItem",
+      "name": "Exotherm"
+    },
+    {
+      "className": "COOL_WCPR_S02_Taiga_SCItem",
+      "name": "Taiga"
+    },
+    {
+      "className": "COOL_TYDT_S01_HeatSafe_SCItem",
+      "name": "HeatSafe"
+    },
+    {
+      "className": "COOL_WCPR_S02_Graupel_SCItem",
+      "name": "Graupel"
+    },
+    {
+      "className": "COOL_LPLT_S01_FlashFreeze_SCItem",
+      "name": "FlashFreeze"
+    },
+    {
+      "className": "COOL_TYDT_S01_SnowBlind_SCItem",
+      "name": "SnowBlind"
+    },
+    {
+      "className": "COOL_Template",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "COOL_AEGS_S03_Mercury_SCItem",
+      "name": "Mercury"
+    },
+    {
+      "className": "COOL_LPLT_S03_ColdSurge_SCItem",
+      "name": "ColdSurge"
+    },
+    {
+      "className": "COOL_ACOM_S02_AbsoluteZero_SCItem",
+      "name": "AbsoluteZero"
+    },
+    {
+      "className": "COOL_TYDT_S01_VaporBlock_SCItem",
+      "name": "VaporBlock"
+    },
+    {
+      "className": "COOL_JSPN_S01_FrostStar_SCItem",
+      "name": "Frost-Star"
+    },
+    {
+      "className": "COOL_S01_Template",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "COOL_ACOM_S01_QuickCool_SCItem",
+      "name": "QuikCool"
+    },
+    {
+      "className": "COOL_JSPN_S02_WinterStarEX_SCItem",
+      "name": "Winter-Star EX"
+    },
+    {
+      "className": "COOL_JUST_S02_Snowfall_SCItem",
+      "name": "Snowfall"
+    },
+    {
+      "className": "COOL_AEGS_S03_Galinstan_SCItem",
+      "name": "Galinstan"
+    },
+    {
+      "className": "COOL_AEGS_S03_Blizzard_SCItem",
+      "name": "Blizzard"
+    },
+    {
+      "className": "COOL_ACOM_S02_RapidCool_SCItem",
+      "name": "RapidCool"
+    },
+    {
+      "className": "COOL_ACOM_S02_IceDive_SCItem",
+      "name": "IceDive"
+    },
+    {
+      "className": "COOL_JSPN_S03_WinterStarXL_SCItem",
+      "name": "Winter-Star XL"
+    },
+    {
+      "className": "COOL_LPLT_S01_ArcticStorm_SCItem",
+      "name": "ArcticStorm"
+    },
+    {
+      "className": "COOL_JUST_S02_Snowpack_SCItem",
+      "name": "Snowpack"
+    },
+    {
+      "className": "COOL_AEGS_S04_Javelin_SCItem",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "COOL_TYDT_S02_IceBox_SCItem",
+      "name": "IceBox"
+    },
+    {
+      "className": "COOL_JSPN_S02_CryoStarEX_SCItem",
+      "name": "Cryo-Star EX"
+    },
+    {
+      "className": "COOL_ACOM_S01_ZeroRush_SCItem",
+      "name": "ZeroRush"
+    },
+    {
+      "className": "COOL_AEGS_S04_Reclaimer",
+      "name": "Algid"
+    },
+    {
+      "className": "COOL_JUST_S03_ChillMax_SCItem",
+      "name": "Chill-Max"
+    },
+    {
+      "className": "COOL_JUST_S03_ThermalCore_SCItem",
+      "name": "ThermalCore"
+    },
+    {
+      "className": "COOL_AEGS_S01_Polar_SCItem",
+      "name": "Polar"
+    },
+    {
+      "className": "COOL_AEGS_S01_Bracer_SCItem",
+      "name": "Bracer"
+    },
+    {
+      "className": "COOL_LPLT_S03_FrostBurn_SCItem",
+      "name": "FrostBurn"
+    },
+    {
+      "className": "COOL_AEGS_S02_Avalanche_SCItem",
+      "name": "Avalanche"
+    },
+    {
+      "className": "COOL_JUST_S02_CoolCore_SCItem",
+      "name": "CoolCore"
+    },
+    {
+      "className": "COOL_JUST_S03_IceFlush_SCItem",
+      "name": "Ice-Flush"
+    },
+    {
+      "className": "COOL_LPLT_S02_ColdSnap_SCItem",
+      "name": "ColdSnap"
+    },
+    {
+      "className": "COOL_WCPR_S01_Endo_SCItem",
+      "name": "Endo"
+    },
+    {
+      "className": "COOL_JSPN_S03_FrostStarXL_SCItem",
+      "name": "Frost-Star XL"
+    },
+    {
+      "className": "COOL_JUST_S01_EcoFlow_SCItem",
+      "name": "Eco-Flow"
+    },
+    {
+      "className": "COOL_JSPN_S03_CryoStarXL_SCItem",
+      "name": "Cryo-Star XL"
+    },
+    {
+      "className": "COOL_ORIG_S04_890J_SCItem",
+      "name": "Serac"
+    }
+  ],
+  "QuantumDrive": [
+    {
+      "className": "QDRV_TARS_S01_Expedition_SCItem",
+      "name": "Expedition"
+    },
+    {
+      "className": "QDRV_TARS_S03_Wanderer_SCItem",
+      "name": "Wanderer"
+    },
+    {
+      "className": "QDRV_RACO_S02_Nova_SCItem",
+      "name": "Nova"
+    },
+    {
+      "className": "QDRV_JUST_S01_Vulcan_SCItem",
+      "name": "Vulcan"
+    },
+    {
+      "className": "QDRV_RSI_S01_Atlas_SCItem",
+      "name": "Atlas"
+    },
+    {
+      "className": "QDRV_S02_Template",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "QDRV_WETK_S02_Crossfield_SCItem",
+      "name": "Crossfield"
+    },
+    {
+      "className": "QDRV_ARCC_S03_Impulse_SCItem",
+      "name": "Impulse"
+    },
+    {
+      "className": "QDRV_TARS_S03_Ranger_SCItem",
+      "name": "Ranger"
+    },
+    {
+      "className": "QDRV_ARCC_S03_Echo_SCItem",
+      "name": "Echo"
+    },
+    {
+      "className": "QDRV_RSI_S01_Eos_SCItem",
+      "name": "Eos"
+    },
+    {
+      "className": "QDRV_RSI_S01_Hyperion_SCItem",
+      "name": "Hyperion"
+    },
+    {
+      "className": "QDRV_JUST_S02_Huracan_SCItem",
+      "name": "Huracan"
+    },
+    {
+      "className": "QDRV_WETK_S02_Yeager_SCItem",
+      "name": "Yeager"
+    },
+    {
+      "className": "QDRV_ARCC_S01_Flood_SCItem",
+      "name": "Flood"
+    },
+    {
+      "className": "QDRV_WETK_S01_VK00_SCItem",
+      "name": "VK-00"
+    },
+    {
+      "className": "QDRV_S03_Template",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "QDRV_S04_Template",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "QDRV_WETK_S02_XL1_SCItem",
+      "name": "XL-1"
+    },
+    {
+      "className": "QDRV_RACO_S01_Spectre_SCItem",
+      "name": "Spectre"
+    },
+    {
+      "className": "QDRV_ARCC_S01_Rush_SCItem",
+      "name": "Rush"
+    },
+    {
+      "className": "QDRV_RSI_S03_Erebos_SCItem",
+      "name": "Erebos"
+    },
+    {
+      "className": "QDRV_WETK_S03_Balandin_SCItem",
+      "name": "Balandin"
+    },
+    {
+      "className": "QDRV_TARS_S03_Drifter_SCItem",
+      "name": "Drifter"
+    },
+    {
+      "className": "QDRV_RACO_S02_Bolt_SCItem",
+      "name": "Bolt"
+    },
+    {
+      "className": "QDRV_ACAS_S02_SunFire_SCItem",
+      "name": "SunFire"
+    },
+    {
+      "className": "QDRV_TARS_S01_Voyage_SCItem",
+      "name": "Voyage"
+    },
+    {
+      "className": "QDRV_RSI_S02_Khaos_SCItem",
+      "name": "Khaos"
+    },
+    {
+      "className": "QDRV_RSI_S03_Metis_SCItem",
+      "name": "Metis"
+    },
+    {
+      "className": "QDRV_JUST_S01_Colossus_SCItem",
+      "name": "Colossus"
+    },
+    {
+      "className": "QDRV_TARS_S02_Odyssey_SCItem",
+      "name": "Odyssey"
+    },
+    {
+      "className": "QDRV_JUST_S01_Goliath_SCItem",
+      "name": "Goliath"
+    },
+    {
+      "className": "QDRV_JUST_S03_Vesta_SCItem",
+      "name": "Vesta"
+    },
+    {
+      "className": "QDRV_WETK_S04_Idris_TEMP",
+      "name": "Frontline"
+    },
+    {
+      "className": "QDRV_WETK_S03_Pontes_SCItem",
+      "name": "Pontes"
+    },
+    {
+      "className": "QDRV_ACAS_S01_LightFire_SCItem",
+      "name": "LightFire"
+    },
+    {
+      "className": "QDRV_JUST_S02_Bolon_SCItem",
+      "name": "Bolon"
+    },
+    {
+      "className": "QDRV_ARCC_S01_Burst_SCItem",
+      "name": "Burst"
+    },
+    {
+      "className": "QDRV_TARS_S02_Sojourn_SCItem",
+      "name": "Sojourn"
+    },
+    {
+      "className": "QDRV_ACAS_S02_SparkFire_SCItem",
+      "name": "SparkFire"
+    },
+    {
+      "className": "QDRV_JUST_S03_Agni_SCItem",
+      "name": "Agni"
+    },
+    {
+      "className": "QDRV_JUST_S03_Kama_SCItem",
+      "name": "Kama"
+    },
+    {
+      "className": "QDRV_ARCC_S03_Fissure_SCItem",
+      "name": "Fissure"
+    },
+    {
+      "className": "QDRV_ARCC_S02_Cascade_SCItem",
+      "name": "Cascade"
+    },
+    {
+      "className": "QDRV_RSI_S03_Tyche_SCItem",
+      "name": "Tyche"
+    },
+    {
+      "className": "QDRV_WETK_S03_TS2_SCItem",
+      "name": "TS-2"
+    },
+    {
+      "className": "QDRV_RSI_S02_Aither_SCItem",
+      "name": "Aither"
+    },
+    {
+      "className": "QDRV_RACO_S01_Drift_SCItem",
+      "name": "Drift"
+    },
+    {
+      "className": "QDRV_RACO_S01_Zephyr_SCItem",
+      "name": "Zephyr"
+    },
+    {
+      "className": "QDRV_ACAS_S01_FoxFire_SCItem",
+      "name": "FoxFire"
+    },
+    {
+      "className": "QDRV_ARCC_S02_Flash_SCItem",
+      "name": "Flash"
+    },
+    {
+      "className": "QDRV_ARCC_S02_Torrent_SCItem",
+      "name": "Torrent"
+    },
+    {
+      "className": "QDRV_RACO_S02_Spicule_SCItem",
+      "name": "Spicule"
+    },
+    {
+      "className": "QDRV_S01_Template",
+      "name": "<= PLACEHOLDER =>"
+    },
+    {
+      "className": "QDRV_TARS_S01_Wayfare_SCItem",
+      "name": "Wayfare"
+    },
+    {
+      "className": "QDRV_WETK_S01_Siren_SCItem",
+      "name": "Siren"
+    },
+    {
+      "className": "QDRV_TARS_S02_Quest_SCItem",
+      "name": "Quest"
+    },
+    {
+      "className": "QDRV_RSI_S02_Hemera_SCItem",
+      "name": "Hemera"
+    },
+    {
+      "className": "QDRV_WETK_S01_Beacon_SCItem",
+      "name": "Beacon"
+    },
+    {
+      "className": "QDRV_JUST_S02_Yaluk_SCItem",
+      "name": "Yaluk"
+    },
+    {
+      "className": "QDRV_ORIG_S04_890J_SCItem",
+      "name": "Allegro"
+    },
+    {
+      "className": "QDRV_AEGS_S04_Javelin_SCItem",
+      "name": "<= PLACEHOLDER =>"
+    }
+  ]
+}

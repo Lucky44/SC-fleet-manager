@@ -1,0 +1,47 @@
+[
+  {
+    "className": "GLSN_BallisticGatling_S4",
+    "originalName": "Breakneck S4 Gatling",
+    "cleanedName": "Breakneck S4 Gatling",
+    "type": "WeaponGun",
+    "isMessy": [
+      "S4"
+    ]
+  },
+  {
+    "className": "BANU_TachyonCannon_S1",
+    "originalName": "Singe Cannon (S1)",
+    "cleanedName": "Singe Cannon (S1)",
+    "type": "WeaponGun",
+    "isMessy": [
+      "S1"
+    ]
+  },
+  {
+    "className": "BANU_TachyonCannon_S3",
+    "originalName": "Singe Cannon (S3)",
+    "cleanedName": "Singe Cannon (S3)",
+    "type": "WeaponGun",
+    "isMessy": [
+      "S3"
+    ]
+  },
+  {
+    "className": "BANU_TachyonCannon_S2",
+    "originalName": "Singe Cannon (S2)",
+    "cleanedName": "Singe Cannon (S2)",
+    "type": "WeaponGun",
+    "isMessy": [
+      "S2"
+    ]
+  },
+  {
+    "className": "GLSN_LaserRepeater_S3",
+    "originalName": "Tormenter S3 Repeater",
+    "cleanedName": "Tormenter S3 Repeater",
+    "type": "WeaponGun",
+    "isMessy": [
+      "S3"
+    ]
+  }
+]

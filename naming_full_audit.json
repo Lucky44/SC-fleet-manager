@@ -1,0 +1,2907 @@
+[
+  {
+    "className": "test_RN_powerplant_no_fuel",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "test RN powerplant no fuel",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "test_gats_gattlings_s3",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "test gats gattlings",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "RSI_Constellation_Taurus_Tractor_Beam",
+    "originalName": "SureGrip TH2 Tractor Beam",
+    "cleanedName": "SureGrip TH2 Tractor Beam",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "HRST_LaserScatterGun_S1",
+    "originalName": "Dominance-1 Scattergun",
+    "cleanedName": "Dominance-1",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "VNCL_NeutronCannon_S5",
+    "originalName": "'WAR' Cannon",
+    "cleanedName": "WAR",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_BallisticGatling_Hornet_Bespoke",
+    "originalName": "TMSB-5 Gatling",
+    "cleanedName": "TMSB-5 Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "VNCL_Gen2_PlasmaCannon_S2",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "Gen2 PlasmaCannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_BallisticRepeater_VNG_S2",
+    "originalName": "BRVS Repeater",
+    "cleanedName": "BRVS Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KLWE_LaserRepeater_S5_LowPoly",
+    "originalName": "CF-557 Galdereen Repeater",
+    "cleanedName": "Galdereen Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KLWE_LaserRepeater_S1_ATLS",
+    "originalName": "CF-117 Bulldog Repeater",
+    "cleanedName": "Bulldog Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "VNCL_LaserCannon_S1",
+    "originalName": "'WEAK' Repeater",
+    "cleanedName": "WEAK",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "GLSN_BallisticGatling_S4",
+    "originalName": "Breakneck S4 Gatling",
+    "cleanedName": "Breakneck S4 Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BANU_TachyonCannon_S1",
+    "originalName": "Singe Cannon (S1)",
+    "cleanedName": "Singe Cannon (S1)",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "APAR_BallisticGatling_S4_LowPoly",
+    "originalName": "Revenant Gatling",
+    "cleanedName": "Revenant Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "HRST_LaserScatterGun_S2",
+    "originalName": "Dominance-2 Scattergun",
+    "cleanedName": "Dominance-2",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BANU_TachyonCannon_S3",
+    "originalName": "Singe Cannon (S3)",
+    "cleanedName": "Singe Cannon (S3)",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_DistortionRepeater_VNG_S2",
+    "originalName": "ATVS Repeater",
+    "cleanedName": "ATVS Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "VNCL_LaserCannon_S2",
+    "originalName": "'WASP' Repeater",
+    "cleanedName": "WASP",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BANU_TachyonCannon_S2",
+    "originalName": "Singe Cannon (S2)",
+    "cleanedName": "Singe Cannon (S2)",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserCannon_SF7E_S7_Collector",
+    "originalName": "SF7E Cannon",
+    "cleanedName": "SF7E Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "HRST_LaserScatterGun_S3",
+    "originalName": "Dominance-3 Scattergun",
+    "cleanedName": "Dominance-3",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "HRST_Nova_BallisticCannon_S5",
+    "originalName": "Slayer Cannon",
+    "cleanedName": "Slayer Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "TOAG_LaserRepeater_S3",
+    "originalName": "Yeng’tu Repeater",
+    "cleanedName": "Yeng’tu Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "Bengal_BallisticCannon_S8",
+    "originalName": "Tarantula GT-870 Mark 3 Cannon",
+    "cleanedName": "Tarantula GT-870 Mark 3 Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "Krig_LaserRepeater_Bespoke_S4",
+    "originalName": "Axiom L-22 Repeater",
+    "cleanedName": "Axiom L-22 Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "VNCL_Gen2_PlasmaCannon_S4",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "Gen2 PlasmaCannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "ASAD_DistortionRepeater_S1",
+    "originalName": "DR Model-XJ1 Repeater",
+    "cleanedName": "DR Model-XJ1 Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "GATS_BallisticCannon_S2",
+    "originalName": "Tarantula GT-870 Mark 2 Cannon",
+    "cleanedName": "Tarantula GT-870 Mark 2",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "GATS_BallisticCannon_S3",
+    "originalName": "Tarantula GT-870 Mark 3 Cannon",
+    "cleanedName": "Tarantula GT-870 Mark 3",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "MXOX_NeutronCannon_S1",
+    "originalName": "NN-13 Cannon",
+    "cleanedName": "NN-13 Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "VNCL_Gen2_PlasmaCannon_S5",
+    "originalName": "'WRATH' Cannon",
+    "cleanedName": "WRATH",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserCannon_S7_LowPoly",
+    "originalName": "M9A Cannon",
+    "cleanedName": "M9A Laser Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_MassDriver_S12",
+    "originalName": "M9A Cannon",
+    "cleanedName": "M9A Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "APAR_MassDriver_S2",
+    "originalName": "Strife Mass Driver Cannon",
+    "cleanedName": "Strife Mass Driver Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "MXOX_NeutronCannon_S3",
+    "originalName": "NN-14 Cannon",
+    "cleanedName": "NN-15 Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "ASAD_DistortionRepeater_S2",
+    "originalName": "DR Model-XJ2 Repeater",
+    "cleanedName": "DR Model-XJ2 Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "GATS_BallisticCannon_S1",
+    "originalName": "Tarantula GT-870 Mark 1 Cannon",
+    "cleanedName": "Tarantula GT-870 Mark 1",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KLWE_MassDriver_S10",
+    "originalName": "Destroyer Mass Driver Cannon",
+    "cleanedName": "Destroyer Mass Driver Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "ASAD_DistortionRepeater_S3",
+    "originalName": "DR Model-XJ3 Repeater",
+    "cleanedName": "DR Model-XJ3 Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "MXOX_NeutronCannon_S2",
+    "originalName": "NN-14 Cannon",
+    "cleanedName": "NN-14 Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KLWE_MassDriver_S10_LowPoly",
+    "originalName": "Destroyer Mass Driver Cannon",
+    "cleanedName": "Destroyer Mass Driver Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "NONE_LaserRepeater_S3",
+    "originalName": "Ardor-3 Salvaged Repeater",
+    "cleanedName": "Ardor-3 Salvaged Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "ESPR_LaserCannon_S2",
+    "originalName": "Lightstrike II Cannon",
+    "cleanedName": "Lightstrike II Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KLWE_LaserRepeater_S5_Idris_M",
+    "originalName": "CF-557 Galdereen Repeater",
+    "cleanedName": "Galdereen Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KLWE_MassDriver_S2",
+    "originalName": "Sledge II Mass Driver Cannon",
+    "cleanedName": "Sledge II Mass Driver Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "HRST_LaserRepeater_S3",
+    "originalName": "Attrition-3 Repeater",
+    "cleanedName": "Attrition-3 Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KRIG_BallisticGatling_S2",
+    "originalName": "Tigerstrike T-19P",
+    "cleanedName": "Tigerstrike T-19P",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "MXOX_NeutronRepeater_S1",
+    "originalName": "NDB-26 Repeater",
+    "cleanedName": "NDB-26 Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserCannon_S7",
+    "originalName": "M9A Cannon",
+    "cleanedName": "M9A Laser Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_BallisticGatling_S6",
+    "originalName": "AD6B Ballistic Gatling",
+    "cleanedName": "AD6B Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_BallisticGatling_S7",
+    "originalName": "SF7B Gatling",
+    "cleanedName": "SF7B Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "APAR_BallisticGatling_S6",
+    "originalName": "Draugar Gatling",
+    "cleanedName": "Draugar Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserCannon_S6",
+    "originalName": "M8A Cannon",
+    "cleanedName": "M8A Laser Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KBAR_BallisticCannon_S1",
+    "originalName": "9-Series Longsword Cannon",
+    "cleanedName": "9-Series Longsword Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KRIG_BallisticGatling_S3",
+    "originalName": "Tigerstrike T-21 Gatling",
+    "cleanedName": "Tigerstrike T-21 Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "HRST_LaserRepeater_S2",
+    "originalName": "Attrition-2 Repeater",
+    "cleanedName": "Attrition-2 Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KLWE_MassDriver_S3",
+    "originalName": "Sledge III Mass Driver Cannon",
+    "cleanedName": "Sledge III Mass Driver Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_BallisticGatling_S7_Collector",
+    "originalName": "SF7B Gatling",
+    "cleanedName": "SF7B Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "ESPR_LaserCannon_S3",
+    "originalName": "Lightstrike III Cannon",
+    "cleanedName": "Lightstrike III Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "NONE_LaserRepeater_S2",
+    "originalName": "Ardor-2 Salvaged Repeater",
+    "cleanedName": "Ardor-2 Salvaged Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "ESPR_LaserCannon_S1",
+    "originalName": "Lightstrike I Cannon",
+    "cleanedName": "Lightstrike I Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KLWE_MassDriver_S1",
+    "originalName": "Sledge I Mass Driver Cannon",
+    "cleanedName": "Sledge I Mass Driver Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "Krig_BallisticGatling_Bespoke_S4",
+    "originalName": "Relentless L-21 Gatling",
+    "cleanedName": "Relentless L-21 Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "MXOX_NeutronRepeater_S2",
+    "originalName": "NDB-28 Repeater",
+    "cleanedName": "NDB-28 Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KBAR_BallisticCannon_S3",
+    "originalName": "11-Series Broadsword Cannon",
+    "cleanedName": "11-Series Broadsword Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "APAR_BallisticGatling_S4",
+    "originalName": "Revenant Gatling",
+    "cleanedName": "Revenant Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserCannon_S4",
+    "originalName": "M6A Cannon",
+    "cleanedName": "M6A Laser Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_BallisticGatling_S5",
+    "originalName": "AD5B Ballistic Gatling",
+    "cleanedName": "AD5B Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserCannon_SF7E_S7",
+    "originalName": "SF7E Cannon",
+    "cleanedName": "SF7E Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_BallisticGatling_S4",
+    "originalName": "AD4B Ballistic Gatling",
+    "cleanedName": "AD4B Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BRRA_LaserCannon_AP_AutomatedTurret",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "LaserCannon AP AutomatedTurret",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserCannon_S5",
+    "originalName": "M7A Cannon",
+    "cleanedName": "M7A Laser Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KBAR_BallisticCannon_S2",
+    "originalName": "10-Series Greatsword Cannon",
+    "cleanedName": "10-Series Greatsword Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "MXOX_NeutronRepeater_S3",
+    "originalName": "NDB-30 Repeater",
+    "cleanedName": "NDB-30 Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "HRST_LaserRepeater_S1",
+    "originalName": "Attrition-1 Repeater",
+    "cleanedName": "Attrition-1 Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "NONE_LaserRepeater_S1",
+    "originalName": "Ardor-1 Salvaged Repeater",
+    "cleanedName": "Ardor-1 Salvaged Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserCannon_S7_Turret",
+    "originalName": "M9A Cannon",
+    "cleanedName": "M9A Laser Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "ESPR_LaserCannon_S4",
+    "originalName": "Lightstrike IV Cannon",
+    "cleanedName": "Lightstrike IV Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "HRST_LaserRepeater_S5",
+    "originalName": "Attrition-5 Repeater",
+    "cleanedName": "Attrition-5 Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KLWE_LaserRepeater_S5_Turret",
+    "originalName": "CF-557 Galdereen Repeater",
+    "cleanedName": "Galdereen Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "JOKR_DistortionCannon_S2",
+    "originalName": "Suckerpunch-L Cannon",
+    "cleanedName": "Suckerpunch-L Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserCannon_S6_SecurityNetwork",
+    "originalName": "M8A Cannon",
+    "cleanedName": "M8A Laser Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserCannon_S7_Idris_M",
+    "originalName": "M9A Cannon",
+    "cleanedName": "M9A Laser Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserCannon_S1",
+    "originalName": "M3A Cannon",
+    "cleanedName": "M3A Laser Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KRON_LaserCannon_S2",
+    "originalName": "FL-22 Cannon",
+    "cleanedName": "FL-22 Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KRON_LaserCannon_S3",
+    "originalName": "FL-33 Cannon",
+    "cleanedName": "FL-33 Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "AMRS_AAgun_CC_S3",
+    "originalName": "PyroBurst Scattergun",
+    "cleanedName": "PyroBurst Scattergun",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_JavelinBallisticCannon_S7_LowPoly",
+    "originalName": "M9A Cannon",
+    "cleanedName": "M9A Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "JOKR_DistortionCannon_S3",
+    "originalName": "Suckerpunch-XL Cannon",
+    "cleanedName": "Suckerpunch-XL Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "HRST_LaserRepeater_S4",
+    "originalName": "Attrition-4 Repeater",
+    "cleanedName": "Attrition-4 Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "ESPR_LaserCannon_S5",
+    "originalName": "Lightstrike V Cannon",
+    "cleanedName": "Lightstrike V Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "HRST_Storm_LaserRepeater_S3",
+    "originalName": "Reign-3 Repeater",
+    "cleanedName": "Reign-3 Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "HRST_LaserRepeater_S6",
+    "originalName": "Attrition-6 Repeater",
+    "cleanedName": "Attrition-6 Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "JOKR_DistortionCannon_S1",
+    "originalName": "Suckerpunch Cannon",
+    "cleanedName": "Suckerpunch Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserCannon_S2",
+    "originalName": "M4A Cannon",
+    "cleanedName": "M4A Laser Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KLWE_LaserRepeater_S6_LowPoly",
+    "originalName": "CF-667 Mammoth Repeater",
+    "cleanedName": "Mammoth Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KRON_LaserCannon_S1",
+    "originalName": "FL-11 Cannon",
+    "cleanedName": "FL-11 Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BANU_EnergyRepeater_S2",
+    "originalName": "CF-227 Badger Repeater",
+    "cleanedName": "CF-227 Badger Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "AMRS_ScatterGun_S3",
+    "originalName": "PyroBurst Scattergun",
+    "cleanedName": "PyroBurst Scattergun",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserCannon_S7_Idris_M_Dummy",
+    "originalName": "M9A Cannon",
+    "cleanedName": "M9A Laser Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_JavelinBallisticCannon_S7",
+    "originalName": "M9A Cannon",
+    "cleanedName": "M9A Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "APAR_BallisticScatterGun_S1_Shark",
+    "originalName": "Havoc Scattergun Sharkmouth Edition",
+    "cleanedName": "Havoc Scattergun Sharkmouth Edition",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserCannon_S3",
+    "originalName": "M5A Cannon",
+    "cleanedName": "M5A Laser Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "RPOD_S2_THCN_8x_S2",
+    "originalName": "Liberator Prime",
+    "cleanedName": "Liberator Prime",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "RPOD_S2_FSKI_6x_S3",
+    "originalName": "Yebira II",
+    "cleanedName": "Yebira II",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "RPOD_S1_HRST_6x_S1",
+    "originalName": "Jericho",
+    "cleanedName": "Jericho",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "RPOD_S3_HRST_18x_S1",
+    "originalName": "Jericho XL",
+    "cleanedName": "Jericho XL",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "RPOD_S3_THCN_12x_S2",
+    "originalName": "Liberator Ultra",
+    "cleanedName": "Liberator Ultra",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "RPOD_S2_HRST_12x_S1",
+    "originalName": "Jericho X",
+    "cleanedName": "Jericho X",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "RPOD_S1_FSKI_3x_S3",
+    "originalName": "Yebira I",
+    "cleanedName": "Yebira I",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "RPOD_S3_FSKI_9x_S3",
+    "originalName": "Jericho XL",
+    "cleanedName": "Jericho XL",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "RPOD_S1_THCN_4x_S2",
+    "originalName": "Liberator",
+    "cleanedName": "Liberator",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "ESPR_LaserCannon_S6",
+    "originalName": "Lightstrike VI Cannon",
+    "cleanedName": "Lightstrike VI Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "VNCL_PlasmaCannon_S2",
+    "originalName": "'WHIP' Cannon",
+    "cleanedName": "WHIP",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "GATS_BallisticGatling_S3",
+    "originalName": "Mantis GT-220 Gatling",
+    "cleanedName": "Mantis GT-220",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "Bengal_Turret_BallisticCannon_S8",
+    "originalName": "Slayer Cannon",
+    "cleanedName": "Slayer Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "GATS_BallisticGatling_S2",
+    "originalName": "Scorpion GT-215 Gatling",
+    "cleanedName": "Scorpion GT-215",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "VNCL_PlasmaCannon_S3",
+    "originalName": "'WARLORD' Cannon",
+    "cleanedName": "WARLORD",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "GLSN_LaserRepeater_S3",
+    "originalName": "Tormenter S3 Repeater",
+    "cleanedName": "Tormenter S3 Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserRepeater_S10_SecurityNetwork_Weak",
+    "originalName": "GVSR Repeater",
+    "cleanedName": "GVSR Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserRepeater_S10_SecurityNetwork",
+    "originalName": "GVSR Repeater",
+    "cleanedName": "GVSR Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "APAR_BallisticScatterGun_S6",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "BallisticScatterGun",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "GATS_BallisticGatling_S1",
+    "originalName": "YellowJacket GT-210 Gatling",
+    "cleanedName": "YellowJacket GT-210",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "TOAG_LaserGatling_S2",
+    "originalName": "Thlilye Laser Gatling",
+    "cleanedName": "Thlilye Laser Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_DistortionCannon_VNG_S2",
+    "originalName": "EVSD Cannon",
+    "cleanedName": "EVSD Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserCannon_S8",
+    "originalName": "M9A Cannon",
+    "cleanedName": "M9A Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_BallisticRepeater_S1",
+    "originalName": "SW16BR1 “Buzzsaw” Repeater",
+    "cleanedName": "SW16BR1 “Buzzsaw” Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "APAR_BallisticScatterGun_S2",
+    "originalName": "Hellion Scattergun",
+    "cleanedName": "Hellion Scattergun",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "PRAR_DistortionScatterGun_S5",
+    "originalName": "Absolution Distortion Scattergun",
+    "cleanedName": "Absolution Scattergun",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "PRAR_DistortionScatterGun_S4",
+    "originalName": "Salvation Distortion Scattergun",
+    "cleanedName": "Salvation Scattergun",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "APAR_BallisticScatterGun_S3",
+    "originalName": "Predator Scattergun",
+    "cleanedName": "Predator Scattergun",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserCannon_S9",
+    "originalName": "M9A Cannon",
+    "cleanedName": "M9A Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "VNCL_PlasmaCannon_S5",
+    "originalName": "'WRATH' Cannon",
+    "cleanedName": "WRATH",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "RSI_Perseus_BallisticCannon_B_S8",
+    "originalName": "RSI Medusa Cannon",
+    "cleanedName": "RSI Medusa Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "APAR_BallisticScatterGun_S2_Shark",
+    "originalName": "Hellion Scattergun Sharkmouth Edition",
+    "cleanedName": "Hellion Scattergun Sharkmouth Edition",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KLWE_LaserRepeater_S4_LowPoly",
+    "originalName": "CF-447 Rhino Repeater",
+    "cleanedName": "Rhino Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_BallisticRepeater_S2",
+    "originalName": "SW16BR2 “Sawbuck” Repeater",
+    "cleanedName": "SW16BR2 “Sawbuck” Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "APAR_BallisticScatterGun_S1",
+    "originalName": "Havoc Scattergun",
+    "cleanedName": "Havoc Scattergun",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "PRAR_DistortionScatterGun_S6",
+    "originalName": "Condemnation Distortion Scattergun",
+    "cleanedName": "Condemnation Distortion Scattergun",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_BallisticRepeater_S3",
+    "originalName": "SW16BR3 “Shredder” Repeater",
+    "cleanedName": "SW16BR3 “Shredder” Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserRepeater_VNG_S2",
+    "originalName": "GVSR Repeater",
+    "cleanedName": "GVSR Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserCannon_VNG_S2",
+    "originalName": "MVSA Cannon",
+    "cleanedName": "MVSA Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_Nova_BallisticGatling_S5",
+    "originalName": "NV57 Ballistic Gatling",
+    "cleanedName": "NV57 Ballistic Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "RSI_Bespoke_BallisticCannon_A",
+    "originalName": "Maris Cannon",
+    "cleanedName": "Maris Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "Bengal_BallisticCannon_S7",
+    "originalName": "Tarantula GT-870 Mark 3 Cannon",
+    "cleanedName": "Tarantula GT-870 Mark 3 Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_BallisticGatling_PDC_S1",
+    "originalName": "MRX \"Torrent\"",
+    "cleanedName": "MRX \"Torrent\"",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "AMRS_LaserCannon_S1",
+    "originalName": "Omnisky III Cannon",
+    "cleanedName": "Omnisky III",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "ESPR_BallisticCannon_S3",
+    "originalName": "Deadbolt III Cannon",
+    "cleanedName": "Deadbolt III",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "ESPR_BallisticCannon_S2",
+    "originalName": "Deadbolt II Cannon",
+    "cleanedName": "Deadbolt II",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "HRST_LaserRepeater_S4_Turret",
+    "originalName": "Attrition-4 Repeater",
+    "cleanedName": "Attrition-4 Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserCannon_S9_LowPoly",
+    "originalName": "M9A Cannon",
+    "cleanedName": "M9A Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "RSI_BallisticCannon_S5_Meteor_Bespoke",
+    "originalName": "Leonids Cannon",
+    "cleanedName": "Leonids Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "Bengal_BallisticGatling_S6",
+    "originalName": "Revenant Gatling",
+    "cleanedName": "Revenant Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KLWE_LaserRepeater_S6",
+    "originalName": "CF-667 Mammoth Repeater",
+    "cleanedName": "Mammoth Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KLWE_LaserRepeater_S4",
+    "originalName": "CF-447 Rhino Repeater",
+    "cleanedName": "Rhino Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_JavelinBallisticCannon_S7_Dummy",
+    "originalName": "M9A Cannon",
+    "cleanedName": "M9A Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_BallisticCannon_S7_Idris",
+    "originalName": "Conqueror-7",
+    "cleanedName": "Conqueror-7",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "AMRS_LaserCannon_S2",
+    "originalName": "Omnisky VI Cannon",
+    "cleanedName": "Omnisky VI",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KLWE_LaserRepeater_PDC_S2",
+    "originalName": "CF-227 Badger Repeater",
+    "cleanedName": "CF-227 Badger Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "ESPR_BallisticCannon_S1",
+    "originalName": "Deadbolt I Cannon",
+    "cleanedName": "Deadbolt I Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserRepeater_S10",
+    "originalName": "GVSR Repeater",
+    "cleanedName": "GVSR Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "AMRS_LaserCannon_S3",
+    "originalName": "Omnisky IX Cannon",
+    "cleanedName": "Omnisky IX",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_BallisticCannon_S4",
+    "originalName": "C-788 Cannon",
+    "cleanedName": "C-788 Combine",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "ANVL_BallisticGatling_Bespoke",
+    "originalName": "Revenant Gatling",
+    "cleanedName": "Revenant Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KLWE_LaserRepeater_S5",
+    "originalName": "CF-557 Galdereen Repeater",
+    "cleanedName": "Galdereen Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KLWE_LaserRepeater_S1",
+    "originalName": "CF-117 Bulldog Repeater",
+    "cleanedName": "Bulldog Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserRepeater_PDC_S1",
+    "originalName": "M2C \"Swarm\"",
+    "cleanedName": "M2C \"Swarm\"",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "ESPR_BallisticCannon_S5",
+    "originalName": "Deadbolt V Cannon",
+    "cleanedName": "Deadbolt V",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "ESPR_BallisticCannon_S4",
+    "originalName": "Deadbolt IV Cannon",
+    "cleanedName": "Deadbolt IV",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "AMRS_LaserCannon_S6",
+    "originalName": "Omnisky XVIII Cannon",
+    "cleanedName": "Omnisky XVIII",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KLWE_LaserRepeater_S2",
+    "originalName": "CF-227 Badger Repeater",
+    "cleanedName": "Badger Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "HRST_LaserBeam_Bespoke",
+    "originalName": "Exodus-10 Laser Beam",
+    "cleanedName": "Exodus-10 Laser Beam",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "AMRS_LaserCannon_S4",
+    "originalName": "Omnisky XII Cannon",
+    "cleanedName": "Omnisky XII",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "APAR_BallisticScatterGun_S3_Shark",
+    "originalName": "Predator Scattergun Sharkmouth Edition",
+    "cleanedName": "Predator Scattergun Sharkmouth Edition",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KRIG_LaserCannon_S3",
+    "originalName": "Quarreler Cannon",
+    "cleanedName": "Quarreler Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "ESPR_BallisticCannon_S6",
+    "originalName": "Deadbolt VI Cannon",
+    "cleanedName": "Deadbolt VI Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "AMRS_LaserCannon_S5",
+    "originalName": "Omnisky XV Cannon",
+    "cleanedName": "Omnisky XV",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_LaserCannon_S6_Turret",
+    "originalName": "M8A Cannon",
+    "cleanedName": "M8A Laser Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "BEHR_BallisticCannon_VNG_S2",
+    "originalName": "CVSA Cannon",
+    "cleanedName": "CVSA Cannon",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "KLWE_LaserRepeater_S3",
+    "originalName": "CF-337 Panther Repeater",
+    "cleanedName": "Panther Repeater",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_AEGS_S01_Glacier_SCItem",
+    "originalName": "Glacier",
+    "cleanedName": "Glacier",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JUST_S03_Hydropulse_SCItem",
+    "originalName": "Hydropulse",
+    "cleanedName": "Hydropulse",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_WCPR_S00_Fridan_SCItem",
+    "originalName": "Fridan",
+    "cleanedName": "Fridan",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JSPN_S01_WinterStar_SCItem",
+    "originalName": "Winter-Star",
+    "cleanedName": "Winter-Star",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_TYDT_S02_NightFall_SCItem",
+    "originalName": "NightFall",
+    "cleanedName": "NightFall",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_LPLT_S02_FullFrost_SCItem",
+    "originalName": "FullFrost",
+    "cleanedName": "FullFrost",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_AEGS_S02_Boreal_SCItem",
+    "originalName": "Boreal",
+    "cleanedName": "Boreal",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_WCPR_S01_Berian_SCItem",
+    "originalName": "Berian",
+    "cleanedName": "Berian",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JUST_S01_Thermax_SCItem",
+    "originalName": "Thermax",
+    "cleanedName": "Thermax",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JSPN_S00_FrostStarSL_SCItem",
+    "originalName": "Frost-Star SL",
+    "cleanedName": "Frost-Star SL",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JSPN_S00_WinterStarSL_SCItem",
+    "originalName": "Winter-Star SL",
+    "cleanedName": "Winter-Star SL",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_WCPR_S00_Kelvid_SCItem",
+    "originalName": "Kelvid",
+    "cleanedName": "Kelvid",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JSPN_S02_FrostStarEX_SCItem",
+    "originalName": "Frost-Star EX",
+    "cleanedName": "Frost-Star EX",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_ACOM_S01_IcePlunge_SCItem",
+    "originalName": "IcePlunge",
+    "cleanedName": "IcePlunge",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JUST_S01_Hydrocel_SCItem",
+    "originalName": "Hydrocel",
+    "cleanedName": "Hydrocel",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_AEGS_S02_Arctic_SCItem",
+    "originalName": "Arctic",
+    "cleanedName": "Arctic",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_S04_Template",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "Template",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_S03_Template",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "Template",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_AEGS_S01_Tundra_SCItem",
+    "originalName": "Tundra",
+    "cleanedName": "Tundra",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_TYDT_S02_HeatSink_SCItem",
+    "originalName": "HeatSink",
+    "cleanedName": "HeatSink",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JUST_S02_Hydrojet_SCItem",
+    "originalName": "HydroJet",
+    "cleanedName": "HydroJet",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_WCPR_S03_Kragen_SCItem",
+    "originalName": "Kragen",
+    "cleanedName": "Kragen",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_AEGS_S02_Permafrost_SCItem",
+    "originalName": "Permafrost",
+    "cleanedName": "Permafrost",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JUST_S01_UltraFlow_SCItem",
+    "originalName": "Ultra-Flow",
+    "cleanedName": "Ultra-Flow",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_LPLT_S01_BlastChill_SCItem",
+    "originalName": "BlastChill",
+    "cleanedName": "BlastChill",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JSPN_S01_CryoStar_SCItem",
+    "originalName": "Cryo-Star",
+    "cleanedName": "Cryo-Star",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_WCPR_S03_Draug_SCItem",
+    "originalName": "Draug",
+    "cleanedName": "Draug",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_S02_Template",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "Template",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_WCPR_S03_Elsen_SCItem",
+    "originalName": "Elsen",
+    "cleanedName": "Elsen",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_AEGS_S03_Tempest_SCItem",
+    "originalName": "Tempest",
+    "cleanedName": "Tempest",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_RSI_S04_Bengal_SCItem",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "Bengal",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_WCPR_S00_Tepilo_SCItem",
+    "originalName": "Tepilo",
+    "cleanedName": "Tepilo",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_RSI_S04_Polaris_SCItem",
+    "originalName": "Serac",
+    "cleanedName": "Serac",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_LPLT_S02_WhiteOut_SCItem",
+    "originalName": "WhiteOut",
+    "cleanedName": "WhiteOut",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_LPLT_S03_FrostBite_SCItem",
+    "originalName": "FrostBite",
+    "cleanedName": "FrostBite",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_WCPR_S01_Gelid_SCItem",
+    "originalName": "Gelid",
+    "cleanedName": "Gelid",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JSPN_S00_CryoStarSL_SCItem",
+    "originalName": "Cryo-Star SL",
+    "cleanedName": "Cryo-Star SL",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_WCPR_S02_Aufeis_SCItem",
+    "originalName": "Aufeis",
+    "cleanedName": "Aufeis",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_AEGS_S04_Idris_SCItem",
+    "originalName": "Exotherm",
+    "cleanedName": "Exotherm",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_WCPR_S02_Taiga_SCItem",
+    "originalName": "Taiga",
+    "cleanedName": "Taiga",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_TYDT_S01_HeatSafe_SCItem",
+    "originalName": "HeatSafe",
+    "cleanedName": "HeatSafe",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_WCPR_S02_Graupel_SCItem",
+    "originalName": "Graupel",
+    "cleanedName": "Graupel",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_LPLT_S01_FlashFreeze_SCItem",
+    "originalName": "FlashFreeze",
+    "cleanedName": "FlashFreeze",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_TYDT_S01_SnowBlind_SCItem",
+    "originalName": "SnowBlind",
+    "cleanedName": "SnowBlind",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_Template",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "Template",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_AEGS_S03_Mercury_SCItem",
+    "originalName": "Mercury",
+    "cleanedName": "Mercury",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_LPLT_S03_ColdSurge_SCItem",
+    "originalName": "ColdSurge",
+    "cleanedName": "ColdSurge",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_ACOM_S02_AbsoluteZero_SCItem",
+    "originalName": "AbsoluteZero",
+    "cleanedName": "AbsoluteZero",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_TYDT_S01_VaporBlock_SCItem",
+    "originalName": "VaporBlock",
+    "cleanedName": "VaporBlock",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JSPN_S01_FrostStar_SCItem",
+    "originalName": "Frost-Star",
+    "cleanedName": "Frost-Star",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_S01_Template",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "Template",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_ACOM_S01_QuickCool_SCItem",
+    "originalName": "QuikCool",
+    "cleanedName": "QuikCool",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JSPN_S02_WinterStarEX_SCItem",
+    "originalName": "Winter-Star EX",
+    "cleanedName": "Winter-Star EX",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JUST_S02_Snowfall_SCItem",
+    "originalName": "Snowfall",
+    "cleanedName": "Snowfall",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_AEGS_S03_Galinstan_SCItem",
+    "originalName": "Galinstan",
+    "cleanedName": "Galinstan",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_AEGS_S03_Blizzard_SCItem",
+    "originalName": "Blizzard",
+    "cleanedName": "Blizzard",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_ACOM_S02_RapidCool_SCItem",
+    "originalName": "RapidCool",
+    "cleanedName": "RapidCool",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_ACOM_S02_IceDive_SCItem",
+    "originalName": "IceDive",
+    "cleanedName": "IceDive",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JSPN_S03_WinterStarXL_SCItem",
+    "originalName": "Winter-Star XL",
+    "cleanedName": "Winter-Star XL",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_LPLT_S01_ArcticStorm_SCItem",
+    "originalName": "ArcticStorm",
+    "cleanedName": "ArcticStorm",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JUST_S02_Snowpack_SCItem",
+    "originalName": "Snowpack",
+    "cleanedName": "Snowpack",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_AEGS_S04_Javelin_SCItem",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "Javelin",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_TYDT_S02_IceBox_SCItem",
+    "originalName": "IceBox",
+    "cleanedName": "IceBox",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JSPN_S02_CryoStarEX_SCItem",
+    "originalName": "Cryo-Star EX",
+    "cleanedName": "Cryo-Star EX",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_ACOM_S01_ZeroRush_SCItem",
+    "originalName": "ZeroRush",
+    "cleanedName": "ZeroRush",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_AEGS_S04_Reclaimer",
+    "originalName": "Algid",
+    "cleanedName": "Algid",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JUST_S03_ChillMax_SCItem",
+    "originalName": "Chill-Max",
+    "cleanedName": "Chill-Max",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JUST_S03_ThermalCore_SCItem",
+    "originalName": "ThermalCore",
+    "cleanedName": "ThermalCore",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_AEGS_S01_Polar_SCItem",
+    "originalName": "Polar",
+    "cleanedName": "Polar",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_AEGS_S01_Bracer_SCItem",
+    "originalName": "Bracer",
+    "cleanedName": "Bracer",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_LPLT_S03_FrostBurn_SCItem",
+    "originalName": "FrostBurn",
+    "cleanedName": "FrostBurn",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_AEGS_S02_Avalanche_SCItem",
+    "originalName": "Avalanche",
+    "cleanedName": "Avalanche",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JUST_S02_CoolCore_SCItem",
+    "originalName": "CoolCore",
+    "cleanedName": "CoolCore",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JUST_S03_IceFlush_SCItem",
+    "originalName": "Ice-Flush",
+    "cleanedName": "Ice-Flush",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_LPLT_S02_ColdSnap_SCItem",
+    "originalName": "ColdSnap",
+    "cleanedName": "ColdSnap",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_WCPR_S01_Endo_SCItem",
+    "originalName": "Endo",
+    "cleanedName": "Endo",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JSPN_S03_FrostStarXL_SCItem",
+    "originalName": "Frost-Star XL",
+    "cleanedName": "Frost-Star XL",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JUST_S01_EcoFlow_SCItem",
+    "originalName": "Eco-Flow",
+    "cleanedName": "Eco-Flow",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_JSPN_S03_CryoStarXL_SCItem",
+    "originalName": "Cryo-Star XL",
+    "cleanedName": "Cryo-Star XL",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "COOL_ORIG_S04_890J_SCItem",
+    "originalName": "Serac",
+    "cleanedName": "Serac",
+    "type": "Cooler",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_TARS_S01_Expedition_SCItem",
+    "originalName": "Expedition",
+    "cleanedName": "Expedition",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_TARS_S03_Wanderer_SCItem",
+    "originalName": "Wanderer",
+    "cleanedName": "Wanderer",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_RACO_S02_Nova_SCItem",
+    "originalName": "Nova",
+    "cleanedName": "Nova",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_JUST_S01_Vulcan_SCItem",
+    "originalName": "Vulcan",
+    "cleanedName": "Vulcan",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_RSI_S01_Atlas_SCItem",
+    "originalName": "Atlas",
+    "cleanedName": "Atlas",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_S02_Template",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "Template",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_WETK_S02_Crossfield_SCItem",
+    "originalName": "Crossfield",
+    "cleanedName": "Crossfield",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_ARCC_S03_Impulse_SCItem",
+    "originalName": "Impulse",
+    "cleanedName": "Impulse",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_TARS_S03_Ranger_SCItem",
+    "originalName": "Ranger",
+    "cleanedName": "Ranger",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_ARCC_S03_Echo_SCItem",
+    "originalName": "Echo",
+    "cleanedName": "Echo",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_RSI_S01_Eos_SCItem",
+    "originalName": "Eos",
+    "cleanedName": "Eos",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_RSI_S01_Hyperion_SCItem",
+    "originalName": "Hyperion",
+    "cleanedName": "Hyperion",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_JUST_S02_Huracan_SCItem",
+    "originalName": "Huracan",
+    "cleanedName": "Huracan",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_WETK_S02_Yeager_SCItem",
+    "originalName": "Yeager",
+    "cleanedName": "Yeager",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_ARCC_S01_Flood_SCItem",
+    "originalName": "Flood",
+    "cleanedName": "Flood",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_WETK_S01_VK00_SCItem",
+    "originalName": "VK-00",
+    "cleanedName": "VK-00",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_S03_Template",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "Template",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_S04_Template",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "Template",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_WETK_S02_XL1_SCItem",
+    "originalName": "XL-1",
+    "cleanedName": "XL-1",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_RACO_S01_Spectre_SCItem",
+    "originalName": "Spectre",
+    "cleanedName": "Spectre",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_ARCC_S01_Rush_SCItem",
+    "originalName": "Rush",
+    "cleanedName": "Rush",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_RSI_S03_Erebos_SCItem",
+    "originalName": "Erebos",
+    "cleanedName": "Erebos",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_WETK_S03_Balandin_SCItem",
+    "originalName": "Balandin",
+    "cleanedName": "Balandin",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_TARS_S03_Drifter_SCItem",
+    "originalName": "Drifter",
+    "cleanedName": "Drifter",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_RACO_S02_Bolt_SCItem",
+    "originalName": "Bolt",
+    "cleanedName": "Bolt",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_ACAS_S02_SunFire_SCItem",
+    "originalName": "SunFire",
+    "cleanedName": "SunFire",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_TARS_S01_Voyage_SCItem",
+    "originalName": "Voyage",
+    "cleanedName": "Voyage",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_RSI_S02_Khaos_SCItem",
+    "originalName": "Khaos",
+    "cleanedName": "Khaos",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_RSI_S03_Metis_SCItem",
+    "originalName": "Metis",
+    "cleanedName": "Metis",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_JUST_S01_Colossus_SCItem",
+    "originalName": "Colossus",
+    "cleanedName": "Colossus",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_TARS_S02_Odyssey_SCItem",
+    "originalName": "Odyssey",
+    "cleanedName": "Odyssey",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_JUST_S01_Goliath_SCItem",
+    "originalName": "Goliath",
+    "cleanedName": "Goliath",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_JUST_S03_Vesta_SCItem",
+    "originalName": "Vesta",
+    "cleanedName": "Vesta",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_WETK_S04_Idris_TEMP",
+    "originalName": "Frontline",
+    "cleanedName": "Frontline",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_WETK_S03_Pontes_SCItem",
+    "originalName": "Pontes",
+    "cleanedName": "Pontes",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_ACAS_S01_LightFire_SCItem",
+    "originalName": "LightFire",
+    "cleanedName": "LightFire",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_JUST_S02_Bolon_SCItem",
+    "originalName": "Bolon",
+    "cleanedName": "Bolon",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_ARCC_S01_Burst_SCItem",
+    "originalName": "Burst",
+    "cleanedName": "Burst",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_TARS_S02_Sojourn_SCItem",
+    "originalName": "Sojourn",
+    "cleanedName": "Sojourn",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_ACAS_S02_SparkFire_SCItem",
+    "originalName": "SparkFire",
+    "cleanedName": "SparkFire",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_JUST_S03_Agni_SCItem",
+    "originalName": "Agni",
+    "cleanedName": "Agni",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_JUST_S03_Kama_SCItem",
+    "originalName": "Kama",
+    "cleanedName": "Kama",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_ARCC_S03_Fissure_SCItem",
+    "originalName": "Fissure",
+    "cleanedName": "Fissure",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_ARCC_S02_Cascade_SCItem",
+    "originalName": "Cascade",
+    "cleanedName": "Cascade",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_RSI_S03_Tyche_SCItem",
+    "originalName": "Tyche",
+    "cleanedName": "Tyche",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_WETK_S03_TS2_SCItem",
+    "originalName": "TS-2",
+    "cleanedName": "TS-2",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_RSI_S02_Aither_SCItem",
+    "originalName": "Aither",
+    "cleanedName": "Aither",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_RACO_S01_Drift_SCItem",
+    "originalName": "Drift",
+    "cleanedName": "Drift",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_RACO_S01_Zephyr_SCItem",
+    "originalName": "Zephyr",
+    "cleanedName": "Zephyr",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_ACAS_S01_FoxFire_SCItem",
+    "originalName": "FoxFire",
+    "cleanedName": "FoxFire",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_ARCC_S02_Flash_SCItem",
+    "originalName": "Flash",
+    "cleanedName": "Flash",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_ARCC_S02_Torrent_SCItem",
+    "originalName": "Torrent",
+    "cleanedName": "Torrent",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_RACO_S02_Spicule_SCItem",
+    "originalName": "Spicule",
+    "cleanedName": "Spicule",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_S01_Template",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "Template",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_TARS_S01_Wayfare_SCItem",
+    "originalName": "Wayfare",
+    "cleanedName": "Wayfare",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_WETK_S01_Siren_SCItem",
+    "originalName": "Siren",
+    "cleanedName": "Siren",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_TARS_S02_Quest_SCItem",
+    "originalName": "Quest",
+    "cleanedName": "Quest",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_RSI_S02_Hemera_SCItem",
+    "originalName": "Hemera",
+    "cleanedName": "Hemera",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_WETK_S01_Beacon_SCItem",
+    "originalName": "Beacon",
+    "cleanedName": "Beacon",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_JUST_S02_Yaluk_SCItem",
+    "originalName": "Yaluk",
+    "cleanedName": "Yaluk",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_ORIG_S04_890J_SCItem",
+    "originalName": "Allegro",
+    "cleanedName": "Allegro",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "QDRV_AEGS_S04_Javelin_SCItem",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "Javelin",
+    "type": "QuantumDrive",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AMRS_S01_OverDrive_SCItem",
+    "originalName": "OverDrive",
+    "cleanedName": "OverDrive",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_JUST_S01_Fortitude_SCItem",
+    "originalName": "Fortitude",
+    "cleanedName": "Fortitude",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_ACOM_S01_SunFlare_SCItem",
+    "originalName": "SunFlare",
+    "cleanedName": "SunFlare",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_TYDT_S02_Cirrus_SCItem",
+    "originalName": "Cirrus",
+    "cleanedName": "Cirrus",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_ACOM_S02_SolarFlare_SCItem",
+    "originalName": "SolarFlare",
+    "cleanedName": "SolarFlare",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_SASU_S01_MagnaBloom_SCItem",
+    "originalName": "MagnaBloom",
+    "cleanedName": "MagnaBloom",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_LPLT_S00_DuraJet_SCItem",
+    "originalName": "DuraJet",
+    "cleanedName": "DuraJet",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_JUST_S03_Durango_SCItem",
+    "originalName": "Durango",
+    "cleanedName": "Durango",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AMRS_S02_JS400_SCItem",
+    "originalName": "JS-400",
+    "cleanedName": "JS-400",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_LPLT_S03_IonSurgePro_SCItem",
+    "originalName": "IonSurge Pro",
+    "cleanedName": "IonSurge Pro",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_LPLT_S00_Radix_SCItem_SM_TE",
+    "originalName": "Radix",
+    "cleanedName": "Radix",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_ACOM_S01_StarHeart_SCItem",
+    "originalName": "StarHeart",
+    "cleanedName": "StarHeart",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_JUST_S01_Endurance_SCItem",
+    "originalName": "Endurance",
+    "cleanedName": "Endurance",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_SASU_S01_LightBlossom_SCItem",
+    "originalName": "LightBlossom",
+    "cleanedName": "LightBlossom",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AEGS_S03_Fulgur_SCItem",
+    "originalName": "Fulgur",
+    "cleanedName": "Fulgur",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_JUST_S00_Defiant_SCItem",
+    "originalName": "Defiant",
+    "cleanedName": "Defiant",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_JUST_S02_Diligence_SCItem",
+    "originalName": "Diligence",
+    "cleanedName": "Diligence",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_JUST_S02_Genoa_SCItem",
+    "originalName": "Genoa",
+    "cleanedName": "Genoa",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_LPLT_S03_SparkJetPro_SCItem",
+    "originalName": "SparkJet Pro",
+    "cleanedName": "SparkJet Pro",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_TYDT_S02_Eclipse_SCItem",
+    "originalName": "Eclipse",
+    "cleanedName": "Eclipse",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_LPLT_S01_PowerBolt_SCItem",
+    "originalName": "PowerBolt",
+    "cleanedName": "PowerBolt",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_LPLT_S02_FullForce_SCItem",
+    "originalName": "FullForce",
+    "cleanedName": "FullForce",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_ACOM_S02_StarBurn_SCItem",
+    "originalName": "StarBurn",
+    "cleanedName": "StarBurn",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_RSI_S04_Bengal_SCItem",
+    "originalName": "Main Powerplant",
+    "cleanedName": "Main Powerplant",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_LPLT_S00_IonWave_SCItem",
+    "originalName": "IonWave",
+    "cleanedName": "IonWave",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AEGS_S04_Reclaimer_SCItem",
+    "originalName": "Main Powerplant",
+    "cleanedName": "Main Powerplant",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_S02_Template",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "Template",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_SASU_S03_NewDawn_SCItem",
+    "originalName": "NewDawn",
+    "cleanedName": "NewDawn",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AMRS_S02_UltraFlux_SCItem",
+    "originalName": "UltraFlux",
+    "cleanedName": "UltraFlux",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AMRS_S03_SuperDrive_SCItem",
+    "originalName": "SuperDrive",
+    "cleanedName": "SuperDrive",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AMRS_S02_ExoGen_SCItem",
+    "originalName": "ExoGen",
+    "cleanedName": "ExoGen",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AEGS_S03_Drassik_SCItem",
+    "originalName": "Drassik",
+    "cleanedName": "Drassik",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_TYDT_S02_GammaMax_SCItem",
+    "originalName": "GammaMax",
+    "cleanedName": "GammaMax",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AEGS_S01_Quadracell_SCItem",
+    "originalName": "QuadraCell",
+    "cleanedName": "QuadraCell",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_TYDT_S01_Slipstream_SCItem",
+    "originalName": "Slipstream",
+    "cleanedName": "Slipstream",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_LPLT_S03_FullForcePro_SCItem",
+    "originalName": "FullForce Pro",
+    "cleanedName": "FullForce Pro",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AMRS_S01_HyperGen_SCItem",
+    "originalName": "HyperGen",
+    "cleanedName": "HyperGen",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_SASU_S03_TigerLilly_SCItem",
+    "originalName": "TigerLilly",
+    "cleanedName": "TigerLilly",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AMRS_S03_JS500_SCItem",
+    "originalName": "JS-500",
+    "cleanedName": "JS-500",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AMRS_S02_TurboDrive_SCItem",
+    "originalName": "TurboDrive",
+    "cleanedName": "TurboDrive",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_S03_Template",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "Template",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_S04_Template",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "Template",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_SASU_S01_WhiteRose_SCItem",
+    "originalName": "WhiteRose",
+    "cleanedName": "WhiteRose",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_JUST_S02_Trommel_SCItem",
+    "originalName": "Trommel",
+    "cleanedName": "Trommel",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_RSI_S04_Polaris_SCItem",
+    "originalName": "Stellate",
+    "cleanedName": "Stellate",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_JUST_S03_Ginzel_SCItem",
+    "originalName": "Ginzel",
+    "cleanedName": "Ginzel",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AEGS_S02_QuadracellMT_SCItem",
+    "originalName": "QuadraCell MT",
+    "cleanedName": "QuadraCell MT",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AEGS_S02_Bolide_SCItem",
+    "originalName": "Bolide",
+    "cleanedName": "Bolide",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_SASU_S02_DayBreak_SCItem",
+    "originalName": "DayBreak",
+    "cleanedName": "DayBreak",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AMRS_S01_DynaFlux_SCItem",
+    "originalName": "DynaFlux",
+    "cleanedName": "DynaFlux",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AEGS_S03_QuadracellMX_SCItem",
+    "originalName": "QuadraCell MX",
+    "cleanedName": "QuadraCell MX",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_ACOM_S02_LuxCore_SCItem",
+    "originalName": "LuxCore",
+    "cleanedName": "LuxCore",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_JUST_S02_Sedulity_SCItem",
+    "originalName": "Sedulity",
+    "cleanedName": "Sedulity",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AEGS_S03_Centurion_SCItem",
+    "originalName": "Centurion",
+    "cleanedName": "Centurion",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AMRS_S03_SmartGen_SCItem",
+    "originalName": "SmartGen",
+    "cleanedName": "SmartGen",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_LPLT_S02_SparkJet_SCItem",
+    "originalName": "SparkJet",
+    "cleanedName": "SparkJet",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_LPLT_S02_IonSurge_SCItem",
+    "originalName": "IonSurge",
+    "cleanedName": "IonSurge",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_SASU_S02_Radiance_SCItem",
+    "originalName": "Radiance",
+    "cleanedName": "Radiance",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_LPLT_S01_IonBurst_SCItem",
+    "originalName": "IonBurst",
+    "cleanedName": "IonBurst",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_S01_Template",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "Template",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AEGS_S01_Regulus_SCItem",
+    "originalName": "Regulus",
+    "cleanedName": "Regulus",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_SASU_S03_Celestial_SCItem",
+    "originalName": "Celestial",
+    "cleanedName": "Celestial",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AEGS_S04_Idris_SCItem",
+    "originalName": "Main Powerplant",
+    "cleanedName": "Main Powerplant",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_JUST_S00_SteadFast_SCItem",
+    "originalName": "Steadfast",
+    "cleanedName": "Steadfast",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_LPLT_S01_ZapJet_SCItem",
+    "originalName": "ZapJet",
+    "cleanedName": "ZapJet",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_JUST_S01_Roughneck_SCItem",
+    "originalName": "Roughneck",
+    "cleanedName": "Roughneck",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AEGS_S01_Charger_SCItem",
+    "originalName": "Charger",
+    "cleanedName": "Charger",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_ACOM_S01_LumaCore_SCItem",
+    "originalName": "LumaCore",
+    "cleanedName": "LumaCore",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_PyroOutpost",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "PyroOutpost",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_JUST_S03_Reliance_SCItem",
+    "originalName": "Reliance",
+    "cleanedName": "Reliance",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_TYDT_S01_SonicLite_SCItem",
+    "originalName": "SonicLite",
+    "cleanedName": "SonicLite",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AEGS_S02_Maelstrom_SCItem",
+    "originalName": "Maelstrom",
+    "cleanedName": "Maelstrom",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AEGS_S02_Vortex_SCItem",
+    "originalName": "Vortex",
+    "cleanedName": "Vortex",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AMRS_S01_JS300_SCItem",
+    "originalName": "JS-300",
+    "cleanedName": "JS-300",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AEGS_S01_FierellCascade_SCItem",
+    "originalName": "Fierell Cascade",
+    "cleanedName": "Fierell Cascade",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_SASU_S02_Lotus_SCItem",
+    "originalName": "Lotus",
+    "cleanedName": "Lotus",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_JUST_S01_Breton_SCItem",
+    "originalName": "Breton",
+    "cleanedName": "Breton",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_TYDT_S01_DeltaMax_SCItem",
+    "originalName": "DeltaMax",
+    "cleanedName": "DeltaMax",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_AMRS_S03_MegaFlux_SCItem",
+    "originalName": "MegaFlux",
+    "cleanedName": "MegaFlux",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_ORIG_S04_890J_SCItem",
+    "originalName": "Stellate",
+    "cleanedName": "Stellate",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_JUST_S00_Jennet_SCItem",
+    "originalName": "Jennet",
+    "cleanedName": "Jennet",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "POWR_LPLT_S00_Radix_SCItem",
+    "originalName": "Radix",
+    "cleanedName": "Radix",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "Power_Chemline_Generator",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "Power Chemline Generator",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "MASTER_PowerPlant",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "MASTER PowerPlant",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "test_station_power_plant",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "test station power plant",
+    "type": "PowerPlant",
+    "isMessy": null
+  },
+  {
+    "className": "GATS_BallisticGatling_Mounted_S1_DRAK_Cutlass_Steel",
+    "originalName": "YellowJacket GT-210 Gatling",
+    "cleanedName": "YellowJacket GT-210 Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "GATS_BallisticGatling_Mounted_S1_fps_balance",
+    "originalName": "YellowJacket GT-210 Gatling",
+    "cleanedName": "YellowJacket GT-210 Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "GATS_BallisticGatling_Mounted_S1_FakeHologram",
+    "originalName": "YellowJacket GT-210 Gatling",
+    "cleanedName": "YellowJacket GT-210 Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "GATS_BallisticGatling_Mounted_S1",
+    "originalName": "YellowJacket GT-210 Gatling",
+    "cleanedName": "YellowJacket GT-210 Gatling",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "RN_Light_Basic",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "RN Light Basic",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "RN_Resource_Relay",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "RN Resource Relay",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "RN_WindTurbine",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "RN WindTurbine",
+    "type": "WeaponGun",
+    "isMessy": null
+  },
+  {
+    "className": "satellite_power_plant_test",
+    "originalName": "<= PLACEHOLDER =>",
+    "cleanedName": "satellite power plant test",
+    "type": "PowerPlant",
+    "isMessy": null
+  }
+]

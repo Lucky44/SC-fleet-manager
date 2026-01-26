@@ -1,0 +1,290 @@
+[
+  {
+    "className": "SHLD_ASAS_S02_Shroud_SCItem",
+    "name": "Shroud"
+  },
+  {
+    "className": "SHLD_BEHR_S01_6SA_SCItem",
+    "name": "6SA 'Arbiter'"
+  },
+  {
+    "className": "SHLD_BASL_S00_Castra_SCItem",
+    "name": "Castra"
+  },
+  {
+    "className": "SHLD_BANU_S02_Placeholder_SCItem",
+    "name": "Sukoran"
+  },
+  {
+    "className": "SHLD_BASL_S01_Steward_SCItem",
+    "name": "Steward"
+  },
+  {
+    "className": "SHLD_BEHR_S03_7CA_SCItem",
+    "name": "7CA 'Nargun'"
+  },
+  {
+    "className": "SHLD_BASL_S03_Ward_SCItem",
+    "name": "Ward"
+  },
+  {
+    "className": "SHLD_GODI_S02_SecureShield_SCItem",
+    "name": "SecureShield"
+  },
+  {
+    "className": "SHLD_BANU_S01_Placeholder_SCItem",
+    "name": "Suldrath"
+  },
+  {
+    "className": "SHLD_BEHR_S02_5MA_SCItem",
+    "name": "5MA 'Chimalli'"
+  },
+  {
+    "className": "SHLD_YORM_S02_Bamoty_SCItem",
+    "name": "Bamoty"
+  },
+  {
+    "className": "SHLD_BASL_S02_Aspis_SCItem",
+    "name": "Aspis"
+  },
+  {
+    "className": "SHLD_BEHR_S03_6CA_SCItem",
+    "name": "6CA 'Bila'"
+  },
+  {
+    "className": "SHLD_BASL_S01_Palisade_SCItem",
+    "name": "Palisade"
+  },
+  {
+    "className": "SHLD_GODI_S02_CoverAll_SCItem",
+    "name": "CoverAll"
+  },
+  {
+    "className": "SHLD_BEHR_S01_7SA_SCItem",
+    "name": "7SA 'Concord'"
+  },
+  {
+    "className": "SHLD_YORM_S02_Trenta_SCItem",
+    "name": "Trenta"
+  },
+  {
+    "className": "SHLD_SECO_S00_PIN_SCItem",
+    "name": "PIN"
+  },
+  {
+    "className": "SHLD_GODI_S04_Bengal_SCItem",
+    "name": "<= PLACEHOLDER =>"
+  },
+  {
+    "className": "SHLD_S02_Template",
+    "name": "<= PLACEHOLDER =>"
+  },
+  {
+    "className": "SHLD_ASAS_S01_Mirage_SCItem",
+    "name": "Mirage"
+  },
+  {
+    "className": "SHLD_YORM_S01_Falco_SCItem",
+    "name": "Falco"
+  },
+  {
+    "className": "SHLD_BASL_S01_Guardian_SCItem",
+    "name": "Guardian"
+  },
+  {
+    "className": "SHLD_YORM_S01_Jaghte_SCItem",
+    "name": "Jaghte"
+  },
+  {
+    "className": "SHLD_SECO_S02_RPEL_SCItem",
+    "name": "RPEL"
+  },
+  {
+    "className": "SHLD_SECO_S03_GUARD_SCItem",
+    "name": "GUARD"
+  },
+  {
+    "className": "SHLD_ASAS_S01_Veil_SCItem",
+    "name": "Veil"
+  },
+  {
+    "className": "SHLD_BASL_S01_Bulwark_SCItem",
+    "name": "Bulwark"
+  },
+  {
+    "className": "SHLD_SECO_S01_HEX_SCItem",
+    "name": "HEX"
+  },
+  {
+    "className": "SHLD_SECO_S02_STOP_SCItem",
+    "name": "STOP"
+  },
+  {
+    "className": "SHLD_GODI_S04_Idris_SCItem",
+    "name": "Holdstrong"
+  },
+  {
+    "className": "SHLD_AEGS_S04_Reclaimer_SCItem",
+    "name": "RS-Barrier"
+  },
+  {
+    "className": "SHLD_BASL_S03_Parapet_SCItem",
+    "name": "Parapet"
+  },
+  {
+    "className": "SHLD_SECO_S02_BLOC_SCItem",
+    "name": "BLOC"
+  },
+  {
+    "className": "SHLD_ASAS_S02_Umbra_SCItem",
+    "name": "Umbra"
+  },
+  {
+    "className": "SHLD_S04_Template",
+    "name": "<= PLACEHOLDER =>"
+  },
+  {
+    "className": "SHLD_S03_Template",
+    "name": "<= PLACEHOLDER =>"
+  },
+  {
+    "className": "SHLD_ASAS_S02_Sheut_SCItem",
+    "name": "Sheut"
+  },
+  {
+    "className": "SHLD_BASL_S03_Stronghold_SCItem",
+    "name": "Stronghold"
+  },
+  {
+    "className": "SHLD_SECO_S01_INK_SCItem",
+    "name": "INK"
+  },
+  {
+    "className": "SHLD_BASL_S02_Armada_SCItem",
+    "name": "Armada"
+  },
+  {
+    "className": "SHLD_GODI_S01_FR66_SCItem",
+    "name": "FR-66"
+  },
+  {
+    "className": "SHLD_YORM_S02_Haltur_SCItem",
+    "name": "Haltur"
+  },
+  {
+    "className": "SHLD_GODI_S01_AllStop_SCItem",
+    "name": "AllStop"
+  },
+  {
+    "className": "SHLD_GODI_S04_Idris_Pirate_SCItem",
+    "name": "Holdstrong"
+  },
+  {
+    "className": "SHLD_BASL_S03_Barbican_SCItem",
+    "name": "Barbican"
+  },
+  {
+    "className": "SHLD_S01_Template",
+    "name": "<= PLACEHOLDER =>"
+  },
+  {
+    "className": "SHLD_GODI_S02_FR76_SCItem",
+    "name": "FR-76"
+  },
+  {
+    "className": "SHLD_BASL_S02_Rampart_SCItem",
+    "name": "Rampart"
+  },
+  {
+    "className": "SHLD_GODI_S03_FR86_SCItem",
+    "name": "FR-86"
+  },
+  {
+    "className": "SHLD_ASAS_S02_Obscura_SCItem",
+    "name": "Obscura"
+  },
+  {
+    "className": "SHLD_GODI_S04_Javelin_SCItem",
+    "name": "<= PLACEHOLDER =>"
+  },
+  {
+    "className": "SHLD_RSI_S04_Polaris_SCItem",
+    "name": "Glacis"
+  },
+  {
+    "className": "SHLD_ASAS_S01_Shimmer_SCItem",
+    "name": "Shimmer"
+  },
+  {
+    "className": "SHLD_SECO_S03_ARMOR_SCItem",
+    "name": "ARMOR"
+  },
+  {
+    "className": "SHLD_BEHR_S02_7MA_SCItem",
+    "name": "7MA 'Lorica'"
+  },
+  {
+    "className": "SHLD_YORM_S01_Targa_SCItem",
+    "name": "Targa"
+  },
+  {
+    "className": "SHLD_ORIG_S04_890J_SCItem",
+    "name": "Glacis"
+  },
+  {
+    "className": "SHLD_SECO_S03_HAVEN_SCItem",
+    "name": "HAVEN"
+  },
+  {
+    "className": "SHLD_GODI_S01_ForceWall_SCItem",
+    "name": "ForceWall"
+  },
+  {
+    "className": "SHLD_GODI_S03_SureStop_SCItem",
+    "name": "SureStop"
+  },
+  {
+    "className": "SHLD_GODI_S02_FullStop_SCItem",
+    "name": "FullStop"
+  },
+  {
+    "className": "SHLD_BEHR_S01_5SA_SCItem",
+    "name": "5SA 'Rhada'"
+  },
+  {
+    "className": "SHLD_GODI_S01_AllStop_SCItem_ResistGasclouds",
+    "name": "AllStop"
+  },
+  {
+    "className": "SHLD_BEHR_S02_6MA_SCItem",
+    "name": "6MA 'Kozane'"
+  },
+  {
+    "className": "SHLD_SECO_S01_WEB_SCItem",
+    "name": "WEB"
+  },
+  {
+    "className": "SHLD_BASL_S02_Citadel_SCItem",
+    "name": "Citadel"
+  },
+  {
+    "className": "SHLD_GODI_S03_FullBlock_SCItem",
+    "name": "FullBlock"
+  },
+  {
+    "className": "SHLD_GODI_S03_SecureScreen_SCItem",
+    "name": "SecureScreen"
+  },
+  {
+    "className": "SHLD_GODI_S01_SecureHyde_SCItem",
+    "name": "SecureHyde"
+  },
+  {
+    "className": "SHLD_ASAS_S01_Cloak_SCItem",
+    "name": "Cloak"
+  },
+  {
+    "className": "SHLD_BEHR_S03_5CA_SCItem",
+    "name": "5CA 'Akura'"
+  }
+]
