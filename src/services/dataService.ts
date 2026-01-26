@@ -283,12 +283,15 @@ export const fetchItems = async (): Promise<Item[]> => {
         if (typeLower.includes('armor')) return false;
         if (typeLower.includes('grenade')) return false;
         if (typeLower.includes('gadget')) return false;
-        if (typeLower.includes('weaponmining')) return false;
-        if (typeLower.includes('weapontractor')) return false;
+        if (typeLower.includes('mining') || typeLower.includes('tractor')) return false;
         if (typeLower.includes('missilelauncher')) return false;
 
         const nameLower = (item.name || '').toLowerCase();
+        const classLower = (item.className || '').toLowerCase();
+
         if (nameLower.includes('tractor') || nameLower.includes('mining')) return false;
+        if (classLower.includes('tractor') || classLower.includes('mining')) return false;
+
         if (nameLower === 'turret' || nameLower === 'remote turret' || nameLower === 'manned turret' || nameLower === 'mannequin') return false;
         if (nameLower.includes('regenpool') || nameLower.includes('weaponmount') || nameLower.includes('ammobox')) return false;
 
@@ -296,7 +299,6 @@ export const fetchItems = async (): Promise<Item[]> => {
         if (nameLower.includes('bespoke') || nameLower.includes('limited') || nameLower.includes('interior')) return false;
         if (nameLower.includes('idris') || nameLower.includes('javelin') || nameLower.includes('kraken')) return false;
 
-        const classLower = (item.className || '').toLowerCase();
         if (classLower.includes('_container') || classLower.includes('controller')) return false;
         if (classLower.includes('bespoke') || classLower.includes('massive')) return false;
 
@@ -474,7 +476,11 @@ export const filterItemsForPort = (items: Item[], port: Port): Item[] => {
             const isGunPort = (targetType.includes('weapongun') && !fullTargetType.includes('rocket')) || targetType === 'turret' || targetType.includes('turretgun') || targetType === 'wepn';
             if (isGunPort) {
                 const isGunItem = itemType.includes('weapongun');
-                return isGunItem && !itemType.includes('missile');
+                const isNonWeapon = (item.name || '').toLowerCase().includes('tractor') ||
+                    (item.name || '').toLowerCase().includes('mining') ||
+                    (item.className || '').toLowerCase().includes('tractor') ||
+                    (item.className || '').toLowerCase().includes('mining');
+                return isGunItem && !isNonWeapon && !itemType.includes('missile');
             }
 
             const isMissilePort = targetType.includes('missile') || targetType === 'mslr';
