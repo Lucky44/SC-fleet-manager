@@ -76,7 +76,7 @@ const App: React.FC = () => {
     if (toast.visible) {
       const timer = setTimeout(() => {
         setToast(prev => ({ ...prev, visible: false }));
-      }, 3000);
+      }, 2000);
       return () => clearTimeout(timer);
     }
   }, [toast.visible]);
@@ -142,7 +142,7 @@ const App: React.FC = () => {
               <Shield className="w-10 h-10" /> SC FLEET LOADOUT MANAGER
             </h1>
             <p className="text-gray-500 font-mono text-sm mt-1 flex items-center gap-2">
-              v4.3.0 [BUILD: 2026-01-25 15:40] // DATALINK: SCUNPACKED
+              v4.3.1 [BUILD: 2026-01-25 16:40] // DATALINK: SCUNPACKED
               <a
                 href="https://github.com/Lucky44/sc-fleet-loadout-manager/blob/main/README.md"
                 target="_blank"

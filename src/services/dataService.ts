@@ -288,6 +288,7 @@ export const fetchItems = async (): Promise<Item[]> => {
         if (typeLower.includes('missilelauncher')) return false;
 
         const nameLower = (item.name || '').toLowerCase();
+        if (nameLower.includes('tractor') || nameLower.includes('mining')) return false;
         if (nameLower === 'turret' || nameLower === 'remote turret' || nameLower === 'manned turret' || nameLower === 'mannequin') return false;
         if (nameLower.includes('regenpool') || nameLower.includes('weaponmount') || nameLower.includes('ammobox')) return false;
 
@@ -472,7 +473,7 @@ export const filterItemsForPort = (items: Item[], port: Port): Item[] => {
 
             const isGunPort = (targetType.includes('weapongun') && !fullTargetType.includes('rocket')) || targetType === 'turret' || targetType.includes('turretgun') || targetType === 'wepn';
             if (isGunPort) {
-                const isGunItem = itemType.includes('weapongun') || itemType.includes('weaponmining') || itemType.includes('weapontractor');
+                const isGunItem = itemType.includes('weapongun');
                 return isGunItem && !itemType.includes('missile');
             }
 
