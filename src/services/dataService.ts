@@ -632,8 +632,17 @@ export const fetchItems = async (): Promise<Item[]> => {
         // Use className for deduping to ensure all valid variations are kept
         if (!uniqueItems.has(item.className)) {
             // Resolve the best name during fetch
-            const resolvedName = item.stdItem?.Name || item.name;
-            uniqueItems.set(item.className, { ...item, name: resolvedName });
+            // Priority: stdItem.Name > clean version of itemName > raw name > className
+            let resolvedName = item.stdItem?.Name || '';
+
+            if (!resolvedName || resolvedName.startsWith('@') || resolvedName.includes('_')) {
+                resolvedName = cleanName(item.itemName || item.name || '', item.className);
+            }
+
+            uniqueItems.set(item.className, {
+                ...item,
+                name: resolvedName
+            });
         }
     });
 
@@ -882,30 +891,44 @@ export const cleanName = (name: string, className?: string): string => {
     if (WEAPON_NAME_MAP[mappingKey]) return WEAPON_NAME_MAP[mappingKey];
     if (COMPONENT_NAME_MAP[mappingKey]) return COMPONENT_NAME_MAP[mappingKey];
 
-    // 5. Advanced Cleaning for components
-    const componentsPrefixes = ['SHLD', 'COOL', 'POWR', 'QDRV', 'ITEM', 'TRNS'];
-    const manufacturers = ['AEGS', 'JUST', 'WCPR', 'JSPN', 'TYDT', 'LPLT', 'AMRS', 'ACOM', 'SASU', 'TARS', 'RACO', 'RSI', 'WETK', 'ARCC', 'ASAS', 'BASL', 'GODI', 'BEHR', 'KLWE', 'ESPR', 'APAR', 'GATS', 'PRAR', 'MXOX', 'VNCL', 'SECO', 'YORM', 'BRRA', 'ORIG', 'MRAI', 'CNOU'];
+    // 4. Map to Dictionary (Final check with suffix stripping)
+    const rawClass = (className || '').toUpperCase().replace(/_SCITEM$|_SCITEM$/gi, '');
+    const mapped = COMPONENT_NAME_MAP[rawClass] || WEAPON_NAME_MAP[rawClass];
+    if (mapped) return mapped;
+
+    // 5. Advanced Cleaning for components and weapons
+    const prefixes = ['SHLD', 'COOL', 'POWR', 'QDRV', 'ITEM', 'TRNS', 'WEAP', 'MISS', 'TORP', 'GUN', 'PORT', 'HARDPOINT'];
+    const manufacturers = ['AEGS', 'JUST', 'WCPR', 'JSPN', 'TYDT', 'LPLT', 'AMRS', 'ACOM', 'SASU', 'TARS', 'RACO', 'RSI', 'WETK', 'ARCC', 'ASAS', 'BASL', 'GODI', 'BEHR', 'KLWE', 'ESPR', 'APAR', 'GATS', 'PRAR', 'MXOX', 'VNCL', 'SECO', 'YORM', 'BRRA', 'ORIG', 'MRAI', 'CNOU', 'MISC', 'DRAK', 'ANVL', 'HRST', 'KRMN', 'KRON'];
 
     let finalClean = clean;
 
-    // If name is just the className or technical, aggressively clean it
-    if (clean.includes('_') || clean === className || raw.includes('@LOC') || raw.includes('PLACEHOLDER')) {
+    // If name is technical, split and clean parts
+    if (clean.includes('_') || clean === className || raw.includes('@LOC') || raw.includes('PLACEHOLDER') || /^[A-Z0-9_]+$/.test(clean)) {
         finalClean = (className || clean)
             .replace(/(_SCITEM|_TURRET|_LOWPOLY|_DUMMY|_VNG|_VANDUUL|_B_|_A_).*/gi, '')
-            .replace(new RegExp(`^(${componentsPrefixes.join('|')})_`, 'i'), '')
+            .replace(new RegExp(`^(${prefixes.join('|')})_`, 'i'), '')
             .replace(new RegExp(`^(${manufacturers.join('|')})_`, 'i'), '')
-            .replace(/_?S\d+_?/gi, '') // More aggressive size stripping
+            .replace(/_LASERREPEATER/gi, ' Repeater')
+            .replace(/_LASERCANNON/gi, ' Cannon')
+            .replace(/_BALLISTICGATLING/gi, ' Gatling')
+            .replace(/_BALLISTICCANNON/gi, ' Cannon')
+            .replace(/_DISTORTIONSCATTERGUN/gi, ' Scattergun')
+            .replace(/_?S\d+_?/gi, ' ') // Replace S1, S2 etc with space
             .replace(/_/g, ' ')
+            .trim();
+
+        // Title case it
+        finalClean = finalClean.split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+            .join(' ');
+
         manufacturers.forEach(m => {
             const mRegex = new RegExp(`^${m}\\s`, 'i');
             finalClean = finalClean.replace(mRegex, '');
         });
     }
-    // 6. Map to Master Dictionary (Final check with suffix stripping)
-    const rawClass = (className || '').toUpperCase().replace(/_SCITEM$|_SCITEM$/gi, '');
-    const mapped = COMPONENT_NAME_MAP[rawClass] || WEAPON_NAME_MAP[rawClass];
 
-    return mapped || finalClean || clean || className || 'Unknown Item';
+    return finalClean || clean || className || 'Unknown Item';
 };
 
 export const cleanPortName = (name: string): string => {
