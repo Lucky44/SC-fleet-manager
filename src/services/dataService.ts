@@ -276,16 +276,32 @@ const COMPONENT_NAME_MAP: Record<string, string> = {
     'SHLD_BEHR_S1_6SA': 'Arbiter',
     'SHLD_BEHR_S2_5MA': 'Chimalli',
     'SHLD_BEHR_S3_7CA': 'Nargun',
+    'SHLD_BEHR_S1_7SA': 'Concord',
+    'SHLD_BEHR_S2_6MA': 'Kozane',
+    'SHLD_BEHR_S3_6CA': 'Bila',
+    'SHLD_BEHR_S1_5SA': 'Rhada',
+    'SHLD_BEHR_S2_7MA': 'Lorica',
+    'SHLD_BEHR_S3_5CA': 'Akura',
     'SHLD_ASAS_S2_SHROUD': 'Shroud',
     'SHLD_BASL_S0_CASTRA': 'Castra',
     'SHLD_BASL_S1_STEWARD': 'Steward',
+    'SHLD_BASL_S2_ASPIS': 'Aspis',
     'SHLD_BASL_S3_WARD': 'Ward',
+    'SHLD_GODI_S1_FR66': 'FR-66',
+    'SHLD_GODI_S2_FR76': 'FR-76',
+    'SHLD_GODI_S3_FR86': 'FR-86',
+    'SHLD_BANU_S02_PLACEHOLDER': 'Sukoran',
+    'SHLD_BANU_S01_PLACEHOLDER': 'Suldrath',
 
     // Power Plant Overrides
     'POWR_AMRS_S1_JS300': 'JS-300',
     'POWR_AMRS_S2_JS400': 'JS-400',
     'POWR_ACOM_S1_SUNFLARE': 'SunFlare',
     'POWR_ACOM_S2_SOLARFLARE': 'SolarFlare',
+    'POWR_JUST_S01_FORTITUDE': 'Fortitude',
+    'POWR_JUST_S03_DURANGO': 'Durango',
+    'POWR_SASU_S01_MAGNABLOOM': 'MagnaBloom',
+    'POWR_LPLT_S00_DURAJET': 'DuraJet',
 
     // Quantum Drive Overrides
     'QDRV_RSI_S1_ATLAS': 'Atlas',
@@ -294,11 +310,25 @@ const COMPONENT_NAME_MAP: Record<string, string> = {
     'QDRV_TARS_S3_WANDERER': 'Wanderer',
     'QDRV_TARS_S3_RANGER': 'Ranger',
     'QDRV_ARCC_S3_ECHO': 'Echo',
+    'QDRV_TARS_S1_EXPEDITION': 'Expedition',
+    'QDRV_RACO_S02_NOVA': 'Nova',
 
     // Cooler Overrides
     'COOL_AEGS_S1_GLACIER': 'Glacier',
     'COOL_AEGS_S2_BOREAL': 'Boreal',
-    'COOL_JSPN_S1_WINTERSTAR': 'Winter-Star'
+    'COOL_AEGS_S2_ARCTIC': 'Arctic',
+    'COOL_AEGS_S1_TUNDRA': 'Tundra',
+    'COOL_AEGS_S2_PERMAFROST': 'Permafrost',
+    'COOL_JSPN_S1_WINTERSTAR': 'Winter-Star',
+    'COOL_JSPN_S0_FROSTSTARSL': 'Frost-Star SL',
+    'COOL_JSPN_S0_WINTERSTARSL': 'Winter-Star SL',
+    'COOL_JSPN_S2_FROSTSTAREX': 'Frost-Star EX',
+    'COOL_WCPR_S00_FRIDAN': 'Fridan',
+    'COOL_WCPR_S01_BERIAN': 'Berian',
+    'COOL_WCPR_S00_KELVID': 'Kelvid',
+    'COOL_JUST_S01_THERMAX': 'Thermax',
+    'COOL_JUST_S03_HYDROPULSE': 'Hydropulse',
+    'COOL_TYDT_S02_NIGHTFALL': 'NightFall'
 };
 
 export const fetchItems = async (): Promise<Item[]> => {
@@ -536,8 +566,14 @@ export const filterItemsForPort = (items: Item[], port: Port): Item[] => {
 export const cleanName = (name: string, className?: string): string => {
     if (!name && !className) return 'Unknown Item';
 
-    // 1. Initial Cleaning (Remove technical prefixes to allow matching)
+    // 0. Quote Extraction (Immediate priority for quoted API names)
     const raw = (name || '').trim();
+    if (raw.includes("'")) {
+        const quoted = raw.match(/'([^']+)'/);
+        if (quoted && quoted[1]) return quoted[1];
+    }
+
+    // 1. Initial Cleaning (Remove technical prefixes)
     let clean = raw
         .replace(/@[\w\s]*Name[ _]?|@LOC_PLACE_HOLDER_|@LOC_PLACEHOLDER_|@item_Name_|@LOC /gi, '')
         .replace(/itemName/gi, '')
@@ -565,7 +601,7 @@ export const cleanName = (name: string, className?: string): string => {
         if (COMPONENT_NAME_MAP[stripped]) return COMPONENT_NAME_MAP[stripped];
 
         // Match after stripping everything after Size
-        const sizeStripped = normalized.replace(/(_S\d).*/gi, '$1');
+        const sizeStripped = normalized.replace(/(_S\d+).*/gi, '$1');
         if (WEAPON_NAME_MAP[sizeStripped]) return WEAPON_NAME_MAP[sizeStripped];
         if (COMPONENT_NAME_MAP[sizeStripped]) return COMPONENT_NAME_MAP[sizeStripped];
     }
@@ -577,30 +613,25 @@ export const cleanName = (name: string, className?: string): string => {
 
     // 5. Advanced Cleaning for components
     const componentsPrefixes = ['SHLD', 'COOL', 'POWR', 'QDRV', 'ITEM', 'TRNS'];
-    const manufacturers = ['AEGS', 'JUST', 'WCPR', 'JSPN', 'TYDT', 'LPLT', 'AMRS', 'ACOM', 'SASU', 'TARS', 'RACO', 'RSI', 'WETK', 'ARCC', 'ASAS', 'BASL', 'GODI', 'BEHR', 'KLWE', 'ESPR', 'APAR', 'GATS', 'PRAR', 'MXOX', 'VNCL'];
+    const manufacturers = ['AEGS', 'JUST', 'WCPR', 'JSPN', 'TYDT', 'LPLT', 'AMRS', 'ACOM', 'SASU', 'TARS', 'RACO', 'RSI', 'WETK', 'ARCC', 'ASAS', 'BASL', 'GODI', 'BEHR', 'KLWE', 'ESPR', 'APAR', 'GATS', 'PRAR', 'MXOX', 'VNCL', 'SECO', 'YORM', 'BRRA', 'ORIG', 'MRAI', 'CNOU'];
 
     let finalClean = clean;
 
     // If name is just the className or technical, aggressively clean it
-    if (clean.includes('_') || clean === className || raw.includes('@LOC')) {
+    if (clean.includes('_') || clean === className || raw.includes('@LOC') || raw.includes('PLACEHOLDER')) {
         finalClean = (className || clean)
             .replace(/(_SCITEM|_TURRET|_LOWPOLY|_DUMMY|_VNG|_VANDUUL|_B_|_A_).*/gi, '')
             .replace(new RegExp(`^(${componentsPrefixes.join('|')})_`, 'i'), '')
             .replace(new RegExp(`^(${manufacturers.join('|')})_`, 'i'), '')
-            .replace(/_S\d+/gi, '')
+            .replace(/_?S\d+_?/gi, '') // More aggressive size stripping
             .replace(/_/g, ' ')
             .trim();
 
-        // Final manufacturer strip if it leaked through (e.g. AEGS S1 Glacier -> Glacier)
+        // Final manufacturer strip if it leaked through
         manufacturers.forEach(m => {
             const mRegex = new RegExp(`^${m}\\s`, 'i');
             finalClean = finalClean.replace(mRegex, '');
         });
-    }
-
-    // Special fix for Arbiter/Chimalli series naming in API
-    if (finalClean.includes("'")) {
-        finalClean = finalClean.replace(/.*'(.*)'.*/, '$1');
     }
 
     return finalClean || clean || className || 'Unknown Item';
