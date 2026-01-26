@@ -283,14 +283,17 @@ export const fetchItems = async (): Promise<Item[]> => {
         if (typeLower.includes('armor')) return false;
         if (typeLower.includes('grenade')) return false;
         if (typeLower.includes('gadget')) return false;
-        if (typeLower.includes('mining') || typeLower.includes('tractor')) return false;
+        if (typeLower.includes('mining') || typeLower.includes('tractor') || typeLower.includes('utility') || typeLower.includes('beam')) return false;
         if (typeLower.includes('missilelauncher')) return false;
 
         const nameLower = (item.name || '').toLowerCase();
         const classLower = (item.className || '').toLowerCase();
+        const manufacturer = (item.manufacturer?.code || '').toLowerCase();
 
-        if (nameLower.includes('tractor') || nameLower.includes('mining')) return false;
-        if (classLower.includes('tractor') || classLower.includes('mining')) return false;
+        // Block Greycat Industrial (GRIN) and utility keywords
+        if (manufacturer === 'grin' || classLower.startsWith('grin_')) return false;
+        if (nameLower.includes('tractor') || nameLower.includes('mining') || nameLower.includes('beam') || nameLower.includes('utility')) return false;
+        if (classLower.includes('tractor') || classLower.includes('mining') || classLower.includes('beam') || classLower.includes('utility')) return false;
 
         if (nameLower === 'turret' || nameLower === 'remote turret' || nameLower === 'manned turret' || nameLower === 'mannequin') return false;
         if (nameLower.includes('regenpool') || nameLower.includes('weaponmount') || nameLower.includes('ammobox')) return false;
@@ -476,10 +479,11 @@ export const filterItemsForPort = (items: Item[], port: Port): Item[] => {
             const isGunPort = (targetType.includes('weapongun') && !fullTargetType.includes('rocket')) || targetType === 'turret' || targetType.includes('turretgun') || targetType === 'wepn';
             if (isGunPort) {
                 const isGunItem = itemType.includes('weapongun');
-                const isNonWeapon = (item.name || '').toLowerCase().includes('tractor') ||
-                    (item.name || '').toLowerCase().includes('mining') ||
-                    (item.className || '').toLowerCase().includes('tractor') ||
-                    (item.className || '').toLowerCase().includes('mining');
+                const nLower = (item.name || '').toLowerCase();
+                const cLower = (item.className || '').toLowerCase();
+                const isNonWeapon = nLower.includes('tractor') || nLower.includes('mining') || nLower.includes('beam') || nLower.includes('utility') ||
+                    cLower.includes('tractor') || cLower.includes('mining') || cLower.includes('beam') || cLower.includes('utility') ||
+                    cLower.startsWith('grin_');
                 return isGunItem && !isNonWeapon && !itemType.includes('missile');
             }
 
