@@ -47,19 +47,23 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
             portList.forEach(p => {
                 const rawName = p.PortName || p.Name;
                 const item = p.InstalledItem;
-                const itemType = (item?.Type || '').toLowerCase();
+                const itemType = (item?.Type || item?.type || '').toLowerCase();
+                const itemTags = item?.Tags || item?.tags || [];
+                const rawPorts = item?.Ports || item?.ports || [];
 
                 // Identify if this is a mount that should be consolidated
-                // (Gimbals and Missile Racks)
-                const isGimbal = itemType.includes('turret.gunturret') || (item?.Tags || []).includes('gimbalMount');
+                const isTurret = itemType.includes('turret');
                 const isRack = itemType.includes('missilelauncher') || itemType.includes('missilerack');
+                const isGimbal = isTurret || itemTags.some((t: any) => String(t).toLowerCase().includes('gimbal'));
                 const isMount = isGimbal || isRack;
 
                 let childPorts: any[] = [];
-                if (isMount && item?.Ports && Array.isArray(item.Ports)) {
-                    childPorts = item.Ports.filter((cp: any) => {
-                        const types = (cp.Types || []).join(',').toLowerCase();
-                        return types.includes('gun') || types.includes('missile') || types.includes('torpedo');
+                if (isMount && Array.isArray(rawPorts)) {
+                    childPorts = rawPorts.filter((cp: any) => {
+                        const types = (cp.Types || cp.types || []).join(',').toLowerCase();
+                        const category = (cp.Category || cp.category || '').toLowerCase();
+                        return types.includes('gun') || types.includes('missile') || types.includes('torpedo') ||
+                            category.includes('weapon') || category.includes('missile');
                     });
                 }
 
@@ -610,7 +614,7 @@ export const fetchItems = async (): Promise<Item[]> => {
         if (nameLower.includes('tractor') || nameLower.includes('mining') || nameLower.includes('beam') || nameLower.includes('utility')) return false;
         if (classLower.includes('tractor') || classLower.includes('mining') || classLower.includes('beam') || classLower.includes('utility')) return false;
 
-        if (nameLower === 'turret' || nameLower === 'remote turret' || nameLower === 'manned turret' || nameLower === 'mannequin') return false;
+        if (nameLower === 'turret' || nameLower === 'remote turret' || nameLower === 'manned turret' || nameLower === 'mannequin' || nameLower.includes('gimbal mount')) return false;
         if (nameLower.includes('regenpool') || nameLower.includes('weaponmount') || nameLower.includes('ammobox')) return false;
 
         // Filter out "bespoke" or ship-specific massive items
