@@ -103,25 +103,33 @@ export const LoadoutEditor: React.FC<LoadoutEditorProps> = ({
                         </p>
                     </div>
                     <div className="flex items-center gap-4 flex-shrink-0">
-                        <button
-                            onClick={() => {
-                                if (isConfirmingReset) {
-                                    onReset(fleetShip.id);
-                                    setIsConfirmingReset(false);
-                                } else {
-                                    setIsConfirmingReset(true);
-                                    setTimeout(() => setIsConfirmingReset(false), 3000);
-                                }
-                            }}
-                            className={`flex items-center gap-2 px-6 py-2.5 rounded-lg border-2 transition-all text-xs font-black tracking-widest uppercase shadow-[0_0_30px_rgba(220,38,38,0.5)] active:scale-95 whitespace-nowrap ${isConfirmingReset
-                                    ? 'bg-white text-red-600 border-white shadow-[0_0_40px_rgba(255,255,255,0.4)]'
-                                    : 'bg-red-600 text-white border-red-400'
-                                }`}
-                            title="Reset all ports to stock items"
-                        >
-                            <RotateCcw className={`w-4 h-4 ${isConfirmingReset ? 'animate-spin' : ''}`} />
-                            {isConfirmingReset ? 'CONFIRM RESET?' : 'RESET TO STOCK'}
-                        </button>
+                        {isConfirmingReset ? (
+                            <div className="flex items-center gap-12 bg-white/5 p-1 rounded-xl border border-white/10 transition-all">
+                                <button
+                                    onClick={() => setIsConfirmingReset(false)}
+                                    className="px-6 py-2 bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white rounded-lg transition-all text-[10px] font-black tracking-widest uppercase"
+                                >
+                                    NO
+                                </button>
+                                <button
+                                    onClick={() => {
+                                        onReset(fleetShip.id);
+                                        setIsConfirmingReset(false);
+                                    }}
+                                    className="px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-all text-[10px] font-black tracking-widest uppercase shadow-[0_0_20px_rgba(220,38,38,0.4)]"
+                                >
+                                    YES, RESET
+                                </button>
+                            </div>
+                        ) : (
+                            <button
+                                onClick={() => setIsConfirmingReset(true)}
+                                className="flex items-center gap-2 px-6 py-2.5 bg-red-600 text-white rounded-lg border-2 border-red-400 transition-all text-xs font-black tracking-widest uppercase shadow-[0_0_30px_rgba(220,38,38,0.5)] hover:bg-red-700 active:scale-95 whitespace-nowrap"
+                                title="Reset all ports to stock items"
+                            >
+                                <RotateCcw className="w-4 h-4" /> RESET TO STOCK
+                            </button>
+                        )}
                         <button onClick={onClose} className="group p-3 hover:bg-white/5 rounded-full transition-all border border-transparent hover:border-white/10">
                             <X className="w-6 h-6 text-gray-400 group-hover:text-white" />
                         </button>

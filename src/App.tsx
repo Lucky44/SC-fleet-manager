@@ -220,7 +220,6 @@ const App: React.FC = () => {
             ships={ships}
             onRemove={removeFromFleet}
             onEdit={(ship) => setEditingShipId(ship.id)}
-            onReset={resetToStock}
             onImport={importFleet}
             onClear={clearFleet}
           />

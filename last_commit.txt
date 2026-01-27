@@ -1,0 +1,1 @@
+d640940 - Add confirmation step for Reset to Stock button
