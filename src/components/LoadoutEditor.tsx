@@ -79,7 +79,7 @@ export const LoadoutEditor: React.FC<LoadoutEditorProps> = ({
         if (types.some(t => t.includes('Shield'))) return <Shield className="w-5 h-5 text-sc-blue" />;
         if (types.some(t => t.includes('PowerPlant'))) return <Zap className="w-5 h-5 text-yellow-500" />;
         if (types.some(t => t.includes('QuantumDrive'))) return <Cpu className="w-5 h-5 text-purple-500" />;
-        if (types.some(t => t.includes('Cooler'))) return <Wind className="w-5 h-5 text-cyan-400" />;
+        if (types.some(t => t.includes('Cooler'))) return <Wind className="w-5 h-5 text-sc-blue" />;
         if (types.some(t => t.includes('Weapon') || t.includes('Turret'))) return <Box className="w-5 h-5 text-red-500" />;
         return <ChevronDown className="w-5 h-5 text-gray-500" />;
     };

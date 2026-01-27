@@ -189,16 +189,16 @@ const App: React.FC = () => {
             </p>
           </div>
 
-          <nav className="flex bg-sc-dark/50 rounded-lg p-1 border border-white/5">
+          <nav className="flex bg-black/40 rounded-lg p-1 border border-white/10 shadow-inner">
             <button
               onClick={() => setActiveTab('ships')}
-              className={`flex items-center gap-2 px-6 py-2 rounded-md transition-all ${activeTab === 'ships' ? 'bg-sc-blue text-sc-dark font-bold' : 'bg-transparent text-gray-500 hover:bg-sc-gray/50 hover:text-gray-300'}`}
+              className={`flex items-center gap-2 px-6 py-2 rounded-md transition-all ${activeTab === 'ships' ? 'bg-sc-blue text-white font-bold shadow-[0_0_15px_rgba(37,99,235,0.4)]' : 'bg-sc-gray/40 text-gray-500 hover:bg-sc-gray/60 hover:text-gray-300'}`}
             >
               <Database className="w-4 h-4" /> SHIP DATABASE
             </button>
             <button
               onClick={() => setActiveTab('fleet')}
-              className={`flex items-center gap-2 px-6 py-2 rounded-md transition-all ${activeTab === 'fleet' ? 'bg-sc-blue text-sc-dark font-bold' : 'bg-transparent text-gray-500 hover:bg-sc-gray/50 hover:text-gray-300'}`}
+              className={`flex items-center gap-2 px-6 py-2 rounded-md transition-all ${activeTab === 'fleet' ? 'bg-sc-blue text-white font-bold shadow-[0_0_15px_rgba(37,99,235,0.4)]' : 'bg-sc-gray/40 text-gray-500 hover:bg-sc-gray/60 hover:text-gray-300'}`}
             >
               <Layout className="w-4 h-4" /> MY FLEET ({fleet.length})
             </button>
