@@ -53,7 +53,8 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
 
                 // Add aggressive filtering for internal/invisible ports
                 const flags = (p.Flags || p.flags || []).map((f: any) => String(f).toLowerCase());
-                if (flags.includes('invisible') || flags.includes('uneditable') || p.Uneditable === true) {
+                const isTurret = itemType.includes('turret');
+                if ((flags.includes('invisible') || flags.includes('uneditable') || p.Uneditable === true) && !isTurret) {
                     return;
                 }
 
@@ -63,7 +64,6 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
 
 
                 // Aggressive mount identification
-                const isTurret = itemType.includes('turret');
                 const isRack = itemType.includes('missilelauncher') || itemType.includes('missilerack') || itemType.includes('missile.rack');
                 const isGimbal = isTurret || itemTags.includes('gimbalmount') || itemTags.includes('gimbal') || itemType.includes('gimbal');
                 const isMount = isGimbal || isRack;
@@ -204,10 +204,10 @@ const applyPortPatches = (className: string, ports: Port[]): Port[] => {
 
     if (className === 'DRAK_Corsair') {
         const weaponPorts: Port[] = [
-            { Name: 'hardpoint_cheek_weapon_left', DisplayName: 'Cheek Weapon (L) S4', MaxSize: 4, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
-            { Name: 'hardpoint_cheek_weapon_right', DisplayName: 'Cheek Weapon (R) S4', MaxSize: 4, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
-            { Name: 'hardpoint_chin_weapon_left', DisplayName: 'Chin Weapon (L) S4', MaxSize: 4, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
-            { Name: 'hardpoint_chin_weapon_right', DisplayName: 'Chin Weapon (R) S4', MaxSize: 4, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
+            { Name: 'hardpoint_cheek_weapon_left', DisplayName: 'Front Cheek (L) S4', MaxSize: 4, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
+            { Name: 'hardpoint_cheek_weapon_right', DisplayName: 'Front Cheek (R) S4', MaxSize: 4, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
+            { Name: 'hardpoint_chin_weapon_left', DisplayName: 'Front Chin (L) S4', MaxSize: 4, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
+            { Name: 'hardpoint_chin_weapon_right', DisplayName: 'Front Chin (R) S4', MaxSize: 4, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
             { Name: 'hardpoint_weapon_wing_top', DisplayName: 'Wing S5 (Top)', MaxSize: 5, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M7A Laser Cannon', ClassName: 'BEHR_LaserCannon_S5', Size: 5 } },
             { Name: 'hardpoint_weapon_wing_bottom', DisplayName: 'Wing S5 (Bottom)', MaxSize: 5, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M7A Laser Cannon', ClassName: 'BEHR_LaserCannon_S5', Size: 5 } },
         ];
