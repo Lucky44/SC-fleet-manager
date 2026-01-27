@@ -75,7 +75,9 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
                 let childPorts: any[] = [];
                 if (isMount && Array.isArray(nestedPorts)) {
                     childPorts = nestedPorts.filter((cp: any) => {
-                        const types = (cp.Types || cp.types || []).map((t: any) => String(t).toLowerCase());
+                        const types = (cp.Types || cp.types || []).map((t: any) =>
+                            typeof t === 'string' ? t : (t.Type || t.type || String(t))
+                        ).map((t: any) => String(t).toLowerCase());
                         const category = (cp.Category || cp.category || '').toLowerCase();
                         const combinedTypes = types.join(',');
                         return combinedTypes.includes('gun') || combinedTypes.includes('missile') || combinedTypes.includes('torpedo') ||
@@ -121,15 +123,20 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
                 } else {
                     // Standard port or mount with no removable children
                     const uniqueName = parentName ? `${parentName} > ${rawName}` : rawName;
+                    const finalMaxSize = isPilotCategory && topLevelSize ? Math.max(topLevelSize, p.MaxSize ?? p.Size ?? 0) : (p.MaxSize ?? p.Size ?? p.InstalledItem?.Size ?? 10);
+                    const normalizedTypes = (p.Types || p.types || []).map((t: any) =>
+                        typeof t === 'string' ? t : (t.Type || t.type || String(t))
+                    );
+
                     extracted.push({
                         ...p,
                         Name: uniqueName,
                         DisplayName: p.DisplayName || (parentName ? cleanPortName(parentName) : cleanPortName(rawName)),
                         TurretBaseName: p.TurretBaseName || (isRealTurret ? cleanPortName(rawName) : (parentIsTurret ? turretBaseName : '')),
-                        Types: p.Types || p.types || [],
+                        Types: normalizedTypes,
                         Turret: isRealTurret || parentIsTurret,
                         MinSize: p.MinSize ?? p.Size ?? p.InstalledItem?.Size ?? 0,
-                        MaxSize: p.MaxSize ?? p.Size ?? p.InstalledItem?.Size ?? (topLevelSize || 10),
+                        MaxSize: finalMaxSize,
                     });
                 }
             });
@@ -151,9 +158,34 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
 const applyPortPatches = (className: string, ports: Port[]): Port[] => {
     if (className === 'RSI_Constellation_Andromeda') {
         return ports.map(p => {
+            const isGun = p.Types.some(t => t.toLowerCase().includes('gun'));
             // Force sizing on turret weapons specifically
-            if (p.Turret && p.Types.some(t => t.toLowerCase().includes('gun'))) {
-                return { ...p, MaxSize: 3, MinSize: 3 };
+            if (p.Turret && isGun) {
+                return {
+                    ...p,
+                    MaxSize: 3,
+                    MinSize: 3,
+                    InstalledItem: p.InstalledItem ? {
+                        ...p.InstalledItem,
+                        Name: 'CF-337 Panther Repeater',
+                        ClassName: 'KLWE_LaserRepeater_S3',
+                        Size: 3
+                    } : undefined
+                };
+            }
+            // Force sizing on pilot weapons
+            if (!p.Turret && isGun) {
+                return {
+                    ...p,
+                    MaxSize: 5,
+                    MinSize: 1,
+                    InstalledItem: p.InstalledItem ? {
+                        ...p.InstalledItem,
+                        Name: 'M7A Laser Cannon',
+                        ClassName: 'BEHR_LaserCannon_S5',
+                        Size: 5
+                    } : undefined
+                };
             }
             return p;
         });
