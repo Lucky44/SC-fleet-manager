@@ -63,20 +63,7 @@ interface FleetListProps {
 
 export const FleetList: React.FC<FleetListProps> = ({ fleet, ships, onRemove, onEdit, onImport, onClear }) => {
     const [isConfirmingClear, setIsConfirmingClear] = React.useState(false);
-    const confirmTimeout = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
-    const handleClearClick = () => {
-        if (isConfirmingClear) {
-            onClear();
-            setIsConfirmingClear(false);
-            if (confirmTimeout.current) clearTimeout(confirmTimeout.current);
-        } else {
-            setIsConfirmingClear(true);
-            confirmTimeout.current = setTimeout(() => {
-                setIsConfirmingClear(false);
-            }, 3000);
-        }
-    };
 
     const handleShare = () => {
         const url = generateShareUrl(fleet);
@@ -140,17 +127,33 @@ export const FleetList: React.FC<FleetListProps> = ({ fleet, ships, onRemove, on
                     <input type="file" accept=".json" onChange={handleFileUpload} className="hidden" />
                 </label>
 
-                <button
-                    onClick={handleClearClick}
-                    disabled={fleet.length === 0}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all text-xs font-bold disabled:opacity-50 disabled:cursor-not-allowed ${isConfirmingClear
-                        ? 'bg-red-500 text-white border-red-400 animate-pulse'
-                        : 'bg-red-500/10 hover:bg-red-500/20 text-red-400 border-red-500/20'
-                        }`}
-                >
-                    <Trash className="w-4 h-4" />
-                    {isConfirmingClear ? 'ARE YOU SURE?' : 'CLEAR ALL'}
-                </button>
+                {isConfirmingClear ? (
+                    <div className="flex items-center gap-6 bg-white/5 p-1 rounded-xl border border-white/10 transition-all">
+                        <button
+                            onClick={() => setIsConfirmingClear(false)}
+                            className="w-24 py-2 bg-white/20 hover:bg-white/30 text-white rounded-lg transition-all text-[10px] font-black tracking-widest uppercase"
+                        >
+                            NO
+                        </button>
+                        <button
+                            onClick={() => {
+                                onClear();
+                                setIsConfirmingClear(false);
+                            }}
+                            className="w-24 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-all text-[10px] font-black tracking-widest uppercase shadow-[0_0_20px_rgba(220,38,38,0.4)]"
+                        >
+                            YES, CLEAR
+                        </button>
+                    </div>
+                ) : (
+                    <button
+                        onClick={() => setIsConfirmingClear(true)}
+                        disabled={fleet.length === 0}
+                        className="flex items-center gap-2 px-4 py-2 bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/20 rounded-lg transition-all text-xs font-bold disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        <Trash className="w-4 h-4" /> CLEAR ALL
+                    </button>
+                )}
             </div>
         </div>
     );

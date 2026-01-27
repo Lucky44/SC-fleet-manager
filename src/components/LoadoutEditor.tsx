@@ -104,10 +104,10 @@ export const LoadoutEditor: React.FC<LoadoutEditorProps> = ({
                     </div>
                     <div className="flex items-center gap-4 flex-shrink-0">
                         {isConfirmingReset ? (
-                            <div className="flex items-center gap-12 bg-white/5 p-1 rounded-xl border border-white/10 transition-all">
+                            <div className="flex items-center gap-6 bg-white/5 p-1 rounded-xl border border-white/10 transition-all">
                                 <button
                                     onClick={() => setIsConfirmingReset(false)}
-                                    className="px-6 py-2 bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white rounded-lg transition-all text-[10px] font-black tracking-widest uppercase"
+                                    className="w-32 py-2 bg-white/20 hover:bg-white/30 text-white rounded-lg transition-all text-[10px] font-black tracking-widest uppercase"
                                 >
                                     NO
                                 </button>
@@ -116,7 +116,7 @@ export const LoadoutEditor: React.FC<LoadoutEditorProps> = ({
                                         onReset(fleetShip.id);
                                         setIsConfirmingReset(false);
                                     }}
-                                    className="px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-all text-[10px] font-black tracking-widest uppercase shadow-[0_0_20px_rgba(220,38,38,0.4)]"
+                                    className="w-32 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-all text-[10px] font-black tracking-widest uppercase shadow-[0_0_20px_rgba(220,38,38,0.4)]"
                                 >
                                     YES, RESET
                                 </button>
