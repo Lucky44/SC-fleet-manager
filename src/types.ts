@@ -18,6 +18,7 @@ export interface Ship {
 export interface Port {
     Name: string;
     DisplayName?: string;
+    TurretBaseName?: string;
     Position?: string;
     MaxSize: number;
     MinSize: number;

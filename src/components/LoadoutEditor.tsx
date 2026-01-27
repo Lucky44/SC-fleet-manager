@@ -67,6 +67,14 @@ export const LoadoutEditor: React.FC<LoadoutEditorProps> = ({
         t.includes('Shield') || t.includes('PowerPlant') || t.includes('Cooler') || t.includes('QuantumDrive')
     ));
 
+    // Group turrets by their base name for a cleaner UI
+    const turretGroups = turrets.reduce((groups, port) => {
+        const name = port.TurretBaseName || 'REMOTE TURRETS';
+        if (!groups[name]) groups[name] = [];
+        groups[name].push(port);
+        return groups;
+    }, {} as Record<string, Port[]>);
+
     const getIcon = (types: string[]) => {
         if (types.some(t => t.includes('Shield'))) return <Shield className="w-5 h-5 text-sc-blue" />;
         if (types.some(t => t.includes('PowerPlant'))) return <Zap className="w-5 h-5 text-yellow-500" />;
@@ -147,44 +155,61 @@ export const LoadoutEditor: React.FC<LoadoutEditorProps> = ({
                         <>
                             {/* Pilot Weapons Section */}
                             <section>
-                                <div className="flex items-center gap-4 mb-6">
+                                <div className="flex items-center gap-4 mb-8">
                                     <h3 className="text-xl font-bold text-white tracking-wide uppercase italic">
                                         <span className="text-sc-blue pr-2">//</span> PILOT WEAPON SYSTEMS
                                     </h3>
                                     <div className="h-px flex-1 bg-white/10"></div>
                                 </div>
-                                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                     {pilotWeapons.map(port => (
-                                        <PortSelector
-                                            key={port.Name}
-                                            port={port}
-                                            items={items}
-                                            onSelect={(item) => onUpdate(fleetShip.id, port.Name, item?.className || '')}
-                                            getIcon={getIcon}
-                                        />
+                                        <div key={port.Name} className="space-y-3">
+                                            <div className="flex items-center gap-2 px-1">
+                                                <div className="w-1.5 h-1.5 bg-sc-blue rounded-full"></div>
+                                                <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">{port.DisplayName || port.Name}</span>
+                                            </div>
+                                            <PortSelector
+                                                port={port}
+                                                items={items}
+                                                onSelect={(item) => onUpdate(fleetShip.id, port.Name, item?.className || '')}
+                                                getIcon={getIcon}
+                                            />
+                                        </div>
                                     ))}
                                     {pilotWeapons.length === 0 && <div className="col-span-full py-8 text-center text-gray-600 font-mono italic border border-dashed border-white/5 rounded-xl">NO DIRECT PILOT ARMED SYSTEMS DETECTED</div>}
                                 </div>
                             </section>
 
                             {/* Turrets Section */}
-                            {turrets.length > 0 && (
-                                <section>
-                                    <div className="flex items-center gap-4 mb-6">
+                            {Object.keys(turretGroups).length > 0 && (
+                                <section className="space-y-10">
+                                    <div className="flex items-center gap-4">
                                         <h3 className="text-xl font-bold text-white tracking-wide uppercase italic">
                                             <span className="text-red-500 pr-2">//</span> TURRET SYSTEMS
                                         </h3>
                                         <div className="h-px flex-1 bg-white/10"></div>
                                     </div>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                                        {turrets.map(port => (
-                                            <PortSelector
-                                                key={port.Name}
-                                                port={port}
-                                                items={items}
-                                                onSelect={(item) => onUpdate(fleetShip.id, port.Name, item?.className || '')}
-                                                getIcon={getIcon}
-                                            />
+
+                                    <div className="space-y-12">
+                                        {Object.entries(turretGroups).map(([groupName, groupPorts]) => (
+                                            <div key={groupName} className="space-y-4">
+                                                <div className="flex items-center gap-4 ml-2">
+                                                    <h4 className="text-sm font-black text-white/40 tracking-[0.2em] uppercase italic bg-white/5 px-3 py-1 rounded-sm border-l-2 border-red-500/50">
+                                                        {groupName}
+                                                    </h4>
+                                                </div>
+                                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                                    {groupPorts.map(port => (
+                                                        <PortSelector
+                                                            key={port.Name}
+                                                            port={port}
+                                                            items={items}
+                                                            onSelect={(item) => onUpdate(fleetShip.id, port.Name, item?.className || '')}
+                                                            getIcon={getIcon}
+                                                        />
+                                                    ))}
+                                                </div>
+                                            </div>
                                         ))}
                                     </div>
                                 </section>
@@ -192,21 +217,26 @@ export const LoadoutEditor: React.FC<LoadoutEditorProps> = ({
 
                             {/* Components Section */}
                             <section>
-                                <div className="flex items-center gap-4 mb-6">
+                                <div className="flex items-center gap-4 mb-8">
                                     <h3 className="text-xl font-bold text-white tracking-wide uppercase italic">
                                         <span className="text-yellow-500 pr-2">//</span> INTERNAL SYSTEMS
                                     </h3>
                                     <div className="h-px flex-1 bg-white/10"></div>
                                 </div>
-                                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                     {components.map(port => (
-                                        <PortSelector
-                                            key={port.Name}
-                                            port={port}
-                                            items={items}
-                                            onSelect={(item) => onUpdate(fleetShip.id, port.Name, item?.className || '')}
-                                            getIcon={getIcon}
-                                        />
+                                        <div key={port.Name} className="space-y-3">
+                                            <div className="flex items-center gap-2 px-1">
+                                                <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full"></div>
+                                                <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">{port.DisplayName || port.Name}</span>
+                                            </div>
+                                            <PortSelector
+                                                port={port}
+                                                items={items}
+                                                onSelect={(item) => onUpdate(fleetShip.id, port.Name, item?.className || '')}
+                                                getIcon={getIcon}
+                                            />
+                                        </div>
                                     ))}
                                     {components.length === 0 && <div className="col-span-full py-8 text-center text-gray-600 font-mono italic border border-dashed border-white/5 rounded-xl">NO CONFIGURABLE INTERNAL HARDPOINTS DETECTED</div>}
                                 </div>
@@ -298,16 +328,13 @@ const PortSelector: React.FC<{
                             {getIcon(port.Types)}
                         </div>
                         <div className="flex-1 min-w-0">
-                            <p className="text-[10px] text-gray-500 font-mono uppercase tracking-wider mb-0.5 truncate pr-2">
-                                {port.DisplayName || port.Name}
-                            </p>
                             <div className="flex items-center gap-2">
-                                <span className={`font-bold truncate ${currentItem ? 'text-gray-100' : 'text-gray-500 italic'}`}>
+                                <span className={`font-bold truncate ${currentItem ? 'text-white text-lg' : 'text-gray-500 italic'}`}>
                                     {currentItem ? cleanName(currentItem.Name, currentItem.ClassName) : 'EMPTY SLOT'}
                                 </span>
                                 {currentItem && (
-                                    <span className="text-[10px] px-1.5 py-px border border-white/10 rounded text-gray-400 bg-white/5">
-                                        S{currentItem.Size}
+                                    <span className="text-[10px] px-2 py-0.5 border border-white/10 rounded-sm font-mono text-sc-blue bg-sc-blue/5">
+                                        SIZE {currentItem.Size}
                                     </span>
                                 )}
                             </div>
