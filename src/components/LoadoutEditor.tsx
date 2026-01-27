@@ -61,7 +61,8 @@ export const LoadoutEditor: React.FC<LoadoutEditorProps> = ({
 
 
     // Categorize ports
-    const weapons = ports.filter(p => p.Types.some(t => t.includes('WeaponGun') || t.includes('MissileLauncher') || t.includes('Turret')));
+    const pilotWeapons = ports.filter(p => !p.Turret && p.Types.some(t => t.includes('WeaponGun') || t.includes('MissileLauncher')));
+    const turrets = ports.filter(p => p.Turret);
     const components = ports.filter(p => p.Types.some(t =>
         t.includes('Shield') || t.includes('PowerPlant') || t.includes('Cooler') || t.includes('QuantumDrive')
     ));
@@ -144,14 +145,16 @@ export const LoadoutEditor: React.FC<LoadoutEditorProps> = ({
                         </div>
                     ) : (
                         <>
-                            {/* Weapons Section */}
+                            {/* Pilot Weapons Section */}
                             <section>
                                 <div className="flex items-center gap-4 mb-6">
-                                    <h3 className="text-xl font-bold text-white tracking-wide">OFFENSIVE SYSTEMS</h3>
+                                    <h3 className="text-xl font-bold text-white tracking-wide uppercase italic">
+                                        <span className="text-sc-blue pr-2">//</span> PILOT WEAPON SYSTEMS
+                                    </h3>
                                     <div className="h-px flex-1 bg-white/10"></div>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                                    {weapons.map(port => (
+                                    {pilotWeapons.map(port => (
                                         <PortSelector
                                             key={port.Name}
                                             port={port}
@@ -160,14 +163,39 @@ export const LoadoutEditor: React.FC<LoadoutEditorProps> = ({
                                             getIcon={getIcon}
                                         />
                                     ))}
-                                    {weapons.length === 0 && <div className="col-span-full py-8 text-center text-gray-600 font-mono italic border border-dashed border-white/5 rounded-xl">NO CONFIGURABLE OFFENSIVE HARDPOINTS DETECTED</div>}
+                                    {pilotWeapons.length === 0 && <div className="col-span-full py-8 text-center text-gray-600 font-mono italic border border-dashed border-white/5 rounded-xl">NO DIRECT PILOT ARMED SYSTEMS DETECTED</div>}
                                 </div>
                             </section>
+
+                            {/* Turrets Section */}
+                            {turrets.length > 0 && (
+                                <section>
+                                    <div className="flex items-center gap-4 mb-6">
+                                        <h3 className="text-xl font-bold text-white tracking-wide uppercase italic">
+                                            <span className="text-red-500 pr-2">//</span> TURRET SYSTEMS
+                                        </h3>
+                                        <div className="h-px flex-1 bg-white/10"></div>
+                                    </div>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                                        {turrets.map(port => (
+                                            <PortSelector
+                                                key={port.Name}
+                                                port={port}
+                                                items={items}
+                                                onSelect={(item) => onUpdate(fleetShip.id, port.Name, item?.className || '')}
+                                                getIcon={getIcon}
+                                            />
+                                        ))}
+                                    </div>
+                                </section>
+                            )}
 
                             {/* Components Section */}
                             <section>
                                 <div className="flex items-center gap-4 mb-6">
-                                    <h3 className="text-xl font-bold text-white tracking-wide">INTERNAL SYSTEMS</h3>
+                                    <h3 className="text-xl font-bold text-white tracking-wide uppercase italic">
+                                        <span className="text-yellow-500 pr-2">//</span> INTERNAL SYSTEMS
+                                    </h3>
                                     <div className="h-px flex-1 bg-white/10"></div>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">

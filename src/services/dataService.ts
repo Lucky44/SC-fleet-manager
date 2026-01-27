@@ -42,7 +42,7 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
         const data = await response.json();
         const rawPorts = Object.values(data).flat() as any[];
 
-        const extractPorts = (portList: any[], parentName: string = ''): Port[] => {
+        const extractPorts = (portList: any[], parentName: string = '', parentIsTurret: boolean = false): Port[] => {
             let extracted: Port[] = [];
             portList.forEach(p => {
                 const rawName = p.PortName || p.Name || '';
@@ -80,7 +80,7 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
 
                 if (childPorts.length > 0) {
                     // Recurse into children to handle gimbals-on-turrets (e.g. Carrack, Corsair pilot guns)
-                    const promotedChildren = extractPorts(childPorts, rawName);
+                    const promotedChildren = extractPorts(childPorts, rawName, isTurret || parentIsTurret);
 
                     promotedChildren.forEach((cp, index) => {
                         let displayName = cleanPortName(rawName);
@@ -108,6 +108,7 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
                         Name: uniqueName,
                         DisplayName: p.DisplayName || (parentName ? cleanPortName(parentName) : cleanPortName(rawName)),
                         Types: p.Types || p.types || [],
+                        Turret: isTurret || parentIsTurret,
                         MinSize: p.MinSize ?? p.Size ?? p.InstalledItem?.Size ?? 0,
                         MaxSize: p.MaxSize ?? p.Size ?? p.InstalledItem?.Size ?? 10,
                     });
@@ -161,12 +162,12 @@ const applyPortPatches = (className: string, ports: Port[]): Port[] => {
     }
     if (className === 'RSI_Perseus') {
         const weaponPorts: Port[] = [
-            { Name: 'manned_turret_1', DisplayName: 'Dorsal S8 Turret', MaxSize: 8, MinSize: 8, Types: ['Turret'], InstalledItem: { Name: 'S8 Ballistic Cannon', ClassName: 'BEHR_BallisticCannon_S8', Size: 8 } },
-            { Name: 'manned_turret_2', DisplayName: 'Ventral S8 Turret', MaxSize: 8, MinSize: 8, Types: ['Turret'], InstalledItem: { Name: 'S8 Ballistic Cannon', ClassName: 'BEHR_BallisticCannon_S8', Size: 8 } },
-            { Name: 'remote_turret_1', DisplayName: 'Remote S3 Turret', MaxSize: 3, MinSize: 3, Types: ['Turret'], InstalledItem: { Name: 'Panther Repeater', ClassName: 'KLWE_LaserRepeater_S3', Size: 3 } },
-            { Name: 'remote_turret_2', DisplayName: 'Remote S3 Turret', MaxSize: 3, MinSize: 3, Types: ['Turret'], InstalledItem: { Name: 'Panther Repeater', ClassName: 'KLWE_LaserRepeater_S3', Size: 3 } },
-            { Name: 'remote_turret_3', DisplayName: 'Remote S3 Turret', MaxSize: 3, MinSize: 3, Types: ['Turret'], InstalledItem: { Name: 'Panther Repeater', ClassName: 'KLWE_LaserRepeater_S3', Size: 3 } },
-            { Name: 'remote_turret_4', DisplayName: 'Remote S3 Turret', MaxSize: 3, MinSize: 3, Types: ['Turret'], InstalledItem: { Name: 'Panther Repeater', ClassName: 'KLWE_LaserRepeater_S3', Size: 3 } },
+            { Name: 'manned_turret_1', DisplayName: 'Dorsal S8 Turret', MaxSize: 8, MinSize: 8, Types: ['Turret'], Turret: true, InstalledItem: { Name: 'S8 Ballistic Cannon', ClassName: 'BEHR_BallisticCannon_S8', Size: 8 } },
+            { Name: 'manned_turret_2', DisplayName: 'Ventral S8 Turret', MaxSize: 8, MinSize: 8, Types: ['Turret'], Turret: true, InstalledItem: { Name: 'S8 Ballistic Cannon', ClassName: 'BEHR_BallisticCannon_S8', Size: 8 } },
+            { Name: 'remote_turret_1', DisplayName: 'Remote S3 Turret', MaxSize: 3, MinSize: 3, Types: ['Turret'], Turret: true, InstalledItem: { Name: 'Panther Repeater', ClassName: 'KLWE_LaserRepeater_S3', Size: 3 } },
+            { Name: 'remote_turret_2', DisplayName: 'Remote S3 Turret', MaxSize: 3, MinSize: 3, Types: ['Turret'], Turret: true, InstalledItem: { Name: 'Panther Repeater', ClassName: 'KLWE_LaserRepeater_S3', Size: 3 } },
+            { Name: 'remote_turret_3', DisplayName: 'Remote S3 Turret', MaxSize: 3, MinSize: 3, Types: ['Turret'], Turret: true, InstalledItem: { Name: 'Panther Repeater', ClassName: 'KLWE_LaserRepeater_S3', Size: 3 } },
+            { Name: 'remote_turret_4', DisplayName: 'Remote S3 Turret', MaxSize: 3, MinSize: 3, Types: ['Turret'], Turret: true, InstalledItem: { Name: 'Panther Repeater', ClassName: 'KLWE_LaserRepeater_S3', Size: 3 } },
         ];
         const torpedoPorts: Port[] = Array.from({ length: 20 }, (_, i) => ({
             Name: `torpedo_${i + 1}`,
@@ -210,19 +211,22 @@ const applyPortPatches = (className: string, ports: Port[]): Port[] => {
             { Name: 'hardpoint_chin_weapon_right', DisplayName: 'Front Chin (R) S4', MaxSize: 4, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
             { Name: 'hardpoint_weapon_wing_top', DisplayName: 'Wing S5 (Top)', MaxSize: 5, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M7A Laser Cannon', ClassName: 'BEHR_LaserCannon_S5', Size: 5 } },
             { Name: 'hardpoint_weapon_wing_bottom', DisplayName: 'Wing S5 (Bottom)', MaxSize: 5, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M7A Laser Cannon', ClassName: 'BEHR_LaserCannon_S5', Size: 5 } },
+            { Name: 'hardpoint_manned_turret_left', DisplayName: 'Side Manned Turret (L)', MaxSize: 2, MinSize: 1, Types: ['WeaponGun'], Turret: true, InstalledItem: { Name: 'CF-227 Badger Repeater', ClassName: 'KLWE_LaserRepeater_S2', Size: 2 } },
+            { Name: 'hardpoint_manned_turret_right', DisplayName: 'Side Manned Turret (R)', MaxSize: 2, MinSize: 1, Types: ['WeaponGun'], Turret: true, InstalledItem: { Name: 'CF-227 Badger Repeater', ClassName: 'KLWE_LaserRepeater_S2', Size: 2 } },
+            { Name: 'hardpoint_tail_turret', DisplayName: 'Rear Remote Turret', MaxSize: 2, MinSize: 1, Types: ['WeaponGun'], Turret: true, InstalledItem: { Name: 'CF-227 Badger Repeater', ClassName: 'KLWE_LaserRepeater_S2', Size: 2 } },
         ];
         return [...weaponPorts, ...ports.filter(p => !weaponPorts.some(wp => p.Name.startsWith(wp.Name)))];
     }
 
     if (className === 'RSI_Polaris') {
         const turrets: Port[] = [
-            { Name: 'remote_turret_nose', DisplayName: 'Remote Nose Turret S5', MaxSize: 5, MinSize: 5, Types: ['Turret'], InstalledItem: { Name: 'M7A Laser Cannon', ClassName: 'BEHR_LaserCannon_S5', Size: 5 } },
-            { Name: 'manned_turret_port', DisplayName: 'Manned Port Turret S5', MaxSize: 5, MinSize: 5, Types: ['Turret'], InstalledItem: { Name: 'M7A Laser Cannon', ClassName: 'BEHR_LaserCannon_S5', Size: 5 } },
-            { Name: 'manned_turret_starboard', DisplayName: 'Manned Starboard Turret S5', MaxSize: 5, MinSize: 5, Types: ['Turret'], InstalledItem: { Name: 'M7A Laser Cannon', ClassName: 'BEHR_LaserCannon_S5', Size: 5 } },
-            { Name: 'remote_turret_top_fwd', DisplayName: 'Remote Top Fwd Turret S4', MaxSize: 4, MinSize: 4, Types: ['Turret'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
-            { Name: 'remote_turret_top_aft', DisplayName: 'Remote Top Aft Turret S4', MaxSize: 4, MinSize: 4, Types: ['Turret'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
-            { Name: 'remote_turret_ventral', DisplayName: 'Remote Ventral Turret S4', MaxSize: 4, MinSize: 4, Types: ['Turret'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
-            { Name: 'remote_turret_rear', DisplayName: 'Remote Rear Turret S4', MaxSize: 4, MinSize: 4, Types: ['Turret'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
+            { Name: 'remote_turret_nose', DisplayName: 'Remote Nose Turret S5', MaxSize: 5, MinSize: 5, Types: ['Turret'], Turret: true, InstalledItem: { Name: 'M7A Laser Cannon', ClassName: 'BEHR_LaserCannon_S5', Size: 5 } },
+            { Name: 'manned_turret_port', DisplayName: 'Manned Port Turret S5', MaxSize: 5, MinSize: 5, Types: ['Turret'], Turret: true, InstalledItem: { Name: 'M7A Laser Cannon', ClassName: 'BEHR_LaserCannon_S5', Size: 5 } },
+            { Name: 'manned_turret_starboard', DisplayName: 'Manned Starboard Turret S5', MaxSize: 5, MinSize: 5, Types: ['Turret'], Turret: true, InstalledItem: { Name: 'M7A Laser Cannon', ClassName: 'BEHR_LaserCannon_S5', Size: 5 } },
+            { Name: 'remote_turret_top_fwd', DisplayName: 'Remote Top Fwd Turret S4', MaxSize: 4, MinSize: 4, Types: ['Turret'], Turret: true, InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
+            { Name: 'remote_turret_top_aft', DisplayName: 'Remote Top Aft Turret S4', MaxSize: 4, MinSize: 4, Types: ['Turret'], Turret: true, InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
+            { Name: 'remote_turret_ventral', DisplayName: 'Remote Ventral Turret S4', MaxSize: 4, MinSize: 4, Types: ['Turret'], Turret: true, InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
+            { Name: 'remote_turret_rear', DisplayName: 'Remote Rear Turret S4', MaxSize: 4, MinSize: 4, Types: ['Turret'], Turret: true, InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
         ];
         const torpedoPorts: Port[] = Array.from({ length: 24 }, (_, i) => ({
             Name: `torpedo_${i + 1}`,
