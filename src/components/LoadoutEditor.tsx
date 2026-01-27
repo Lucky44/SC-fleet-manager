@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import type { FleetShip, Ship, Item, Port } from '../types';
 import { fetchShipPorts, filterItemsForPort, cleanName, getItemStats } from '../services/dataService';
-import { X, ChevronDown, Check, Zap, Shield, Cpu, Wind, Search, Trash2, Box } from 'lucide-react';
+import { X, ChevronDown, Check, Zap, Shield, Cpu, Wind, Search, Trash2, Box, RotateCcw } from 'lucide-react';
 
 interface LoadoutEditorProps {
     fleetShip: FleetShip;
     ships: Ship[];
     items: Item[];
     onUpdate: (id: string, portName: string, itemClassName: string) => void;
+    onReset: (id: string) => void;
     onClose: () => void;
 }
 
 export const LoadoutEditor: React.FC<LoadoutEditorProps> = ({
-    fleetShip, ships, items, onUpdate, onClose
+    fleetShip, ships, items, onUpdate, onReset, onClose
 }) => {
     const [ports, setPorts] = useState<Port[]>([]);
     const [loading, setLoading] = useState(true);
@@ -100,9 +101,18 @@ export const LoadoutEditor: React.FC<LoadoutEditorProps> = ({
                             <span>ID: <span className="text-sc-blue">{fleetShip.id.slice(0, 8)}</span></span>
                         </p>
                     </div>
-                    <button onClick={onClose} className="group p-3 hover:bg-white/5 rounded-full transition-all border border-transparent hover:border-white/10">
-                        <X className="w-6 h-6 text-gray-400 group-hover:text-white" />
-                    </button>
+                    <div className="flex items-center gap-4 flex-shrink-0">
+                        <button
+                            onClick={() => onReset(fleetShip.id)}
+                            className="flex items-center gap-2 px-6 py-2.5 bg-red-500 text-white rounded-lg border border-red-400 transition-all text-xs font-black tracking-widest uppercase shadow-[0_0_20px_rgba(239,68,68,0.4)] hover:bg-red-600 active:scale-95 whitespace-nowrap"
+                            title="Reset all ports to stock items"
+                        >
+                            <RotateCcw className="w-4 h-4" /> RESET TO STOCK
+                        </button>
+                        <button onClick={onClose} className="group p-3 hover:bg-white/5 rounded-full transition-all border border-transparent hover:border-white/10">
+                            <X className="w-6 h-6 text-gray-400 group-hover:text-white" />
+                        </button>
+                    </div>
                 </div>
 
                 <div className="flex-1 overflow-y-auto p-8 space-y-12 custom-scrollbar relative z-10">

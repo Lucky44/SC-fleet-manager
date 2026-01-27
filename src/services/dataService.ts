@@ -51,6 +51,17 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
                 const itemTags = (item?.Tags || item?.tags || []).map((t: any) => String(t).toLowerCase());
                 const nestedPorts = item?.Ports || item?.ports || [];
 
+                // Add aggressive filtering for internal/invisible ports
+                const flags = (p.Flags || p.flags || []).map((f: any) => String(f).toLowerCase());
+                if (flags.includes('invisible') || flags.includes('uneditable') || p.Uneditable === true) {
+                    return;
+                }
+
+                if (rawName.toLowerCase().includes('fuel_tank') || rawName.toLowerCase().includes('thruster')) {
+                    return;
+                }
+
+
                 // Aggressive mount identification
                 const isTurret = itemType.includes('turret');
                 const isRack = itemType.includes('missilelauncher') || itemType.includes('missilerack') || itemType.includes('missile.rack');
@@ -117,19 +128,19 @@ const applyPortPatches = (className: string, ports: Port[]): Port[] => {
     if (className === 'ANVL_Lightning_F8') {
         const nonShields = ports.filter(p => !p.Name.toLowerCase().includes('shield'));
         const newShields: Port[] = [
-            { Name: 'shield_generator_1', MaxSize: 2, MinSize: 2, Types: ['Shield.ShieldGenerator'] },
-            { Name: 'shield_generator_2', MaxSize: 2, MinSize: 2, Types: ['Shield.ShieldGenerator'] },
+            { Name: 'shield_generator_1', MaxSize: 2, MinSize: 2, Types: ['Shield.ShieldGenerator'], InstalledItem: { Name: 'Sukoran', ClassName: 'SHLD_BANU_S02_Sukoran', Size: 2 } },
+            { Name: 'shield_generator_2', MaxSize: 2, MinSize: 2, Types: ['Shield.ShieldGenerator'], InstalledItem: { Name: 'Sukoran', ClassName: 'SHLD_BANU_S02_Sukoran', Size: 2 } },
         ];
         return [...nonShields, ...newShields];
     }
     if (className === 'RSI_Meteor') {
         const weaponPorts: Port[] = [
-            { Name: 'weapon_hardpoint_1', DisplayName: 'Main Forward S5', MaxSize: 5, MinSize: 1, Types: ['WeaponGun'] },
-            { Name: 'weapon_hardpoint_2', DisplayName: 'Main Forward S5', MaxSize: 5, MinSize: 1, Types: ['WeaponGun'] },
-            { Name: 'weapon_hardpoint_3', DisplayName: 'Wing S3', MaxSize: 3, MinSize: 1, Types: ['WeaponGun'] },
-            { Name: 'weapon_hardpoint_4', DisplayName: 'Wing S3', MaxSize: 3, MinSize: 1, Types: ['WeaponGun'] },
-            { Name: 'weapon_hardpoint_5', DisplayName: 'Wing S3', MaxSize: 3, MinSize: 1, Types: ['WeaponGun'] },
-            { Name: 'weapon_hardpoint_6', DisplayName: 'Wing S3', MaxSize: 3, MinSize: 1, Types: ['WeaponGun'] },
+            { Name: 'weapon_hardpoint_1', DisplayName: 'Main Forward S5', MaxSize: 5, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M7A Laser Cannon', ClassName: 'BEHR_LaserCannon_S5', Size: 5 } },
+            { Name: 'weapon_hardpoint_2', DisplayName: 'Main Forward S5', MaxSize: 5, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M7A Laser Cannon', ClassName: 'BEHR_LaserCannon_S5', Size: 5 } },
+            { Name: 'weapon_hardpoint_3', DisplayName: 'Wing S3', MaxSize: 3, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'Panther Repeater', ClassName: 'KLWE_LaserRepeater_S3', Size: 3 } },
+            { Name: 'weapon_hardpoint_4', DisplayName: 'Wing S3', MaxSize: 3, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'Panther Repeater', ClassName: 'KLWE_LaserRepeater_S3', Size: 3 } },
+            { Name: 'weapon_hardpoint_5', DisplayName: 'Wing S3', MaxSize: 3, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'Panther Repeater', ClassName: 'KLWE_LaserRepeater_S3', Size: 3 } },
+            { Name: 'weapon_hardpoint_6', DisplayName: 'Wing S3', MaxSize: 3, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'Panther Repeater', ClassName: 'KLWE_LaserRepeater_S3', Size: 3 } },
         ];
         const missilePorts: Port[] = [
             { Name: 'missile_rack_1', DisplayName: 'Missile Rack S4', MaxSize: 4, MinSize: 1, Types: ['MissileLauncher'] },
@@ -140,54 +151,85 @@ const applyPortPatches = (className: string, ports: Port[]): Port[] => {
             { Name: 'missile_hardpoint_2', DisplayName: 'Launcher S3', MaxSize: 3, MinSize: 1, Types: ['MissileLauncher'] },
         ];
         const componentPorts: Port[] = [
-            { Name: 'shield_generator_1', MaxSize: 2, MinSize: 2, Types: ['Shield.ShieldGenerator'] },
-            { Name: 'power_plant_1', MaxSize: 2, MinSize: 2, Types: ['PowerPlant.PowerPlant'] },
-            { Name: 'cooler_1', MaxSize: 2, MinSize: 2, Types: ['Cooler.Cooler'] },
-            { Name: 'cooler_2', MaxSize: 2, MinSize: 2, Types: ['Cooler.Cooler'] },
-            { Name: 'quantum_drive_1', MaxSize: 2, MinSize: 2, Types: ['QuantumDrive.QuantumDrive'] },
+            { Name: 'shield_generator_1', MaxSize: 2, MinSize: 2, Types: ['Shield.ShieldGenerator'], InstalledItem: { Name: 'FR-76', ClassName: 'SHLD_GODI_S02_FR76', Size: 2 } },
+            { Name: 'power_plant_1', MaxSize: 2, MinSize: 2, Types: ['PowerPlant.PowerPlant'], InstalledItem: { Name: 'JS-400', ClassName: 'POWR_AMRS_S02_JS400', Size: 2 } },
+            { Name: 'cooler_1', MaxSize: 2, MinSize: 2, Types: ['Cooler.Cooler'], InstalledItem: { Name: 'CoolCore', ClassName: 'COOL_JUST_S02_CoolCore', Size: 2 } },
+            { Name: 'cooler_2', MaxSize: 2, MinSize: 2, Types: ['Cooler.Cooler'], InstalledItem: { Name: 'CoolCore', ClassName: 'COOL_JUST_S02_CoolCore', Size: 2 } },
+            { Name: 'quantum_drive_1', MaxSize: 2, MinSize: 2, Types: ['QuantumDrive.QuantumDrive'], InstalledItem: { Name: 'Crossfield', ClassName: 'QDRV_WETK_S02_Crossfield', Size: 2 } },
         ];
         return [...weaponPorts, ...missilePorts, ...componentPorts];
     }
     if (className === 'RSI_Perseus') {
         const weaponPorts: Port[] = [
-            { Name: 'manned_turret_1', DisplayName: 'Dorsal S8 Turret', MaxSize: 8, MinSize: 8, Types: ['Turret'] },
-            { Name: 'manned_turret_2', DisplayName: 'Ventral S8 Turret', MaxSize: 8, MinSize: 8, Types: ['Turret'] },
-            { Name: 'remote_turret_1', DisplayName: 'Remote S3 Turret', MaxSize: 3, MinSize: 3, Types: ['Turret'] },
-            { Name: 'remote_turret_2', DisplayName: 'Remote S3 Turret', MaxSize: 3, MinSize: 3, Types: ['Turret'] },
-            { Name: 'remote_turret_3', DisplayName: 'Remote S3 Turret', MaxSize: 3, MinSize: 3, Types: ['Turret'] },
-            { Name: 'remote_turret_4', DisplayName: 'Remote S3 Turret', MaxSize: 3, MinSize: 3, Types: ['Turret'] },
+            { Name: 'manned_turret_1', DisplayName: 'Dorsal S8 Turret', MaxSize: 8, MinSize: 8, Types: ['Turret'], InstalledItem: { Name: 'S8 Ballistic Cannon', ClassName: 'BEHR_BallisticCannon_S8', Size: 8 } },
+            { Name: 'manned_turret_2', DisplayName: 'Ventral S8 Turret', MaxSize: 8, MinSize: 8, Types: ['Turret'], InstalledItem: { Name: 'S8 Ballistic Cannon', ClassName: 'BEHR_BallisticCannon_S8', Size: 8 } },
+            { Name: 'remote_turret_1', DisplayName: 'Remote S3 Turret', MaxSize: 3, MinSize: 3, Types: ['Turret'], InstalledItem: { Name: 'Panther Repeater', ClassName: 'KLWE_LaserRepeater_S3', Size: 3 } },
+            { Name: 'remote_turret_2', DisplayName: 'Remote S3 Turret', MaxSize: 3, MinSize: 3, Types: ['Turret'], InstalledItem: { Name: 'Panther Repeater', ClassName: 'KLWE_LaserRepeater_S3', Size: 3 } },
+            { Name: 'remote_turret_3', DisplayName: 'Remote S3 Turret', MaxSize: 3, MinSize: 3, Types: ['Turret'], InstalledItem: { Name: 'Panther Repeater', ClassName: 'KLWE_LaserRepeater_S3', Size: 3 } },
+            { Name: 'remote_turret_4', DisplayName: 'Remote S3 Turret', MaxSize: 3, MinSize: 3, Types: ['Turret'], InstalledItem: { Name: 'Panther Repeater', ClassName: 'KLWE_LaserRepeater_S3', Size: 3 } },
         ];
         const torpedoPorts: Port[] = Array.from({ length: 20 }, (_, i) => ({
             Name: `torpedo_${i + 1}`,
             DisplayName: `S5 Torpedo ${i + 1}`,
             MaxSize: 5,
             MinSize: 5,
-            Types: ['MissileLauncher']
+            Types: ['MissileLauncher'],
+            InstalledItem: { Name: 'Stalker V', ClassName: 'MISS_BEHR_S05_Stalker_V', Size: 5 }
         }));
         const componentPorts: Port[] = [
-            { Name: 'shield_generator_1', MaxSize: 3, MinSize: 3, Types: ['Shield.ShieldGenerator'] },
-            { Name: 'shield_generator_2', MaxSize: 3, MinSize: 3, Types: ['Shield.ShieldGenerator'] },
-            { Name: 'power_plant_1', MaxSize: 3, MinSize: 3, Types: ['PowerPlant.PowerPlant'] },
-            { Name: 'power_plant_2', MaxSize: 3, MinSize: 3, Types: ['PowerPlant.PowerPlant'] },
-            { Name: 'cooler_1', MaxSize: 3, MinSize: 3, Types: ['Cooler.Cooler'] },
-            { Name: 'cooler_2', MaxSize: 3, MinSize: 3, Types: ['Cooler.Cooler'] },
-            { Name: 'quantum_drive_1', MaxSize: 3, MinSize: 3, Types: ['QuantumDrive.QuantumDrive'] },
+            { Name: 'shield_generator_1', MaxSize: 3, MinSize: 3, Types: ['Shield.ShieldGenerator'], InstalledItem: { Name: 'FR-86', ClassName: 'SHLD_GODI_S03_FR86', Size: 3 } },
+            { Name: 'shield_generator_2', MaxSize: 3, MinSize: 3, Types: ['Shield.ShieldGenerator'], InstalledItem: { Name: 'FR-86', ClassName: 'SHLD_GODI_S03_FR86', Size: 3 } },
+            { Name: 'power_plant_1', MaxSize: 3, MinSize: 3, Types: ['PowerPlant.PowerPlant'], InstalledItem: { Name: 'JS-500', ClassName: 'POWR_AMRS_S03_JS500', Size: 3 } },
+            { Name: 'power_plant_2', MaxSize: 3, MinSize: 3, Types: ['PowerPlant.PowerPlant'], InstalledItem: { Name: 'JS-500', ClassName: 'POWR_AMRS_S03_JS500', Size: 3 } },
+            { Name: 'cooler_1', MaxSize: 3, MinSize: 3, Types: ['Cooler.Cooler'], InstalledItem: { Name: 'ThermalCore', ClassName: 'COOL_JUST_S03_ThermalCore', Size: 3 } },
+            { Name: 'cooler_2', MaxSize: 3, MinSize: 3, Types: ['Cooler.Cooler'], InstalledItem: { Name: 'ThermalCore', ClassName: 'COOL_JUST_S03_ThermalCore', Size: 3 } },
+            { Name: 'quantum_drive_1', MaxSize: 3, MinSize: 3, Types: ['QuantumDrive.QuantumDrive'], InstalledItem: { Name: 'Pontiac', ClassName: 'QDRV_WETK_S03_Pontiac', Size: 3 } },
         ];
         return [...weaponPorts, ...torpedoPorts, ...componentPorts];
     }
 
     if (className === 'ANVL_Pisces_C8R') {
         return [
-            { Name: 'weapon_hardpoint_1', DisplayName: 'Weapon S1', MaxSize: 1, MinSize: 1, Types: ['WeaponGun'] },
-            { Name: 'weapon_hardpoint_2', DisplayName: 'Weapon S1', MaxSize: 1, MinSize: 1, Types: ['WeaponGun'] },
-            { Name: 'missile_rack_1', DisplayName: 'Missile Rack S1', MaxSize: 1, MinSize: 1, Types: ['MissileLauncher'] },
-            { Name: 'missile_rack_2', DisplayName: 'Missile Rack S1', MaxSize: 1, MinSize: 1, Types: ['MissileLauncher'] },
-            { Name: 'shield_generator_1', MaxSize: 1, MinSize: 1, Types: ['Shield.ShieldGenerator'] },
-            { Name: 'power_plant_1', MaxSize: 1, MinSize: 1, Types: ['PowerPlant.PowerPlant'] },
-            { Name: 'cooler_1', MaxSize: 1, MinSize: 1, Types: ['Cooler.Cooler'] },
-            { Name: 'cooler_2', MaxSize: 1, MinSize: 1, Types: ['Cooler.Cooler'] },
-            { Name: 'quantum_drive_1', MaxSize: 1, MinSize: 1, Types: ['QuantumDrive.QuantumDrive'] },
+            { Name: 'weapon_hardpoint_1', DisplayName: 'Weapon S1', MaxSize: 1, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M3A Laser Cannon', ClassName: 'BEHR_LaserCannon_S1', Size: 1 } },
+            { Name: 'weapon_hardpoint_2', DisplayName: 'Weapon S1', MaxSize: 1, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M3A Laser Cannon', ClassName: 'BEHR_LaserCannon_S1', Size: 1 } },
+            { Name: 'missile_rack_1', DisplayName: 'Missile Rack S1', MaxSize: 1, MinSize: 1, Types: ['MissileLauncher'], InstalledItem: { Name: 'Taskforce I', ClassName: 'MISS_BEHR_S01_Taskforce_I', Size: 1 } },
+            { Name: 'missile_rack_2', DisplayName: 'Missile Rack S1', MaxSize: 1, MinSize: 1, Types: ['MissileLauncher'], InstalledItem: { Name: 'Taskforce I', ClassName: 'MISS_BEHR_S01_Taskforce_I', Size: 1 } },
+            { Name: 'shield_generator_1', MaxSize: 1, MinSize: 1, Types: ['Shield.ShieldGenerator'], InstalledItem: { Name: 'FR-66', ClassName: 'SHLD_GODI_S01_FR66', Size: 1 } },
+            { Name: 'power_plant_1', MaxSize: 1, MinSize: 1, Types: ['PowerPlant.PowerPlant'], InstalledItem: { Name: 'JS-300', ClassName: 'POWR_AMRS_S01_JS300', Size: 1 } },
+            { Name: 'cooler_1', MaxSize: 1, MinSize: 1, Types: ['Cooler.Cooler'], InstalledItem: { Name: 'Bracer', ClassName: 'COOL_AEGS_S01_Bracer', Size: 1 } },
+            { Name: 'cooler_2', MaxSize: 1, MinSize: 1, Types: ['Cooler.Cooler'], InstalledItem: { Name: 'Bracer', ClassName: 'COOL_AEGS_S01_Bracer', Size: 1 } },
+            { Name: 'quantum_drive_1', MaxSize: 1, MinSize: 1, Types: ['QuantumDrive.QuantumDrive'], InstalledItem: { Name: 'Atlas', ClassName: 'QDRV_RSI_S01_Atlas', Size: 1 } },
         ];
+    }
+
+    if (className === 'RSI_Polaris') {
+        const turrets: Port[] = [
+            { Name: 'remote_turret_nose', DisplayName: 'Remote Nose Turret S5', MaxSize: 5, MinSize: 5, Types: ['Turret'], InstalledItem: { Name: 'M7A Laser Cannon', ClassName: 'BEHR_LaserCannon_S5', Size: 5 } },
+            { Name: 'manned_turret_port', DisplayName: 'Manned Port Turret S5', MaxSize: 5, MinSize: 5, Types: ['Turret'], InstalledItem: { Name: 'M7A Laser Cannon', ClassName: 'BEHR_LaserCannon_S5', Size: 5 } },
+            { Name: 'manned_turret_starboard', DisplayName: 'Manned Starboard Turret S5', MaxSize: 5, MinSize: 5, Types: ['Turret'], InstalledItem: { Name: 'M7A Laser Cannon', ClassName: 'BEHR_LaserCannon_S5', Size: 5 } },
+            { Name: 'remote_turret_top_fwd', DisplayName: 'Remote Top Fwd Turret S4', MaxSize: 4, MinSize: 4, Types: ['Turret'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
+            { Name: 'remote_turret_top_aft', DisplayName: 'Remote Top Aft Turret S4', MaxSize: 4, MinSize: 4, Types: ['Turret'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
+            { Name: 'remote_turret_ventral', DisplayName: 'Remote Ventral Turret S4', MaxSize: 4, MinSize: 4, Types: ['Turret'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
+            { Name: 'remote_turret_rear', DisplayName: 'Remote Rear Turret S4', MaxSize: 4, MinSize: 4, Types: ['Turret'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
+        ];
+        const torpedoPorts: Port[] = Array.from({ length: 24 }, (_, i) => ({
+            Name: `torpedo_${i + 1}`,
+            DisplayName: `S10 Torpedo ${i + 1}`,
+            MaxSize: 10,
+            MinSize: 10,
+            Types: ['MissileLauncher'],
+            InstalledItem: { Name: 'Size 10 Torpedo', ClassName: 'MISS_TORP_S10', Size: 10 }
+        }));
+        const components: Port[] = [
+            { Name: 'shield_generator_1', MaxSize: 4, MinSize: 4, Types: ['Shield.ShieldGenerator'], InstalledItem: { Name: 'Glacis', ClassName: 'SHLD_RSI_S04_POLARIS', Size: 4 } },
+            { Name: 'shield_generator_2', MaxSize: 4, MinSize: 4, Types: ['Shield.ShieldGenerator'], InstalledItem: { Name: 'Glacis', ClassName: 'SHLD_RSI_S04_POLARIS', Size: 4 } },
+            { Name: 'power_plant_1', MaxSize: 4, MinSize: 4, Types: ['PowerPlant.PowerPlant'], InstalledItem: { Name: 'Stellate', ClassName: 'POWR_RSI_S04_POLARIS', Size: 4 } },
+            { Name: 'power_plant_2', MaxSize: 4, MinSize: 4, Types: ['PowerPlant.PowerPlant'], InstalledItem: { Name: 'Stellate', ClassName: 'POWR_RSI_S04_POLARIS', Size: 4 } },
+            { Name: 'cooler_1', MaxSize: 4, MinSize: 4, Types: ['Cooler.Cooler'], InstalledItem: { Name: 'Serac', ClassName: 'COOL_RSI_S04_POLARIS', Size: 4 } },
+            { Name: 'cooler_2', MaxSize: 4, MinSize: 4, Types: ['Cooler.Cooler'], InstalledItem: { Name: 'Serac', ClassName: 'COOL_RSI_S04_POLARIS', Size: 4 } },
+            { Name: 'quantum_drive_1', MaxSize: 4, MinSize: 4, Types: ['QuantumDrive.QuantumDrive'], InstalledItem: { Name: 'Siren', ClassName: 'QDRV_RSI_S04_POLARIS', Size: 4 } },
+        ];
+        return [...turrets, ...torpedoPorts, ...components];
     }
 
     if (className.startsWith('ANVL_Carrack')) {
@@ -215,7 +257,7 @@ const applyPortPatches = (className: string, ports: Port[]): Port[] => {
                         MaxSize: 4,
                         MinSize: 4,
                         Types: ['WeaponGun'], // Force as weapon port for gun selection
-                        InstalledItem: p.InstalledItem ? { ...p.InstalledItem, Size: 4 } : undefined
+                        InstalledItem: p.InstalledItem ? { ...p.InstalledItem, Size: 4 } : { Name: 'Rhino Repeater', ClassName: 'KLWE_LaserRepeater_S4', Size: 4 }
                     };
                 }
                 return p;

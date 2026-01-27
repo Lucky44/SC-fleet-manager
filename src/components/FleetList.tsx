@@ -1,6 +1,6 @@
 import React from 'react';
 import type { FleetShip, Ship } from '../types';
-import { Trash2, Settings2, Rocket, Share2, Download, Upload, Trash, Info, ChevronDown, ChevronUp, ShieldCheck, Zap } from 'lucide-react';
+import { Trash2, Settings2, Rocket, Share2, Download, Upload, Trash, Info, ChevronDown, ChevronUp, ShieldCheck, Zap, RotateCcw } from 'lucide-react';
 import { generateShareUrl, exportFleetToJson } from '../utils/dataEncoding';
 
 export interface DatalinkInfoProps {
@@ -57,11 +57,12 @@ interface FleetListProps {
     ships: Ship[];
     onRemove: (id: string) => void;
     onEdit: (ship: FleetShip) => void;
+    onReset: (id: string) => void;
     onImport: (fleet: FleetShip[]) => void;
     onClear: () => void;
 }
 
-export const FleetList: React.FC<FleetListProps> = ({ fleet, ships, onRemove, onEdit, onImport, onClear }) => {
+export const FleetList: React.FC<FleetListProps> = ({ fleet, ships, onRemove, onEdit, onReset, onImport, onClear }) => {
     const [isConfirmingClear, setIsConfirmingClear] = React.useState(false);
     const confirmTimeout = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -209,6 +210,13 @@ export const FleetList: React.FC<FleetListProps> = ({ fleet, ships, onRemove, on
                     return (
                         <div key={fs.id} className="relative bg-sc-gray border border-white/5 rounded-2xl overflow-hidden p-6 shadow-xl">
                             <div className="absolute top-0 right-0 p-4 flex gap-2">
+                                <button
+                                    onClick={() => onReset(fs.id)}
+                                    className="p-2 hover:bg-red-500 hover:text-white rounded-lg transition-all text-red-500/50"
+                                    title="Reset to Stock"
+                                >
+                                    <RotateCcw className="w-5 h-5" />
+                                </button>
                                 <button
                                     onClick={() => onEdit(fs)}
                                     className="p-2 hover:bg-sc-blue hover:text-black rounded-lg transition-all text-gray-500"

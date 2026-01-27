@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import type { Ship, Item, FleetShip } from './types';
-import { fetchShips, fetchItems } from './services/dataService';
+import type { Ship, Item, FleetShip, Port } from './types';
+import { fetchShips, fetchItems, fetchShipPorts } from './services/dataService';
 import { ShipList } from './components/ShipList';
 import { FleetList, DatalinkInfo } from './components/FleetList';
 import { LoadoutEditor } from './components/LoadoutEditor';
@@ -81,21 +81,54 @@ const App: React.FC = () => {
     }
   }, [toast.visible]);
 
-  const addToFleet = (ship: Ship) => {
-    const newShip: FleetShip = {
-      id: crypto.randomUUID(),
-      shipClass: ship.ClassName,
-      name: ship.Name,
-      customLoadout: {}
-    };
-    setFleet([...fleet, newShip]);
-    setToast({ message: `${ship.Name.toUpperCase()} ADDED TO FLEET`, visible: true });
-    // setActiveTab('fleet');
+  const addToFleet = async (ship: Ship) => {
+    try {
+      const ports = await fetchShipPorts(ship.ClassName);
+      const stockLoadout: Record<string, string> = {};
+
+      ports.forEach((port: Port) => {
+        if (port.InstalledItem?.ClassName) {
+          stockLoadout[port.Name] = port.InstalledItem.ClassName;
+        }
+      });
+
+      const newShip: FleetShip = {
+        id: crypto.randomUUID(),
+        shipClass: ship.ClassName,
+        name: ship.Name,
+        customLoadout: stockLoadout
+      };
+      setFleet([...fleet, newShip]);
+      setToast({ message: `${ship.Name.toUpperCase()} ADDED TO FLEET`, visible: true });
+    } catch (error) {
+      console.error("Error adding ship to fleet:", error);
+      // Fallback to empty loadout if ports fetch fails
+      const newShip: FleetShip = {
+        id: crypto.randomUUID(),
+        shipClass: ship.ClassName,
+        name: ship.Name,
+        customLoadout: {}
+      };
+      setFleet([...fleet, newShip]);
+    }
   };
 
   const removeFromFleet = (id: string) => {
     setFleet(fleet.filter(s => s.id !== id));
     if (editingShipId === id) setEditingShipId(null);
+  };
+
+  const resetToStock = (id: string) => {
+    setFleet(fleet.map(s => {
+      if (s.id === id) {
+        return {
+          ...s,
+          customLoadout: {}
+        };
+      }
+      return s;
+    }));
+    setToast({ message: "LOADOUT RESET TO STOCK", visible: true });
   };
 
   const clearFleet = () => {
@@ -187,6 +220,7 @@ const App: React.FC = () => {
             ships={ships}
             onRemove={removeFromFleet}
             onEdit={(ship) => setEditingShipId(ship.id)}
+            onReset={resetToStock}
             onImport={importFleet}
             onClear={clearFleet}
           />
@@ -200,6 +234,7 @@ const App: React.FC = () => {
           ships={ships}
           items={items}
           onUpdate={updateLoadout}
+          onReset={resetToStock}
           onClose={() => setEditingShipId(null)}
         />
       )}
