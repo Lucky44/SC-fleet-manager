@@ -40,9 +40,10 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
             return applyPortPatches(className, []);
         }
         const data = await response.json();
-        const rawPorts = Object.values(data).flat() as any[];
 
-        const extractPorts = (portList: any[], parentName: string = '', parentIsTurret: boolean = false, turretBaseName: string = ''): Port[] => {
+        let allExtracted: Port[] = [];
+
+        const extractPorts = (portList: any[], parentName: string = '', isPilotCategory: boolean = false, parentIsTurret: boolean = false, turretBaseName: string = '', topLevelSize: number = 0): Port[] => {
             let extracted: Port[] = [];
             portList.forEach(p => {
                 const rawName = p.PortName || p.Name || '';
@@ -50,11 +51,16 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
                 const itemType = (item?.Type || item?.type || '').toLowerCase();
                 const itemTags = (item?.Tags || item?.tags || []).map((t: any) => String(t).toLowerCase());
                 const nestedPorts = item?.Ports || item?.ports || [];
+                const currentSize = p.Size || p.size || item?.Size || 0;
 
                 // Add aggressive filtering for internal/invisible ports
                 const flags = (p.Flags || p.flags || []).map((f: any) => String(f).toLowerCase());
-                const isTurret = itemType.includes('turret');
-                if ((flags.includes('invisible') || flags.includes('uneditable') || p.Uneditable === true) && !isTurret) {
+
+                // Refine turret check: Gimbal mounts (type 'turret') are NOT real turrets for categorization
+                const isGimbalMount = itemType.includes('turret.gunturret') || itemTags.includes('gimbalmount');
+                const isRealTurret = itemType.includes('turret') && !isGimbalMount;
+
+                if ((flags.includes('invisible') || flags.includes('uneditable') || p.Uneditable === true) && !isRealTurret) {
                     return;
                 }
 
@@ -62,26 +68,32 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
                     return;
                 }
 
-
                 // Aggressive mount identification
                 const isRack = itemType.includes('missilelauncher') || itemType.includes('missilerack') || itemType.includes('missile.rack');
-                const isGimbal = isTurret || itemTags.includes('gimbalmount') || itemTags.includes('gimbal') || itemType.includes('gimbal');
-                const isMount = isGimbal || isRack;
+                const isMount = isRealTurret || isGimbalMount || isRack;
 
                 let childPorts: any[] = [];
                 if (isMount && Array.isArray(nestedPorts)) {
                     childPorts = nestedPorts.filter((cp: any) => {
-                        const types = (cp.Types || cp.types || []).join(',').toLowerCase();
+                        const types = (cp.Types || cp.types || []).map((t: any) => String(t).toLowerCase());
                         const category = (cp.Category || cp.category || '').toLowerCase();
-                        return types.includes('gun') || types.includes('missile') || types.includes('torpedo') ||
+                        const combinedTypes = types.join(',');
+                        return combinedTypes.includes('gun') || combinedTypes.includes('missile') || combinedTypes.includes('torpedo') ||
                             category.includes('weapon') || category.includes('missile');
                     });
                 }
 
                 if (childPorts.length > 0) {
-                    // Recurse into children to handle gimbals-on-turrets (e.g. Carrack, Corsair pilot guns)
-                    const currentTurretBase = isTurret ? cleanPortName(rawName) : (parentIsTurret ? turretBaseName : '');
-                    const promotedChildren = extractPorts(childPorts, rawName, isTurret || parentIsTurret, currentTurretBase);
+                    // Recurse into children
+                    const currentTurretBase = isRealTurret ? cleanPortName(rawName) : (parentIsTurret ? turretBaseName : '');
+                    const promotedChildren = extractPorts(
+                        childPorts,
+                        rawName,
+                        isPilotCategory,
+                        isRealTurret || parentIsTurret,
+                        currentTurretBase,
+                        topLevelSize || currentSize
+                    );
 
                     promotedChildren.forEach((cp, index) => {
                         let displayName = cleanPortName(rawName);
@@ -99,7 +111,11 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
                         extracted.push({
                             ...cp,
                             DisplayName: displayName,
-                            TurretBaseName: cp.TurretBaseName || (isTurret ? cleanPortName(rawName) : (parentIsTurret ? turretBaseName : ''))
+                            TurretBaseName: cp.TurretBaseName || (isRealTurret ? cleanPortName(rawName) : (parentIsTurret ? turretBaseName : '')),
+                            // Preserve the top-most hardpoint size if we are in pilot weapons
+                            MaxSize: isPilotCategory ? (topLevelSize || currentSize) : cp.MaxSize,
+                            MinSize: isPilotCategory ? 1 : cp.MinSize,
+                            Turret: isRealTurret || parentIsTurret
                         });
                     });
                 } else {
@@ -109,19 +125,23 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
                         ...p,
                         Name: uniqueName,
                         DisplayName: p.DisplayName || (parentName ? cleanPortName(parentName) : cleanPortName(rawName)),
-                        TurretBaseName: p.TurretBaseName || (isTurret ? cleanPortName(rawName) : (parentIsTurret ? turretBaseName : '')),
+                        TurretBaseName: p.TurretBaseName || (isRealTurret ? cleanPortName(rawName) : (parentIsTurret ? turretBaseName : '')),
                         Types: p.Types || p.types || [],
-                        Turret: isTurret || parentIsTurret,
+                        Turret: isRealTurret || parentIsTurret,
                         MinSize: p.MinSize ?? p.Size ?? p.InstalledItem?.Size ?? 0,
-                        MaxSize: p.MaxSize ?? p.Size ?? p.InstalledItem?.Size ?? 10,
+                        MaxSize: p.MaxSize ?? p.Size ?? p.InstalledItem?.Size ?? (topLevelSize || 10),
                     });
                 }
             });
             return extracted;
         };
 
-        const normalizedPorts = extractPorts(rawPorts);
-        return applyPortPatches(className, normalizedPorts);
+        Object.entries(data).forEach(([categoryName, portList]) => {
+            const isPilot = categoryName === 'PilotHardpoints';
+            allExtracted = [...allExtracted, ...extractPorts(portList as any[], '', isPilot)];
+        });
+
+        return applyPortPatches(className, allExtracted);
     } catch (error) {
         console.error(`Error fetching ports for ${className}:`, error);
         return applyPortPatches(className, []);
@@ -129,6 +149,15 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
 };
 
 const applyPortPatches = (className: string, ports: Port[]): Port[] => {
+    if (className === 'RSI_Constellation_Andromeda') {
+        return ports.map(p => {
+            // Force sizing on turret weapons specifically
+            if (p.Turret && p.Types.some(t => t.toLowerCase().includes('gun'))) {
+                return { ...p, MaxSize: 3, MinSize: 3 };
+            }
+            return p;
+        });
+    }
     if (className === 'ANVL_Lightning_F8') {
         const nonShields = ports.filter(p => !p.Name.toLowerCase().includes('shield'));
         const newShields: Port[] = [

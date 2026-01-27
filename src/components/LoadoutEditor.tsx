@@ -164,9 +164,12 @@ export const LoadoutEditor: React.FC<LoadoutEditorProps> = ({
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                     {pilotWeapons.map(port => (
                                         <div key={port.Name} className="space-y-3">
-                                            <div className="flex items-center gap-2 px-1">
-                                                <div className="w-1.5 h-1.5 bg-sc-blue rounded-full"></div>
-                                                <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">{port.DisplayName || port.Name}</span>
+                                            <div className="flex items-center justify-between px-1">
+                                                <div className="flex items-center gap-2">
+                                                    <div className="w-1.5 h-1.5 bg-sc-blue rounded-full"></div>
+                                                    <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">{port.DisplayName || port.Name}</span>
+                                                </div>
+                                                <span className="text-[10px] font-mono text-white/30 truncate ml-2">S{port.MaxSize} MOUNT</span>
                                             </div>
                                             <PortSelector
                                                 port={port}
