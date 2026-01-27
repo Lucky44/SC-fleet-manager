@@ -204,14 +204,14 @@ const applyPortPatches = (className: string, ports: Port[]): Port[] => {
 
     if (className === 'DRAK_Corsair') {
         const weaponPorts: Port[] = [
-            { Name: 'hardpoint_cheek_weapon_left', DisplayName: 'Front Cheek (L) S4', MaxSize: 4, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
-            { Name: 'hardpoint_cheek_weapon_right', DisplayName: 'Front Cheek (R) S4', MaxSize: 4, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
-            { Name: 'hardpoint_chin_weapon_left', DisplayName: 'Front Chin (L) S4', MaxSize: 4, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
-            { Name: 'hardpoint_chin_weapon_right', DisplayName: 'Front Chin (R) S4', MaxSize: 4, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
-            { Name: 'hardpoint_weapon_wing_top', DisplayName: 'Wing Top S5', MaxSize: 5, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M7A Laser Cannon', ClassName: 'BEHR_LaserCannon_S5', Size: 5 } },
-            { Name: 'hardpoint_weapon_wing_bottom', DisplayName: 'Wing Bottom S5', MaxSize: 5, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M7A Laser Cannon', ClassName: 'BEHR_LaserCannon_S5', Size: 5 } },
+            { Name: 'hardpoint_cheek_weapon_left', DisplayName: 'Cheek Weapon (L) S4', MaxSize: 4, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
+            { Name: 'hardpoint_cheek_weapon_right', DisplayName: 'Cheek Weapon (R) S4', MaxSize: 4, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
+            { Name: 'hardpoint_chin_weapon_left', DisplayName: 'Chin Weapon (L) S4', MaxSize: 4, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
+            { Name: 'hardpoint_chin_weapon_right', DisplayName: 'Chin Weapon (R) S4', MaxSize: 4, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M6A Laser Cannon', ClassName: 'BEHR_LaserCannon_S4', Size: 4 } },
+            { Name: 'hardpoint_weapon_wing_top', DisplayName: 'Wing S5 (Top)', MaxSize: 5, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M7A Laser Cannon', ClassName: 'BEHR_LaserCannon_S5', Size: 5 } },
+            { Name: 'hardpoint_weapon_wing_bottom', DisplayName: 'Wing S5 (Bottom)', MaxSize: 5, MinSize: 1, Types: ['WeaponGun'], InstalledItem: { Name: 'M7A Laser Cannon', ClassName: 'BEHR_LaserCannon_S5', Size: 5 } },
         ];
-        return [...weaponPorts, ...ports.filter(p => !weaponPorts.some(wp => wp.Name === p.Name))];
+        return [...weaponPorts, ...ports.filter(p => !weaponPorts.some(wp => p.Name.startsWith(wp.Name)))];
     }
 
     if (className === 'RSI_Polaris') {
