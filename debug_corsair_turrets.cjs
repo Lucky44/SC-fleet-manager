@@ -1,54 +1,19 @@
-const fs = require('fs');
-const data = JSON.parse(fs.readFileSync('corsair-ports.json', 'utf8'));
+const { fetchShipPorts } = require('./src/services/dataService');
 
-console.log("Keys in data:", Object.keys(data));
+// Stub global fetch for node if needed, but dataService should be fine if it's imported in a way that works in node
+// Actually, dataService uses fetch, which is available in Node 18+
 
-const rawPorts = Object.values(data).flat();
-console.log("Total ports found:", rawPorts.length);
+async function debug() {
+    try {
+        // We might need to mock fetch or use a local file if scunpacked is blocked or if we want to test our local logic
+        // But since I want to see the result of OUR logic in dataService.ts, I'll try to run it.
+        // NOTE: dataService.ts is TypeScript and uses ES modules. Node might struggle without setup.
 
-const extractPorts = (portList, parentName = '') => {
-    let extracted = [];
-    portList.forEach(p => {
-        const rawName = p.PortName || p.Name || '';
-        const item = p.InstalledItem;
-        const itemType = (item?.Type || item?.type || '').toLowerCase();
-        const itemTags = item?.Tags || item?.tags || [];
-        const nestedPorts = item?.Ports || item?.ports || [];
+        console.log('This script needs to run in a context that understands TS and ESM.');
+        console.log('I will check for ts-node.');
+    } catch (e) {
+        console.error(e);
+    }
+}
 
-        const isTurret = itemType.includes('turret');
-        const isRack = itemType.includes('missilelauncher') || itemType.includes('missilerack');
-        const isGimbal = isTurret || itemTags.some((t) => String(t).toLowerCase().includes('gimbal'));
-        const isMount = isGimbal || isRack;
-
-        let childPorts = [];
-        if (isMount && Array.isArray(nestedPorts)) {
-            childPorts = nestedPorts.filter((cp) => {
-                const types = (cp.Types || cp.types || []).join(',').toLowerCase();
-                const category = (cp.Category || cp.category || '').toLowerCase();
-                return types.includes('gun') || types.includes('missile') || types.includes('torpedo') ||
-                    category.includes('weapon') || category.includes('missile');
-            });
-        }
-
-        if (childPorts.length > 0) {
-            console.log(`[PROMOTING] ${rawName} (${itemType}) has ${childPorts.length} children`);
-            childPorts.forEach((cp, index) => {
-                const childRawName = cp.PortName || cp.Name || '';
-                // ...
-                extracted.push({ Name: `${rawName} > ${childRawName}`, Item: cp.InstalledItem?.Name });
-            });
-        } else {
-            extracted.push({ Name: rawName, Item: item?.Name });
-        }
-    });
-    return extracted;
-};
-
-const results = extractPorts(rawPorts);
-console.log("\nSample Results (First 5):");
-console.log(results.slice(0, 5));
-
-console.log("\nTurret Search:");
-const turrets = results.filter(r => (r.Name || '').toLowerCase().includes('turret'));
-console.log("Turrets found in results:", turrets.length);
-turrets.forEach(t => console.log(t));
+debug();
