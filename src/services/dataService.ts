@@ -156,7 +156,7 @@ export const fetchShipPorts = async (className: string): Promise<Port[]> => {
 };
 
 const applyPortPatches = (className: string, ports: Port[]): Port[] => {
-    if (className === 'RSI_Constellation_Andromeda') {
+    if (className.startsWith('RSI_Constellation_')) {
         return ports.map(p => {
             const isGun = p.Types.some(t => t.toLowerCase().includes('gun'));
             // Force sizing on turret weapons specifically
