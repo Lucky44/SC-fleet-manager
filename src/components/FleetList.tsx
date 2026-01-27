@@ -64,7 +64,9 @@ interface FleetListProps {
 
 export const FleetList: React.FC<FleetListProps> = ({ fleet, ships, onRemove, onEdit, onReset, onImport, onClear }) => {
     const [isConfirmingClear, setIsConfirmingClear] = React.useState(false);
+    const [confirmingResetId, setConfirmingResetId] = React.useState<string | null>(null);
     const confirmTimeout = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+    const resetTimeout = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const handleClearClick = () => {
         if (isConfirmingClear) {
@@ -211,11 +213,23 @@ export const FleetList: React.FC<FleetListProps> = ({ fleet, ships, onRemove, on
                         <div key={fs.id} className="relative bg-sc-gray border border-white/5 rounded-2xl overflow-hidden p-6 shadow-xl">
                             <div className="absolute top-0 right-0 p-4 flex gap-2">
                                 <button
-                                    onClick={() => onReset(fs.id)}
-                                    className="p-2 hover:bg-red-500 hover:text-white rounded-lg transition-all text-red-500/50"
-                                    title="Reset to Stock"
+                                    onClick={() => {
+                                        if (confirmingResetId === fs.id) {
+                                            onReset(fs.id);
+                                            setConfirmingResetId(null);
+                                            if (resetTimeout.current) clearTimeout(resetTimeout.current);
+                                        } else {
+                                            setConfirmingResetId(fs.id);
+                                            resetTimeout.current = setTimeout(() => setConfirmingResetId(null), 3000);
+                                        }
+                                    }}
+                                    className={`p-2 rounded-lg transition-all ${confirmingResetId === fs.id
+                                            ? 'bg-red-500 text-white animate-pulse'
+                                            : 'hover:bg-red-500 hover:text-white text-red-500/50'
+                                        }`}
+                                    title={confirmingResetId === fs.id ? "Click again to confirm" : "Reset to Stock"}
                                 >
-                                    <RotateCcw className="w-5 h-5" />
+                                    <RotateCcw className={`w-5 h-5 ${confirmingResetId === fs.id ? 'animate-spin' : ''}`} />
                                 </button>
                                 <button
                                     onClick={() => onEdit(fs)}

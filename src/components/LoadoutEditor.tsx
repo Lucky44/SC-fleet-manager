@@ -17,6 +17,7 @@ export const LoadoutEditor: React.FC<LoadoutEditorProps> = ({
 }) => {
     const [ports, setPorts] = useState<Port[]>([]);
     const [loading, setLoading] = useState(true);
+    const [isConfirmingReset, setIsConfirmingReset] = useState(false);
     const shipData = ships.find(s => s.ClassName === fleetShip.shipClass);
 
     useEffect(() => {
@@ -103,11 +104,23 @@ export const LoadoutEditor: React.FC<LoadoutEditorProps> = ({
                     </div>
                     <div className="flex items-center gap-4 flex-shrink-0">
                         <button
-                            onClick={() => onReset(fleetShip.id)}
-                            className="flex items-center gap-2 px-6 py-2.5 bg-red-500 text-white rounded-lg border border-red-400 transition-all text-xs font-black tracking-widest uppercase shadow-[0_0_20px_rgba(239,68,68,0.4)] hover:bg-red-600 active:scale-95 whitespace-nowrap"
+                            onClick={() => {
+                                if (isConfirmingReset) {
+                                    onReset(fleetShip.id);
+                                    setIsConfirmingReset(false);
+                                } else {
+                                    setIsConfirmingReset(true);
+                                    setTimeout(() => setIsConfirmingReset(false), 3000);
+                                }
+                            }}
+                            className={`flex items-center gap-2 px-6 py-2.5 rounded-lg border-2 transition-all text-xs font-black tracking-widest uppercase shadow-[0_0_30px_rgba(220,38,38,0.5)] active:scale-95 whitespace-nowrap ${isConfirmingReset
+                                    ? 'bg-white text-red-600 border-white shadow-[0_0_40px_rgba(255,255,255,0.4)]'
+                                    : 'bg-red-600 text-white border-red-400'
+                                }`}
                             title="Reset all ports to stock items"
                         >
-                            <RotateCcw className="w-4 h-4" /> RESET TO STOCK
+                            <RotateCcw className={`w-4 h-4 ${isConfirmingReset ? 'animate-spin' : ''}`} />
+                            {isConfirmingReset ? 'CONFIRM RESET?' : 'RESET TO STOCK'}
                         </button>
                         <button onClick={onClose} className="group p-3 hover:bg-white/5 rounded-full transition-all border border-transparent hover:border-white/10">
                             <X className="w-6 h-6 text-gray-400 group-hover:text-white" />

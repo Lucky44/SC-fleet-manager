@@ -1,0 +1,29 @@
+commit 4192233e2248e7e10d5b3e0af7125ccb65bc359e
+Author: Fleet Manager <fleet@manager.local>
+Date:   Mon Jan 26 19:03:27 2026 -0800
+
+    Implementing Stock Loadouts and UI improvements
+
+commit 68c759f59110812919a8a6ed4cc295d44bd3aa14
+Author: Fleet Manager <fleet@manager.local>
+Date:   Sun Jan 25 21:00:25 2026 -0800
+
+    v4.9.1: Multi-tiered naming engine for perfect in-game names
+
+commit 868a562f1afbfb8e8eba88751790400b8cd66634
+Author: Fleet Manager <fleet@manager.local>
+Date:   Sun Jan 25 20:59:14 2026 -0800
+
+    v4.9.0: Fix item naming to use friendly in-game names
+
+commit 2ffe3ba4459f6704be15bde650753aa689c359c2
+Author: Fleet Manager <fleet@manager.local>
+Date:   Sun Jan 25 20:53:24 2026 -0800
+
+    v4.8.0: Robust recursive turret consolidation and deep promotion
+
+commit a15fee464abe599874a1462d1f3b2b522d8cff56
+Author: Fleet Manager <fleet@manager.local>
+Date:   Sun Jan 25 20:35:20 2026 -0800
+
+    v4.7.0: Critical fix for gimbal consolidation and turret weapon promotion
