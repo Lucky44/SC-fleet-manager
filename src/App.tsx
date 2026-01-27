@@ -171,7 +171,7 @@ const App: React.FC = () => {
       <div className="sticky top-0 z-50 bg-sc-dark/80 backdrop-blur-md border-b border-white/5 pb-4 px-4 md:px-8">
         <header className="max-w-7xl mx-auto pt-4 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
           <div>
-            <h1 className="text-4xl font-bold text-sc-blue tracking-tighter flex items-center gap-2">
+            <h1 className="text-4xl font-bold text-white tracking-tighter flex items-center gap-2">
               <Shield className="w-10 h-10" /> SC FLEET LOADOUT MANAGER
             </h1>
             <p className="text-gray-500 font-mono text-sm mt-1 flex items-center gap-2">
@@ -189,16 +189,16 @@ const App: React.FC = () => {
             </p>
           </div>
 
-          <nav className="flex bg-sc-gray rounded-lg p-1 border border-white/5">
+          <nav className="flex bg-sc-dark/50 rounded-lg p-1 border border-white/5">
             <button
               onClick={() => setActiveTab('ships')}
-              className={`flex items-center gap-2 px-6 py-2 rounded-md transition-all ${activeTab === 'ships' ? 'bg-sc-blue text-orange-600 font-bold' : 'hover:bg-white/5 text-orange-500'}`}
+              className={`flex items-center gap-2 px-6 py-2 rounded-md transition-all ${activeTab === 'ships' ? 'bg-sc-blue text-sc-dark font-bold' : 'bg-transparent text-gray-500 hover:bg-sc-gray/50 hover:text-gray-300'}`}
             >
               <Database className="w-4 h-4" /> SHIP DATABASE
             </button>
             <button
               onClick={() => setActiveTab('fleet')}
-              className={`flex items-center gap-2 px-6 py-2 rounded-md transition-all ${activeTab === 'fleet' ? 'bg-sc-blue text-orange-600 font-bold' : 'hover:bg-white/5 text-orange-500'}`}
+              className={`flex items-center gap-2 px-6 py-2 rounded-md transition-all ${activeTab === 'fleet' ? 'bg-sc-blue text-sc-dark font-bold' : 'bg-transparent text-gray-500 hover:bg-sc-gray/50 hover:text-gray-300'}`}
             >
               <Layout className="w-4 h-4" /> MY FLEET ({fleet.length})
             </button>
