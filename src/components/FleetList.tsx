@@ -130,12 +130,6 @@ export const FleetList: React.FC<FleetListProps> = ({ fleet, ships, onRemove, on
                 {isConfirmingClear ? (
                     <div className="flex items-center gap-6 bg-white/5 p-1 rounded-xl border border-white/10 transition-all">
                         <button
-                            onClick={() => setIsConfirmingClear(false)}
-                            className="w-24 py-2 bg-white/20 hover:bg-white/30 text-white rounded-lg transition-all text-[10px] font-black tracking-widest uppercase"
-                        >
-                            NO
-                        </button>
-                        <button
                             onClick={() => {
                                 onClear();
                                 setIsConfirmingClear(false);
@@ -143,6 +137,12 @@ export const FleetList: React.FC<FleetListProps> = ({ fleet, ships, onRemove, on
                             className="w-24 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-all text-[10px] font-black tracking-widest uppercase shadow-[0_0_20px_rgba(220,38,38,0.4)]"
                         >
                             YES, CLEAR
+                        </button>
+                        <button
+                            onClick={() => setIsConfirmingClear(false)}
+                            className="w-24 py-2 bg-white/20 hover:bg-white/30 text-white rounded-lg transition-all text-[10px] font-black tracking-widest uppercase"
+                        >
+                            NO
                         </button>
                     </div>
                 ) : (
