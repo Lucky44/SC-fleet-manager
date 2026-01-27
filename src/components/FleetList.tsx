@@ -180,7 +180,7 @@ export const FleetList: React.FC<FleetListProps> = ({ fleet, ships, onRemove, on
 
                     if (!shipData) {
                         return (
-                            <div key={fs.id} className="relative bg-red-950/20 border border-red-500/30 rounded-2xl overflow-hidden p-6 shadow-xl backdrop-blur-sm">
+                            <div key={fs.id} className="relative bg-red-950/20 border-2 border-red-500/30 rounded-2xl overflow-hidden p-6 shadow-xl backdrop-blur-sm">
                                 <div className="absolute top-0 right-0 p-4">
                                     <button
                                         onClick={() => onRemove(fs.id)}
@@ -210,7 +210,7 @@ export const FleetList: React.FC<FleetListProps> = ({ fleet, ships, onRemove, on
                     }
 
                     return (
-                        <div key={fs.id} className="relative bg-sc-gray border border-white/5 rounded-2xl overflow-hidden p-6 shadow-xl">
+                        <div key={fs.id} className="relative bg-sc-gray border-2 border-white/10 rounded-2xl overflow-hidden p-6 shadow-xl">
                             <div className="absolute top-0 right-0 p-4 flex gap-2">
                                 <button
                                     onClick={() => onEdit(fs)}
